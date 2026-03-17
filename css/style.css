@@ -133,7 +133,7 @@ header {
 
 .hero-gradient {
   background: linear-gradient(135deg, #4F5BB0, #8387D4);
-  padding: 5rem 0 4rem;
+  padding: 5rem 0 2.5rem;
   color: #fff;
 }
 
@@ -148,7 +148,7 @@ header {
   font-weight: 700;
   letter-spacing: 0.02em;
   color: #fff;
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.55rem;
 }
 
 .hero-gradient h1 {
