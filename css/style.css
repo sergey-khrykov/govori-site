@@ -151,6 +151,23 @@ header {
   margin-bottom: 0.55rem;
 }
 
+.accented {
+  position: relative;
+  display: inline-block;
+}
+
+.accented::after {
+  content: '\B4';
+  color: #E8612C;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-30%) scaleX(1.3);
+  top: -0.05em;
+  font-size: 1em;
+  font-weight: 900;
+  pointer-events: none;
+}
+
 .hero-gradient h1 {
   color: rgba(255, 255, 255, 0.9);
   font-size: 1.375rem;
