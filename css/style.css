@@ -91,11 +91,11 @@ p {
   z-index: 100;
   display: flex;
   gap: 0;
-  background: var(--color-bg);
-  border: 1px solid var(--color-card-border);
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.3);
   border-radius: 8px;
   overflow: hidden;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
 }
 
 .lang-btn {
@@ -128,13 +128,38 @@ p {
 /* ── Header / Hero ─────────────────────────────────── */
 
 header {
-  padding: 5rem 0 4rem;
   text-align: center;
+}
+
+.hero-gradient {
+  background: linear-gradient(135deg, #4F5BB0, #8387D4);
+  padding: 5rem 0 4rem;
+  color: #fff;
+}
+
+.hero-icon {
+  border-radius: 24px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  margin-bottom: 1rem;
+}
+
+.hero-app-name {
+  font-size: 2.5rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: #fff;
+  margin-bottom: 0.75rem;
+}
+
+.hero-gradient h1 {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1.375rem;
+  font-weight: 500;
 }
 
 header .subtitle {
   font-size: 1.125rem;
-  color: var(--color-muted);
+  color: rgba(255, 255, 255, 0.85);
   max-width: 540px;
   margin: 1rem auto 2rem;
   line-height: 1.5;
@@ -145,6 +170,27 @@ header .subtitle {
   gap: 1rem;
   justify-content: center;
   flex-wrap: wrap;
+  align-items: flex-start;
+}
+
+.btn-badge-wrap {
+  position: relative;
+  display: inline-block;
+}
+
+.badge-soon {
+  position: absolute;
+  top: -8px;
+  right: -12px;
+  background: #E8612C;
+  color: #fff;
+  font-size: 0.625rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 2px 8px;
+  border-radius: 10px;
+  line-height: 1.4;
 }
 
 .btn {
@@ -172,6 +218,15 @@ header .subtitle {
   background: var(--color-accent-hover);
 }
 
+.hero-gradient .btn-primary {
+  background: #fff;
+  color: #4F5BB0;
+}
+
+.hero-gradient .btn-primary:hover {
+  background: rgba(255, 255, 255, 0.9);
+}
+
 .btn-secondary {
   background: var(--color-card-bg);
   color: var(--color-muted);
@@ -180,34 +235,13 @@ header .subtitle {
   opacity: 0.6;
 }
 
-.hero-screenshot {
-  margin: 3rem auto 0;
-  max-width: 280px;
-  display: block;
+.hero-gradient .btn-secondary {
+  background: rgba(255, 255, 255, 0.15);
+  color: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  opacity: 1;
 }
 
-.hero-screenshot img {
-  width: 100%;
-  height: auto;
-  border-radius: 16px;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
-}
-
-/* placeholder when no screenshot yet */
-.screenshot-placeholder {
-  width: 100%;
-  aspect-ratio: 9 / 16;
-  max-width: 280px;
-  margin: 3rem auto 0;
-  background: var(--color-card-bg);
-  border: 2px dashed var(--color-card-border);
-  border-radius: 16px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--color-muted);
-  font-size: 0.875rem;
-}
 
 /* ── Feature Cards ─────────────────────────────────── */
 
@@ -424,8 +458,12 @@ footer a:hover {
 /* ── Responsive ────────────────────────────────────── */
 
 @media (min-width: 640px) {
-  h1 {
-    font-size: 2.75rem;
+  .hero-app-name {
+    font-size: 3.25rem;
+  }
+
+  .hero-gradient h1 {
+    font-size: 1.5rem;
   }
 
   .features-grid {
