@@ -311,47 +311,6 @@ header .subtitle {
   font-size: 0.9375rem;
 }
 
-/* ── Pricing Table ─────────────────────────────────── */
-
-.pricing-intro {
-  color: var(--color-muted);
-  margin-bottom: 1.5rem;
-}
-
-.pricing-table {
-  width: 100%;
-  border-collapse: collapse;
-  font-size: 0.9375rem;
-}
-
-.pricing-table th,
-.pricing-table td {
-  padding: 0.625rem 0.75rem;
-  text-align: left;
-  border-bottom: 1px solid var(--color-card-border);
-}
-
-.pricing-table th {
-  font-weight: 600;
-  font-size: 0.8125rem;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-  color: var(--color-muted);
-}
-
-.pricing-table td:nth-child(2),
-.pricing-table td:nth-child(3),
-.pricing-table th:nth-child(2),
-.pricing-table th:nth-child(3) {
-  text-align: center;
-}
-
-.pricing-note {
-  margin-top: 1rem;
-  font-size: 0.8125rem;
-  color: var(--color-muted);
-}
-
 /* ── Signup Form ───────────────────────────────────── */
 
 #signup {
