@@ -14,7 +14,7 @@ fi
 git -C "$SITE_REPO" pull --ff-only 2>/dev/null || true
 
 # Sync files
-rsync -av --delete --exclude .git "$SITE_SRC/" "$SITE_REPO/"
+rsync -av --delete --exclude .git --exclude videos_full --exclude .DS_Store "$SITE_SRC/" "$SITE_REPO/"
 
 # Check for changes
 cd "$SITE_REPO"
