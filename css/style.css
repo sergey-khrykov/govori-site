@@ -85,17 +85,69 @@ p {
 /* ── Language Switcher ──────────────────────────────── */
 
 .lang-switcher {
-  position: fixed;
-  top: 1rem;
-  right: 1rem;
-  z-index: 100;
   display: flex;
   gap: 0;
-  background: rgba(255, 255, 255, 0.95);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  border-radius: 8px;
+  border-radius: 6px;
   overflow: hidden;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
+}
+
+.lang-switcher--header {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.lang-switcher--header .lang-btn {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.lang-switcher--header .lang-btn:hover {
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+}
+
+.lang-switcher--header .lang-btn.active {
+  background: rgba(255, 255, 255, 0.25);
+  color: #fff;
+}
+
+.lang-switcher--header .lang-btn + .lang-btn {
+  border-left: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.footer-lang {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+
+.footer-lang .lang-link {
+  padding: 0 !important;
+}
+
+.lang-link {
+  background: none;
+  border: none !important;
+  padding: 0;
+  font-size: 0.8125rem;
+  font-family: inherit;
+  color: var(--color-muted);
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.lang-link:hover {
+  color: var(--color-text);
+}
+
+.footer-lang .lang-link.active {
+  color: var(--color-muted);
+  cursor: default;
+  opacity: 0.4;
+  background: none !important;
 }
 
 .lang-btn {
@@ -135,6 +187,7 @@ header {
   background: linear-gradient(135deg, #4F5BB0, #8387D4);
   padding: 5rem 0 2.5rem;
   color: #fff;
+  position: relative;
 }
 
 .hero-icon {
@@ -234,12 +287,12 @@ header .subtitle {
 }
 
 .btn-primary {
-  background: var(--color-accent);
+  background: #4F5BB0;
   color: #fff;
 }
 
 .btn-primary:hover {
-  background: var(--color-accent-hover);
+  background: #434da0;
 }
 
 .hero-gradient .btn-primary {
@@ -321,6 +374,37 @@ header .subtitle {
   width: 100%;
   border-radius: 12px;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+
+.video-wrap {
+  position: relative;
+  flex: 0 0 100%;
+  scroll-snap-align: start;
+}
+
+.video-overlay {
+  position: absolute;
+  inset: 0;
+  border-radius: 12px;
+  background: rgba(0, 0, 0, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.2s;
+  pointer-events: none;
+}
+
+.video-wrap:hover .video-overlay {
+  opacity: 1;
+}
+
+.video-overlay svg {
+  width: 48px;
+  height: 48px;
+  color: #fff;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
 }
 
 /* ── Dark Feature Row ──────────────────────────────── */
@@ -383,9 +467,7 @@ header .subtitle {
 }
 
 .carousel-track video {
-  flex: 0 0 100%;
   width: 100%;
-  scroll-snap-align: start;
   border-radius: 12px;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
 }

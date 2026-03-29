@@ -18,17 +18,15 @@
 </head>
 <body>
 
-  <!-- ── Language Switcher ─────────────────────────── -->
-  <nav class="lang-switcher" aria-label="Language">
-    <button class="lang-btn active" data-lang="en">EN</button>
-    <button class="lang-btn" data-lang="ru">RU</button>
-    <button class="lang-btn" data-lang="sr-latn">SR</button>
-    <button class="lang-btn" data-lang="sr-cyrl">СР</button>
-  </nav>
-
   <!-- ── Hero ──────────────────────────────────────── -->
   <header>
     <div class="hero-gradient">
+      <nav class="lang-switcher lang-switcher--header" aria-label="Language">
+        <button class="lang-btn active" data-lang="en">EN</button>
+        <button class="lang-btn" data-lang="ru">RU</button>
+        <button class="lang-btn" data-lang="sr-latn">SR</button>
+        <button class="lang-btn" data-lang="sr-cyrl">СР</button>
+      </nav>
       <div class="container">
         <img src="img/app-icon-256.png" alt="Govori app icon" class="hero-icon" width="120" height="120">
         <p class="hero-app-name">G<span class="accented">o</span>vori</p>
@@ -63,7 +61,7 @@
         <div class="feature-media">
           <div class="video-carousel">
             <div class="carousel-track">
-              <video autoplay muted loop playsinline><source src="video/feat1_latin_zena.mp4" type="video/mp4"></video>
+              <video muted loop playsinline><source src="video/feat1_latin_zena.mp4" type="video/mp4"></video>
               <video muted loop playsinline><source src="video/feat1_cyrillic_zena.mp4" type="video/mp4"></video>
               <video muted loop playsinline><source src="video/feat1_no_diacritics.mp4" type="video/mp4"></video>
               <video muted loop playsinline><source src="video/feat2_form_ljudi.mp4" type="video/mp4"></video>
@@ -83,7 +81,7 @@
         <div class="feature-media">
           <div class="video-carousel">
             <div class="carousel-track">
-              <video autoplay muted loop playsinline><source src="video/feat3_verb_studirati.mp4" type="video/mp4"></video>
+              <video muted loop playsinline><source src="video/feat3_verb_studirati.mp4" type="video/mp4"></video>
               <video muted loop playsinline><source src="video/feat3_adjective.mp4" type="video/mp4"></video>
               <video muted loop playsinline><source src="video/feat4_labels_bread.mp4" type="video/mp4"></video>
               <video muted loop playsinline><source src="video/feat5_examples_dosli.mp4" type="video/mp4"></video>
@@ -101,7 +99,7 @@
         <div class="feature-media">
           <div class="video-carousel">
             <div class="carousel-track">
-              <video autoplay muted loop playsinline><source src="video/feat6_recents_favorites.mp4" type="video/mp4"></video>
+              <video muted loop playsinline><source src="video/feat6_recents_favorites.mp4" type="video/mp4"></video>
               <video muted loop playsinline><source src="video/feat7_change_scripts.mp4" type="video/mp4"></video>
             </div>
             <div class="carousel-dots"></div>
@@ -147,6 +145,12 @@
   <!-- ── Footer ────────────────────────────────────── -->
   <footer>
     <div class="container">
+      <div class="footer-lang">
+        <button class="lang-link lang-btn active" data-lang="en">English</button>
+        <button class="lang-link lang-btn" data-lang="ru">Русский</button>
+        <button class="lang-link lang-btn" data-lang="sr-latn">Srpski</button>
+        <button class="lang-link lang-btn" data-lang="sr-cyrl">Српски</button>
+      </div>
       <div class="footer-links">
         <a href="privacy.html" data-i18n="footer_privacy">Privacy Policy</a>
         <a href="mailto:support@govoridictionaries.com" data-i18n="footer_contact">Contact</a>
@@ -158,6 +162,49 @@
   <!-- ── Scripts ───────────────────────────────────── -->
   <script src="js/i18n.js"></script>
   <script>
+    const playSVG = '<svg viewBox="0 0 24 24" fill="currentColor"><polygon points="8,5 19,12 8,19"/></svg>';
+    const pauseSVG = '<svg viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/></svg>';
+
+    // Wrap every video with an overlay
+    document.querySelectorAll('.feature-media video').forEach(video => {
+      const wrap = document.createElement('div');
+      wrap.className = 'video-wrap';
+      video.parentNode.insertBefore(wrap, video);
+      wrap.appendChild(video);
+
+      const overlay = document.createElement('div');
+      overlay.className = 'video-overlay';
+      overlay.innerHTML = pauseSVG;
+      wrap.appendChild(overlay);
+
+      // Update icon based on playing state
+      const updateIcon = () => {
+        overlay.innerHTML = video.paused ? playSVG : pauseSVG;
+      };
+      video.addEventListener('play', updateIcon);
+      video.addEventListener('pause', updateIcon);
+      updateIcon();
+
+      // Click to toggle play/pause
+      wrap.addEventListener('click', () => {
+        const carousel = video.closest('.video-carousel');
+        if (video.paused) {
+          video.play();
+          if (carousel) carousel._userPaused = false;
+        } else {
+          video.pause();
+          if (carousel) carousel._userPaused = true;
+        }
+      });
+    });
+
+    // Global: only one carousel plays at a time
+    let activeCarousel = null;
+    function deactivateCarousel(data) {
+      data.inViewport = false;
+      data.videos.forEach(v => v.pause());
+    }
+
     document.querySelectorAll('.video-carousel').forEach(carousel => {
       const track = carousel.querySelector('.carousel-track');
       const dotsContainer = carousel.querySelector('.carousel-dots');
@@ -168,7 +215,8 @@
       videos.forEach(v => v.removeAttribute('loop'));
 
       function scrollTo(idx) {
-        track.scrollTo({ left: videos[idx].offsetLeft - track.offsetLeft, behavior: 'smooth' });
+        const wrap = videos[idx].closest('.video-wrap') || videos[idx];
+        track.scrollTo({ left: wrap.offsetLeft - track.offsetLeft, behavior: 'smooth' });
       }
 
       // Wrap dots + arrows in a nav row
@@ -201,32 +249,56 @@
       });
       const allDots = dotsContainer.querySelectorAll('.carousel-dot');
 
-      // Auto-advance on video end
+      // Auto-advance on video end (only if not manually paused)
       videos.forEach((video, idx) => {
         video.addEventListener('ended', () => {
+          if (carousel._userPaused) return;
           const isLast = idx === videos.length - 1;
           setTimeout(() => {
-            scrollTo(isLast ? 0 : idx + 1);
+            if (!carousel._userPaused) scrollTo(isLast ? 0 : idx + 1);
           }, isLast ? 5000 : 2000);
         });
       });
 
-      // Track visible slide — play/pause accordingly
-      const observer = new IntersectionObserver(entries => {
+      // Track visible slide within carousel
+      const slideObserver = new IntersectionObserver(entries => {
         entries.forEach(entry => {
-          const idx = Array.from(videos).indexOf(entry.target);
+          const video = entry.target.querySelector ? entry.target.querySelector('video') : entry.target;
+          const idx = Array.from(videos).indexOf(video);
+          if (idx === -1) return;
           if (entry.isIntersecting) {
             allDots.forEach((d, i) => d.classList.toggle('active', i === idx));
-            entry.target.currentTime = 0;
-            entry.target.play();
+            if (current !== idx) videos[current].pause();
             current = idx;
-          } else {
-            entry.target.pause();
+            video.currentTime = 0;
+            if (inViewport && !carousel._userPaused) video.play();
           }
         });
       }, { root: track, threshold: 0.6 });
 
-      videos.forEach(v => observer.observe(v));
+      track.querySelectorAll('.video-wrap').forEach(w => slideObserver.observe(w));
+
+      // Play/pause when carousel enters/leaves viewport
+      const carouselData = { inViewport: false, videos, getCurrent: () => current };
+      let inViewport = false;
+      const viewportObserver = new IntersectionObserver(entries => {
+        const visible = entries[0].isIntersecting;
+        inViewport = visible;
+        carouselData.inViewport = visible;
+        if (visible) {
+          if (activeCarousel && activeCarousel !== carouselData) {
+            deactivateCarousel(activeCarousel);
+          }
+          activeCarousel = carouselData;
+          carousel._userPaused = false;
+          videos[current].play();
+        } else {
+          videos.forEach(v => v.pause());
+          if (activeCarousel === carouselData) activeCarousel = null;
+        }
+      }, { threshold: 0.3 });
+
+      viewportObserver.observe(carousel);
     });
   </script>
 
