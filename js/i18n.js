@@ -84,9 +84,9 @@ const translations = {
     title: 'Govori — Сербский словарь с грамматикой для изучения языка',
     description: 'Сербский словарь — приложение для изучения сербского языка с поддержкой грамматики на латинице и кириллице.',
 
-    hero_headline: 'Словарь сербского, который разбирается в грамматике.',
-    hero_subtitle: 'Падежи, спряжения, времена — всё под рукой. Ищите на латинице или кириллице, как вам удобнее.',
-    cta_beta: 'Участвовать в бета-тесте',
+    hero_headline: 'Сербский словарь, который понимает грамматику.',
+    hero_subtitle: 'Все падежи, спряжения и времена. На латинице или кириллице. Офлайн и без рекламы.',
+    cta_beta: 'Присоединиться к бета-тесту',
     cta_appstore: 'В App Store',
     badge_soon: 'Скоро',
     hero_trust: 'Полностью офлайн · Без рекламы · Без аккаунта',
@@ -355,6 +355,51 @@ function setLang(lang) {
 
   // Persist choice
   localStorage.setItem('govori-lang', lang);
+
+  // Swap video sources based on language
+  const videoFolder = lang === 'ru' ? 'video/ru/' : 'video/en/';
+  const ruVideos = new Set([
+    'feat1_latin_zena.mp4', 'feat1_cyrillic_zena.mp4', 'feat1_no_diacritics.mp4',
+    'feat2_form_ljudi.mp4', 'feat2_form_zavolela.mp4', 'feat2_translation_great.mp4',
+    'feat3_verb_studirati.mp4', 'feat3_adjective.mp4', 'feat4_labels_bread.mp4',
+    'feat6_recents_favorites.mp4', 'feat7_change_scripts.mp4'
+  ]);
+
+  document.querySelectorAll('.feature-media video').forEach(video => {
+    const source = video.querySelector('source');
+    if (!source) return;
+    const src = source.getAttribute('src');
+    const filename = src.split('/').pop();
+    const wrap = video.closest('.video-wrap');
+
+    if (lang === 'ru' && !ruVideos.has(filename)) {
+      if (wrap) wrap.style.display = 'none';
+      return;
+    }
+    if (wrap) wrap.style.display = '';
+    const newSrc = videoFolder + filename;
+    if (src !== newSrc) {
+      source.setAttribute('src', newSrc);
+      video.load();
+    }
+  });
+
+  // Rebuild carousel dots for updated video count
+  document.querySelectorAll('.video-carousel').forEach(carousel => {
+    const dots = carousel.querySelector('.carousel-dots');
+    if (!dots) return;
+    const visibleWraps = carousel.querySelectorAll('.video-wrap:not([style*="display: none"])');
+    dots.innerHTML = '';
+    visibleWraps.forEach((_, i) => {
+      const dot = document.createElement('button');
+      dot.className = 'carousel-dot' + (i === 0 ? ' active' : '');
+      dot.addEventListener('click', () => {
+        const track = carousel.querySelector('.carousel-track');
+        track.scrollTo({ left: visibleWraps[i].offsetLeft - track.offsetLeft, behavior: 'smooth' });
+      });
+      dots.appendChild(dot);
+    });
+  });
 }
 
 function initI18n() {
