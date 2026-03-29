@@ -247,7 +247,12 @@
         dot.addEventListener('click', () => scrollTo(i));
         dotsContainer.appendChild(dot);
       });
-      const allDots = dotsContainer.querySelectorAll('.carousel-dot');
+
+      function updateDots(activeIdx) {
+        dotsContainer.querySelectorAll('.carousel-dot').forEach((d, i) => {
+          d.classList.toggle('active', i === activeIdx);
+        });
+      }
 
       // Auto-advance on video end (only if not manually paused)
       videos.forEach((video, idx) => {
@@ -267,7 +272,7 @@
           const idx = Array.from(videos).indexOf(video);
           if (idx === -1) return;
           if (entry.isIntersecting) {
-            allDots.forEach((d, i) => d.classList.toggle('active', i === idx));
+            updateDots(idx);
             if (current !== idx) videos[current].pause();
             current = idx;
             video.currentTime = 0;
