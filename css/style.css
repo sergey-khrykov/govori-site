@@ -377,10 +377,17 @@ header .subtitle {
   cursor: pointer;
 }
 
-.video-wrap {
+.carousel-track .video-wrap {
   position: relative;
   flex: 0 0 100%;
+  width: 100%;
+  min-width: 0;
   scroll-snap-align: start;
+  overflow: hidden;
+}
+
+.feature-media > .video-wrap {
+  position: relative;
 }
 
 .video-overlay {
