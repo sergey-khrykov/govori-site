@@ -111,8 +111,8 @@ const translations = {
     feat7_desc: 'Выбирайте письменность, которая вам удобна. Переключайтесь между латиницей и кириллицей в любой момент – одним нажатием кнопки.',
     group1_title: 'Гибкий поиск',
     group1_desc: 'Латиница, кириллица, с диакритиками или без — пишите как угодно. Встретили незнакомую форму в тексте? Вводите как есть — хоть спряжённый глагол, хоть склонённое существительное. Можно искать и по переводу — на английском или русском.',
-    group2_title: 'Вся грамматика — перед глазами',
-    group2_desc: 'Таблицы склонений и спряжений прямо в статье — не нужно никуда переходить. Сразу видно ударение, род, переходность, стилистику и диалектные пометы. К каждому значению — примеры на сербском, английском и русском.',
+    group2_title: 'Все детали сразу перед глазами',
+    group2_desc: 'Ударение, род, переходность для глаголов, стилистический регистр и диалектная принадлежность – всё это видно сразу вверху карточки. Рядом со значениями даются примеры употребления с переводом. Ниже можно изучить таблицы склонений и спряжений, выбирая любой род, число или время.',
     group3_title: 'Настройте под себя',
     group3_desc: 'Недавние запросы и избранное всегда на виду — ничего не потеряется. Латиница или кириллица — переключайте одним нажатием, и всё приложение тут же перестроится.',
 
@@ -384,12 +384,20 @@ function setLang(lang) {
     }
   });
 
-  // Show/hide carousel dots to match visible videos
+  // Rebuild carousel dots for updated video count
   document.querySelectorAll('.video-carousel').forEach(carousel => {
-    const dots = carousel.querySelectorAll('.carousel-dot');
-    const wraps = carousel.querySelectorAll('.video-wrap');
-    wraps.forEach((wrap, i) => {
-      if (dots[i]) dots[i].style.display = wrap.style.display;
+    const dots = carousel.querySelector('.carousel-dots');
+    if (!dots) return;
+    const visibleWraps = carousel.querySelectorAll('.video-wrap:not([style*="display: none"])');
+    dots.innerHTML = '';
+    visibleWraps.forEach((_, i) => {
+      const dot = document.createElement('button');
+      dot.className = 'carousel-dot' + (i === 0 ? ' active' : '');
+      dot.addEventListener('click', () => {
+        const track = carousel.querySelector('.carousel-track');
+        track.scrollTo({ left: visibleWraps[i].offsetLeft - track.offsetLeft, behavior: 'smooth' });
+      });
+      dots.appendChild(dot);
     });
   });
 }
