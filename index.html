@@ -307,5 +307,21 @@
     });
   </script>
 
+  <!-- Firebase Analytics -->
+  <script type="module">
+    import { initializeApp } from 'https://www.gstatic.com/firebasejs/11.6.0/firebase-app.js';
+    import { getAnalytics } from 'https://www.gstatic.com/firebasejs/11.6.0/firebase-analytics.js';
+    const app = initializeApp({
+      apiKey: "AIzaSyActBzNLPfd-N14ygkDJ0jnWBDxBEGht0g",
+      authDomain: "bcms-280b4.firebaseapp.com",
+      projectId: "bcms-280b4",
+      storageBucket: "bcms-280b4.firebasestorage.app",
+      messagingSenderId: "959141740578",
+      appId: "1:959141740578:web:3e6d67492837cd009e0a7b",
+      measurementId: "G-XTLJVT851W"
+    });
+    getAnalytics(app);
+  </script>
+
 </body>
 </html>
