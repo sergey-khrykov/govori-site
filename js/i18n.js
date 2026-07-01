@@ -2,7 +2,7 @@ const translations = {
   en: {
     lang: 'en',
     title: 'Govori — Serbian Learner’s Dictionary',
-    description: 'Look up any Serbian word form — accusative, past tense, short adjective — and find the canonical entry. Latin and Cyrillic. Offline. Free.',
+    description: 'Look up any Serbian word form — accusative, past tense, short adjective — and find the canonical entry. Latin and Cyrillic. Offline. No Ads.',
 
     // Hero
     hero_headline: 'Learn Serbian with a dictionary that actually understands grammar.',
@@ -55,17 +55,19 @@ const translations = {
 
     // Footer
     footer_privacy: 'Privacy Policy',
+    footer_terms: 'Terms of Use',
     footer_contact: 'Contact',
     footer_built: 'Built for iOS 17+',
 
     // Privacy page
     priv_title: 'Privacy Policy',
-    priv_updated: 'Last updated: March 18, 2026',
+    priv_updated: 'Last updated: July 1, 2026',
     priv_collect_h: 'What we collect',
     priv_collect_p: 'When you sign up for the beta, we collect:',
     priv_collect_li1: 'Your email address (required)',
     priv_collect_li2: 'How you’re learning Serbian (optional)',
     priv_collect_app: 'The Govori app requires no account and works fully offline. To improve stability, it collects anonymous crash reports and performance diagnostics via Firebase Crashlytics. This data is not linked to your identity and is used solely to fix bugs and improve app performance.',
+    priv_teacher_p: 'If you contact us through the in-app "I\'m a teacher" form, the details you provide (name, email, institution, class size, message) are voluntary and are used only to respond to your inquiry.',
     priv_use_h: 'How we use it',
     priv_use_p: 'Your email is used to send you a TestFlight beta invite and to notify you when the app launches on the App Store. That’s it.',
     priv_access_h: 'Who has access',
@@ -124,12 +126,13 @@ const translations = {
     footer_built: 'Для iOS 17+',
 
     priv_title: 'Политика конфиденциальности',
-    priv_updated: 'Последнее обновление: 18 марта 2026',
+    priv_updated: 'Последнее обновление: 1 июля 2026',
     priv_collect_h: 'Что мы собираем',
     priv_collect_p: 'При регистрации на бета-тест мы собираем:',
     priv_collect_li1: 'Ваш адрес электронной почты (обязательно)',
     priv_collect_li2: 'Как вы изучаете сербский (необязательно)',
     priv_collect_app: 'Приложение Govori не требует аккаунта и работает полностью офлайн. Для повышения стабильности оно собирает анонимные отчёты о сбоях и диагностику производительности через Firebase Crashlytics. Эти данные не связаны с вашей личностью и используются исключительно для исправления ошибок и улучшения работы приложения.',
+    priv_teacher_p: 'Если вы обращаетесь к нам через форму «Я преподаватель» в приложении, указанные вами данные (имя, эл. почта, организация, размер группы, сообщение) предоставляются добровольно и используются только для ответа на ваш запрос.',
     priv_use_h: 'Как мы используем данные',
     priv_use_p: 'Электронная почта используется для отправки приглашения в TestFlight и уведомления о запуске в App Store. Больше ни для чего.',
     priv_access_h: 'Кто имеет доступ',
@@ -202,12 +205,13 @@ const translations = {
     footer_built: 'Za iOS 17+',
 
     priv_title: 'Politika privatnosti',
-    priv_updated: 'Poslednje ažuriranje: 18. mart 2026.',
+    priv_updated: 'Poslednje ažuriranje: 1. jul 2026.',
     priv_collect_h: 'Šta prikupljamo',
     priv_collect_p: 'Kada se prijavite za beta test, prikupljamo:',
     priv_collect_li1: 'Vašu email adresu (obavezno)',
     priv_collect_li2: 'Kako učite srpski (opcionalno)',
     priv_collect_app: 'Aplikacija Govori ne zahteva nalog i radi potpuno oflajn. Radi poboljšanja stabilnosti, prikuplja anonimne izveštaje o greškama i dijagnostiku performansi putem Firebase Crashlytics. Ovi podaci nisu povezani sa vašim identitetom i koriste se isključivo za ispravku grešaka i poboljšanje rada aplikacije.',
+    priv_teacher_p: 'Ako nam se obratite putem forme „Ja sam predavač“ u aplikaciji, podaci koje navedete (ime, imejl, institucija, veličina grupe, poruka) daju se dobrovoljno i koriste se isključivo za odgovor na vaš upit.',
     priv_use_h: 'Kako koristimo podatke',
     priv_use_p: 'Email se koristi za slanje TestFlight pozivnice i obaveštenja o lansiranju u App Store. Ni za šta drugo.',
     priv_access_h: 'Ko ima pristup',
@@ -280,12 +284,13 @@ const translations = {
     footer_built: 'За iOS 17+',
 
     priv_title: 'Политика приватности',
-    priv_updated: 'Последње ажурирање: 18. март 2026.',
+    priv_updated: 'Последње ажурирање: 1. јул 2026.',
     priv_collect_h: 'Шта прикупљамо',
     priv_collect_p: 'Када се пријавите за бета тест, прикупљамо:',
     priv_collect_li1: 'Вашу емаил адресу (обавезно)',
     priv_collect_li2: 'Како учите српски (опционално)',
     priv_collect_app: 'Апликација Говори не захтева налог и ради потпуно офлајн. Ради побољшања стабилности, прикупља анонимне извештаје о грешкама и дијагностику перформанси путем Firebase Crashlytics. Ови подаци нису повезани са вашим идентитетом и користе се искључиво за исправку грешака и побољшање рада апликације.',
+    priv_teacher_p: 'Ако нам се обратите путем форме „Ја сам предавач“ у апликацији, подаци које наведете (име, имејл, институција, величина групе, порука) дају се добровољно и користе се искључиво за одговор на ваш упит.',
     priv_use_h: 'Како користимо податке',
     priv_use_p: 'Емаил се користи за слање TestFlight позивнице и обавештења о лансирању у App Store. Ни за шта друго.',
     priv_access_h: 'Ко има приступ',
