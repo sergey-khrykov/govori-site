@@ -253,12 +253,20 @@ header .subtitle {
 .appstore-badge-link {
   display: inline-block;
   line-height: 0;
+  cursor: pointer;
 }
 
-/* Sized to visually match the neighboring .btn height */
+/* Sized to visually match the neighboring .btn height.
+   pointer-events/user-select keep the whole badge acting as one button —
+   otherwise Safari's Live Text offers the words inside the artwork for
+   text selection (I-beam cursor) instead of the link's pointer. */
 .appstore-badge {
   height: 3.25rem;
   width: auto;
+  pointer-events: none;
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-user-drag: none;
 }
 
 .btn-badge-wrap {
@@ -654,15 +662,6 @@ footer a {
 
 footer a:hover {
   color: var(--color-text);
-}
-
-.app-store-badge {
-  opacity: 0.4;
-  cursor: default;
-}
-
-.app-store-badge img {
-  height: 40px;
 }
 
 /* ── Responsive ────────────────────────────────────── */

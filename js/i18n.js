@@ -354,10 +354,7 @@ function setLang(lang) {
   // (only EN and RU exist for our language set; Serbian falls back to EN)
   const appStoreBadge = document.getElementById('appstore-badge');
   if (appStoreBadge) {
-    const badgeLocale = lang === 'ru' ? 'ru-ru' : 'en-us';
-    appStoreBadge.src =
-      'https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/' +
-      badgeLocale + '?size=250x83';
+    appStoreBadge.src = lang === 'ru' ? 'img/appstore-badge-ru.svg' : 'img/appstore-badge-en.svg';
   }
 
   // Swap video sources based on language
