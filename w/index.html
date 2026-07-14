@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Govori — open word</title>
   <meta name="robots" content="noindex">
+  <!-- Safari's native App Store banner: shows OPEN when the app is installed,
+       GET otherwise — the most reliable iOS path into the app/store. -->
+  <meta name="apple-itunes-app" content="app-id=6758169365">
   <link rel="icon" href="../img/app-icon-256.png">
   <link rel="apple-touch-icon" href="../img/app-icon-256.png">
   <style>
@@ -46,10 +49,10 @@
     // Shared word links: https://govoridictionaries.com/w?clean=…&pos=…&etym=…&full=…
     // Mirrors the in-app govorisrb://word?… deep link (see app Deeplink.kt/swift).
     // When the app is installed the redirect below opens it; otherwise this
-    // page pitches the app. Once the store listings exist, point GET_APP_*
-    // at them (and publish assetlinks.json / AASA so verified app links skip
-    // this page entirely).
-    var GET_APP_IOS = 'https://testflight.apple.com/join/kt29nmEd';
+    // page pitches the app. Once the Play listing exists, point
+    // GET_APP_DEFAULT at it (and publish assetlinks.json / AASA so verified
+    // app links skip this page entirely).
+    var GET_APP_IOS = 'https://apps.apple.com/app/id6758169365';
     var GET_APP_DEFAULT = 'https://govoridictionaries.com/';
 
     var params = new URLSearchParams(location.search);

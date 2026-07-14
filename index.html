@@ -33,7 +33,13 @@
         <h1 data-i18n="hero_headline">Learn Serbian with a dictionary that actually understands grammar.</h1>
         <p class="subtitle" data-i18n="hero_subtitle">Look up any word form — accusative, past tense, short adjective — and find the canonical entry. Available in Latin and Cyrillic.</p>
         <div class="cta-group">
-          <a href="https://apps.apple.com/app/id6758169365" class="btn btn-primary" data-i18n="cta_appstore">Download on the App Store</a>
+          <!-- Official App Store badge, hotlinked from Apple's marketing-tools
+               API (their link-maker output); i18n.js swaps the locale. -->
+          <a href="https://apps.apple.com/app/id6758169365" class="appstore-badge-link" aria-label="Download on the App Store">
+            <img id="appstore-badge" class="appstore-badge"
+                 src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83"
+                 alt="Download on the App Store" width="250" height="83">
+          </a>
           <span class="btn-badge-wrap">
             <span class="btn btn-secondary" data-i18n="cta_playstore">Google Play</span>
             <span class="badge-soon" data-i18n="badge_mid2026">Mid 2026</span>

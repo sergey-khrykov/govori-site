@@ -1,0 +1,13 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": ["Z9H8CZNMZB.com.sergeikh.serbian"],
+        "components": [
+          { "/": "/w" },
+          { "/": "/w/*" }
+        ]
+      }
+    ]
+  }
+}

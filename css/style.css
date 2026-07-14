@@ -250,6 +250,17 @@ header .subtitle {
   align-items: flex-start;
 }
 
+.appstore-badge-link {
+  display: inline-block;
+  line-height: 0;
+}
+
+/* Sized to visually match the neighboring .btn height */
+.appstore-badge {
+  height: 3.25rem;
+  width: auto;
+}
+
 .btn-badge-wrap {
   position: relative;
   display: inline-block;

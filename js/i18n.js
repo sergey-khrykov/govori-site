@@ -8,7 +8,6 @@ const translations = {
     hero_headline: 'Learn Serbian with a dictionary that actually understands grammar.',
     hero_subtitle: 'Look up any word form — accusative, past tense, short adjective — and find the canonical entry. Available in Latin and Cyrillic.',
     cta_beta: 'Join the Beta',
-    cta_appstore: 'Download on the App Store',
     badge_soon: 'Soon',
     hero_trust: 'Fully offline · No ads · No account needed',
     cta_playstore: 'Google Play',
@@ -90,7 +89,6 @@ const translations = {
     hero_headline: 'Сербский словарь, который понимает грамматику.',
     hero_subtitle: 'Все падежи, спряжения и времена. На латинице или кириллице. Полностью офлайн и без рекламы.',
     cta_beta: 'Присоединиться к бета-тесту',
-    cta_appstore: 'Скачать в App Store',
     badge_soon: 'Скоро',
     hero_trust: 'Полностью офлайн · Без рекламы · Без аккаунта',
     cta_playstore: 'Google Play',
@@ -156,7 +154,6 @@ const translations = {
     hero_headline: 'Rečnik srpskog jezika koji zaista razume gramatiku.',
     hero_subtitle: 'Pronađite bilo koji oblik reči — akuzativ, prošlo vreme, kratki pridev — i dobijte rečnički članak. Latinica i ćirilica.',
     cta_beta: 'Pridružite se beta testu',
-    cta_appstore: 'Preuzmite u App Store-u',
     badge_soon: 'Uskoro',
     hero_trust: 'Radi oflajn · Bez reklama · Bez naloga',
     cta_playstore: 'Google Play',
@@ -236,7 +233,6 @@ const translations = {
     hero_headline: 'Речник српског језика који заиста разуме граматику.',
     hero_subtitle: 'Пронађите било који облик речи — акузатив, прошло време, кратки придев — и добијте речнички чланак. Латиница и ћирилица.',
     cta_beta: 'Придружите се бета тесту',
-    cta_appstore: 'Преузмите у App Store-у',
     badge_soon: 'Ускоро',
     hero_trust: 'Ради офлајн · Без реклама · Без налога',
     cta_playstore: 'Google Play',
@@ -353,6 +349,16 @@ function setLang(lang) {
 
   // Persist choice
   localStorage.setItem('govori-lang', lang);
+
+  // Swap the App Store badge artwork to the locale Apple provides
+  // (only EN and RU exist for our language set; Serbian falls back to EN)
+  const appStoreBadge = document.getElementById('appstore-badge');
+  if (appStoreBadge) {
+    const badgeLocale = lang === 'ru' ? 'ru-ru' : 'en-us';
+    appStoreBadge.src =
+      'https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/' +
+      badgeLocale + '?size=250x83';
+  }
 
   // Swap video sources based on language
   const videoFolder = lang === 'ru' ? 'video/ru/' : 'video/en/';
