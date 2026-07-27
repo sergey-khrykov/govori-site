@@ -1,0 +1,13 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.langapp.srb",
+      "sha256_cert_fingerprints": [
+        "C4:2B:C3:05:B8:31:DB:0D:EB:E7:05:D0:8D:95:17:CD:3E:F5:85:D7:FB:EB:2C:53:9C:36:33:66:A6:3B:E9:D8",
+        "75:BE:8A:8C:72:66:2C:66:FE:CC:4D:BA:EE:ED:F5:A9:14:D2:26:42:13:E0:CC:26:92:46:D9:D8:B3:D0:7A:5E"
+      ]
+    }
+  }
+]
