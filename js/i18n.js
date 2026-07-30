@@ -53,6 +53,7 @@ const translations = {
     footer_privacy: 'Privacy Policy',
     footer_terms: 'Terms of Use',
     footer_contact: 'Contact',
+    footer_made: 'Made in Belgrade',
     footer_built: 'Built for iOS 16+ and Android 8+',
 
     // Privacy page
@@ -114,7 +115,9 @@ const translations = {
     signup_telegram: 'Есть идеи или нашли ошибку? Заходите в <a href="https://t.me/+9eXsVAtaA_4yYzFi">Telegram-группу</a> — там обсуждаем найденные баги и делимся идеями по улучшению.',
 
     footer_privacy: 'Политика конфиденциальности',
+    footer_terms: 'Условия использования',
     footer_contact: 'Контакты',
+    footer_made: 'Сделано в Белграде',
     footer_built: 'Для iOS 16+ и Android 8+',
 
     priv_title: 'Политика конфиденциальности',
@@ -189,7 +192,9 @@ const translations = {
     signup_telegram: 'Želite da podelite utiske ili pratite novosti? Pridružite se našoj <a href="https://t.me/+9eXsVAtaA_4yYzFi">Telegram grupi</a>.',
 
     footer_privacy: 'Politika privatnosti',
+    footer_terms: 'Uslovi korišćenja',
     footer_contact: 'Kontakt',
+    footer_made: 'Napravljeno u Beogradu',
     footer_built: 'Za iOS 16+ i Android 8+',
 
     priv_title: 'Politika privatnosti',
@@ -264,7 +269,9 @@ const translations = {
     signup_telegram: 'Желите да поделите утиске или пратите новости? Придружите се нашој <a href="https://t.me/+9eXsVAtaA_4yYzFi">Telegram групи</a>.',
 
     footer_privacy: 'Политика приватности',
+    footer_terms: 'Услови коришћења',
     footer_contact: 'Контакт',
+    footer_made: 'Направљено у Београду',
     footer_built: 'За iOS 16+ и Android 8+',
 
     priv_title: 'Политика приватности',
