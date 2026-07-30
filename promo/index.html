@@ -76,23 +76,30 @@
     document.getElementById('openBtn').textContent = t.open;
     document.getElementById('getBtn').textContent = t.get;
 
-    function openInApp() {
+    // withFallback matters: Chrome refuses gesture-less intent:// launches but
+    // still navigates to S.browser_fallback_url — so an automatic attempt WITH
+    // a fallback lands on the Play listing even when the app is installed. The
+    // auto attempt therefore omits the fallback (blocked = page stays up, user
+    // taps the button), and only the button tap — a real gesture — carries it.
+    function openInApp(withFallback) {
       if (isAndroid) {
-        // intent:// opens the app when installed and falls back to the Play
-        // listing otherwise (Chrome handles the fallback natively).
+        var fallback = withFallback
+          ? ';S.browser_fallback_url=' + encodeURIComponent(GET_APP_PLAY)
+          : '';
         location.href = 'intent://promo?' + query +
-          '#Intent;scheme=govorisrb;package=com.langapp.srb;S.browser_fallback_url=' +
-          encodeURIComponent(GET_APP_PLAY) + ';end';
+          '#Intent;scheme=govorisrb;package=com.langapp.srb' + fallback + ';end';
       } else {
         location.href = schemeUrl;
       }
     }
-    document.getElementById('openBtn').addEventListener('click', openInApp);
+    document.getElementById('openBtn').addEventListener('click', function () {
+      openInApp(true);
+    });
 
     // One automatic attempt on Android, so tapping a shared link goes straight
     // into the app when it's installed.
     if (isAndroid && code) {
-      setTimeout(openInApp, 300);
+      setTimeout(function () { openInApp(false); }, 300);
     }
   </script>
 </body>

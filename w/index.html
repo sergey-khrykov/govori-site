@@ -91,13 +91,18 @@
     getBtn.textContent = t.get;
     getBtn.href = isIOS ? GET_APP_IOS : GET_APP_DEFAULT;
 
-    function openInApp() {
+    // withFallback matters: Chrome refuses gesture-less intent:// launches but
+    // still navigates to S.browser_fallback_url — so an automatic attempt WITH
+    // a fallback lands on the fallback even when the app is installed. The
+    // auto attempt therefore omits the fallback (blocked = page stays up, user
+    // taps the button), and only the button tap — a real gesture — carries it.
+    function openInApp(withFallback) {
       if (isAndroid) {
-        // intent:// opens the app when installed and falls back to this page's
-        // "get the app" target otherwise (Chrome handles the fallback natively).
+        var fallback = withFallback
+          ? ';S.browser_fallback_url=' + encodeURIComponent(GET_APP_DEFAULT)
+          : '';
         location.href = 'intent://word?' + query +
-          '#Intent;scheme=govorisrb;package=com.langapp.srb;S.browser_fallback_url=' +
-          encodeURIComponent(GET_APP_DEFAULT) + ';end';
+          '#Intent;scheme=govorisrb;package=com.langapp.srb' + fallback + ';end';
       } else {
         // iOS/other: navigating to the scheme prompts when the app is
         // installed and silently does nothing otherwise — the page stays up
@@ -105,12 +110,14 @@
         location.href = schemeUrl;
       }
     }
-    document.getElementById('openBtn').addEventListener('click', openInApp);
+    document.getElementById('openBtn').addEventListener('click', function () {
+      openInApp(true);
+    });
 
     // One automatic attempt on mobile, so tapping a shared link goes straight
     // into the app when it's installed.
     if ((isAndroid || isIOS) && full) {
-      setTimeout(openInApp, 300);
+      setTimeout(function () { openInApp(false); }, 300);
     }
   </script>
 </body>
