@@ -8,10 +8,8 @@ const translations = {
     hero_headline: 'Learn Serbian with a dictionary that actually understands grammar.',
     hero_subtitle: 'Look up any word form — accusative, past tense, short adjective — and find the canonical entry. Available in Latin and Cyrillic.',
     cta_beta: 'Join the Beta',
-    badge_soon: 'Soon',
     hero_trust: 'Fully offline · No ads · No account needed',
     cta_playstore: 'Google Play',
-    badge_mid2026: 'Mid 2026',
 
     // Features
     features_heading: 'See what Govori can do',
@@ -47,9 +45,10 @@ const translations = {
 
     // Signup
     signup_heading: 'Get Govori',
-    signup_desc: 'Govori is now available free on the App Store — for iPhone and iPad.',
+    signup_desc: 'Govori is now available free on the App Store and Google Play — for iPhone, iPad and Android.',
     signup_btn: 'Download on the App Store',
-    signup_note: 'Requires iOS 16+. Fully offline, no ads, no account needed.',
+    signup_btn_play: 'Get it on Google Play',
+    signup_note: 'Requires iOS 16+ or Android 8+. Fully offline, no ads, no account needed.',
     signup_beta: 'Want early access to new features? Join the <a href="https://testflight.apple.com/join/kt29nmEd">TestFlight beta</a>.',
     signup_telegram: 'Want to share feedback or follow updates? Join our <a href="https://t.me/+9eXsVAtaA_4yYzFi">Telegram group</a>.',
 
@@ -57,7 +56,7 @@ const translations = {
     footer_privacy: 'Privacy Policy',
     footer_terms: 'Terms of Use',
     footer_contact: 'Contact',
-    footer_built: 'Built for iOS 16+',
+    footer_built: 'Built for iOS 16+ and Android 8+',
 
     // Privacy page
     priv_title: 'Privacy Policy',
@@ -89,10 +88,8 @@ const translations = {
     hero_headline: 'Сербский словарь, который понимает грамматику.',
     hero_subtitle: 'Все падежи, спряжения и времена. На латинице или кириллице. Полностью офлайн и без рекламы.',
     cta_beta: 'Присоединиться к бета-тесту',
-    badge_soon: 'Скоро',
     hero_trust: 'Полностью офлайн · Без рекламы · Без аккаунта',
     cta_playstore: 'Google Play',
-    badge_mid2026: 'Середина 2026',
 
     // Features
     features_heading: 'Что умеет Govori',
@@ -115,15 +112,16 @@ const translations = {
     aud3_desc: 'Ваш удобный морфологический справочник с региональными вариантами. Все формы проиндексированы, а если нужно больше информации, из любой статьи можно быстро перейти в Wiktionary, Hrvatski jezični portal или Google.',
 
     signup_heading: 'Установить Govori',
-    signup_desc: 'Govori теперь доступен бесплатно в App Store — для iPhone и iPad.',
+    signup_desc: 'Govori теперь доступен бесплатно в App Store и Google Play — для iPhone, iPad и Android.',
     signup_btn: 'Скачать в App Store',
-    signup_note: 'Требуется iOS 16+. Полностью офлайн, без рекламы и без аккаунта.',
+    signup_btn_play: 'Скачать в Google Play',
+    signup_note: 'Требуется iOS 16+ или Android 8+. Полностью офлайн, без рекламы и без аккаунта.',
     signup_beta: 'Хотите первыми пробовать новые функции? Присоединяйтесь к <a href="https://testflight.apple.com/join/kt29nmEd">бете в TestFlight</a>.',
     signup_telegram: 'Есть идеи или нашли ошибку? Заходите в <a href="https://t.me/+9eXsVAtaA_4yYzFi">Telegram-группу</a> — там обсуждаем найденные баги и делимся идеями по улучшению.',
 
     footer_privacy: 'Политика конфиденциальности',
     footer_contact: 'Контакты',
-    footer_built: 'Для iOS 16+',
+    footer_built: 'Для iOS 16+ и Android 8+',
 
     priv_title: 'Политика конфиденциальности',
     priv_updated: 'Последнее обновление: 11 июля 2026',
@@ -154,10 +152,8 @@ const translations = {
     hero_headline: 'Rečnik srpskog jezika koji zaista razume gramatiku.',
     hero_subtitle: 'Pronađite bilo koji oblik reči — akuzativ, prošlo vreme, kratki pridev — i dobijte rečnički članak. Latinica i ćirilica.',
     cta_beta: 'Pridružite se beta testu',
-    badge_soon: 'Uskoro',
     hero_trust: 'Radi oflajn · Bez reklama · Bez naloga',
     cta_playstore: 'Google Play',
-    badge_mid2026: 'Sredina 2026.',
 
     features_heading: 'Po čemu se Govori razlikuje',
     feat1_title: 'Pretražite bilo koji oblik',
@@ -194,15 +190,16 @@ const translations = {
     aud3_desc: 'Brz morfološki priručnik sa regionalnim varijantama. Svi oblici indeksirani i pretraživi, uz brz pristup Wiktionary-ju, Hrvatski jezični portal-u i Google-u.',
 
     signup_heading: 'Preuzmite Govori',
-    signup_desc: 'Govori je sada dostupan besplatno u App Store-u — za iPhone i iPad.',
+    signup_desc: 'Govori je sada dostupan besplatno u App Store-u i na Google Play-u — za iPhone, iPad i Android.',
     signup_btn: 'Preuzmite u App Store-u',
-    signup_note: 'Potreban iOS 16+. Radi oflajn, bez reklama, bez naloga.',
+    signup_btn_play: 'Preuzmite na Google Play-u',
+    signup_note: 'Potreban iOS 16+ ili Android 8+. Radi oflajn, bez reklama, bez naloga.',
     signup_beta: 'Želite prvi da isprobate nove funkcije? Pridružite se <a href="https://testflight.apple.com/join/kt29nmEd">TestFlight beti</a>.',
     signup_telegram: 'Želite da podelite utiske ili pratite novosti? Pridružite se našoj <a href="https://t.me/+9eXsVAtaA_4yYzFi">Telegram grupi</a>.',
 
     footer_privacy: 'Politika privatnosti',
     footer_contact: 'Kontakt',
-    footer_built: 'Za iOS 16+',
+    footer_built: 'Za iOS 16+ i Android 8+',
 
     priv_title: 'Politika privatnosti',
     priv_updated: 'Poslednje ažuriranje: 11. jul 2026.',
@@ -233,10 +230,8 @@ const translations = {
     hero_headline: 'Речник српског језика који заиста разуме граматику.',
     hero_subtitle: 'Пронађите било који облик речи — акузатив, прошло време, кратки придев — и добијте речнички чланак. Латиница и ћирилица.',
     cta_beta: 'Придружите се бета тесту',
-    badge_soon: 'Ускоро',
     hero_trust: 'Ради офлајн · Без реклама · Без налога',
     cta_playstore: 'Google Play',
-    badge_mid2026: 'Средина 2026.',
 
     features_heading: 'По чему се Говори разликује',
     feat1_title: 'Претражите било који облик',
@@ -273,15 +268,16 @@ const translations = {
     aud3_desc: 'Брз морфолошки приручник са регионалним варијантама. Сви облици индексирани и претраживи, уз брз приступ Wiktionary-ју, Hrvatski jezični portal-у и Google-у.',
 
     signup_heading: 'Преузмите Говори',
-    signup_desc: 'Govori је сада доступан бесплатно у App Store-у — за iPhone и iPad.',
+    signup_desc: 'Govori је сада доступан бесплатно у App Store-у и на Google Play-у — за iPhone, iPad и Android.',
     signup_btn: 'Преузмите у App Store-у',
-    signup_note: 'Потребан iOS 16+. Ради офлајн, без реклама, без налога.',
+    signup_btn_play: 'Преузмите на Google Play-у',
+    signup_note: 'Потребан iOS 16+ или Android 8+. Ради офлајн, без реклама, без налога.',
     signup_beta: 'Желите први да испробате нове функције? Придружите се <a href="https://testflight.apple.com/join/kt29nmEd">TestFlight бети</a>.',
     signup_telegram: 'Желите да поделите утиске или пратите новости? Придружите се нашој <a href="https://t.me/+9eXsVAtaA_4yYzFi">Telegram групи</a>.',
 
     footer_privacy: 'Политика приватности',
     footer_contact: 'Контакт',
-    footer_built: 'За iOS 16+',
+    footer_built: 'За iOS 16+ и Android 8+',
 
     priv_title: 'Политика приватности',
     priv_updated: 'Последње ажурирање: 11. јул 2026.',
@@ -355,6 +351,10 @@ function setLang(lang) {
   const appStoreBadge = document.getElementById('appstore-badge');
   if (appStoreBadge) {
     appStoreBadge.src = lang === 'ru' ? 'img/appstore-badge-ru.svg' : 'img/appstore-badge-en.svg';
+  }
+  const playStoreBadge = document.getElementById('playstore-badge');
+  if (playStoreBadge) {
+    playStoreBadge.src = lang === 'ru' ? 'img/playstore-badge-ru.png' : 'img/playstore-badge-en.png';
   }
 
   // Swap video sources based on language

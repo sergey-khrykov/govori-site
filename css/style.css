@@ -269,6 +269,15 @@ header .subtitle {
   -webkit-user-drag: none;
 }
 
+.playstore-badge {
+  height: 3.25rem;
+  width: auto;
+  pointer-events: none;
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
 .btn-badge-wrap {
   position: relative;
   display: inline-block;
