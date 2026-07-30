@@ -36,14 +36,14 @@
           <!-- Official App Store badge artwork (Apple marketing-tools API,
                self-hosted so it can't be blocked); i18n.js swaps the locale. -->
           <a href="https://apps.apple.com/app/id6758169365" class="appstore-badge-link" aria-label="Download on the App Store">
-            <img id="appstore-badge" class="appstore-badge"
+            <img class="appstore-badge"
                  src="img/appstore-badge-en.svg"
                  alt="Download on the App Store" width="156" height="52">
           </a>
           <!-- Official Google Play badge artwork (play.google.com/badges,
                self-hosted, padding trimmed); i18n.js swaps the locale. -->
           <a href="https://play.google.com/store/apps/details?id=com.langapp.srb" class="appstore-badge-link" aria-label="Get it on Google Play">
-            <img id="playstore-badge" class="playstore-badge"
+            <img class="playstore-badge"
                  src="img/playstore-badge-en.png"
                  alt="Get it on Google Play" width="175" height="52">
           </a>
@@ -141,10 +141,17 @@
     <section id="signup">
       <h2 data-i18n="signup_heading">Get Govori</h2>
       <p class="section-description" data-i18n="signup_desc">Govori is now available free on the App Store — for iPhone and iPad.</p>
-      <a href="https://apps.apple.com/app/id6758169365" class="btn btn-primary signup-cta" data-i18n="signup_btn">Download on the App Store</a>
-      <a href="https://play.google.com/store/apps/details?id=com.langapp.srb" class="btn btn-primary signup-cta" data-i18n="signup_btn_play">Get it on Google Play</a>
+      <div class="cta-group">
+        <a href="https://apps.apple.com/app/id6758169365" class="appstore-badge-link" aria-label="Download on the App Store">
+          <img class="appstore-badge" src="img/appstore-badge-en.svg"
+               alt="Download on the App Store" width="156" height="52">
+        </a>
+        <a href="https://play.google.com/store/apps/details?id=com.langapp.srb" class="appstore-badge-link" aria-label="Get it on Google Play">
+          <img class="playstore-badge" src="img/playstore-badge-en.png"
+               alt="Get it on Google Play" width="175" height="52">
+        </a>
+      </div>
       <p class="form-note" data-i18n="signup_note">Requires iOS 16+. Fully offline, no ads, no account needed.</p>
-      <p class="form-note" data-i18n-html="signup_beta">Want early access to new features? Join the <a href="https://testflight.apple.com/join/kt29nmEd">TestFlight beta</a>.</p>
       <p class="form-note" data-i18n-html="signup_telegram">Want to share feedback or follow updates? Join our <a href="https://t.me/+9eXsVAtaA_4yYzFi">Telegram group</a>.</p>
     </section>
   </div>

@@ -46,10 +46,7 @@ const translations = {
     // Signup
     signup_heading: 'Get Govori',
     signup_desc: 'Govori is now available free on the App Store and Google Play — for iPhone, iPad and Android.',
-    signup_btn: 'Download on the App Store',
-    signup_btn_play: 'Get it on Google Play',
     signup_note: 'Requires iOS 16+ or Android 8+. Fully offline, no ads, no account needed.',
-    signup_beta: 'Want early access to new features? Join the <a href="https://testflight.apple.com/join/kt29nmEd">TestFlight beta</a>.',
     signup_telegram: 'Want to share feedback or follow updates? Join our <a href="https://t.me/+9eXsVAtaA_4yYzFi">Telegram group</a>.',
 
     // Footer
@@ -113,10 +110,7 @@ const translations = {
 
     signup_heading: 'Установить Govori',
     signup_desc: 'Govori теперь доступен бесплатно в App Store и Google Play — для iPhone, iPad и Android.',
-    signup_btn: 'Скачать в App Store',
-    signup_btn_play: 'Скачать в Google Play',
     signup_note: 'Требуется iOS 16+ или Android 8+. Полностью офлайн, без рекламы и без аккаунта.',
-    signup_beta: 'Хотите первыми пробовать новые функции? Присоединяйтесь к <a href="https://testflight.apple.com/join/kt29nmEd">бете в TestFlight</a>.',
     signup_telegram: 'Есть идеи или нашли ошибку? Заходите в <a href="https://t.me/+9eXsVAtaA_4yYzFi">Telegram-группу</a> — там обсуждаем найденные баги и делимся идеями по улучшению.',
 
     footer_privacy: 'Политика конфиденциальности',
@@ -191,10 +185,7 @@ const translations = {
 
     signup_heading: 'Preuzmite Govori',
     signup_desc: 'Govori je sada dostupan besplatno u App Store-u i na Google Play-u — za iPhone, iPad i Android.',
-    signup_btn: 'Preuzmite u App Store-u',
-    signup_btn_play: 'Preuzmite na Google Play-u',
     signup_note: 'Potreban iOS 16+ ili Android 8+. Radi oflajn, bez reklama, bez naloga.',
-    signup_beta: 'Želite prvi da isprobate nove funkcije? Pridružite se <a href="https://testflight.apple.com/join/kt29nmEd">TestFlight beti</a>.',
     signup_telegram: 'Želite da podelite utiske ili pratite novosti? Pridružite se našoj <a href="https://t.me/+9eXsVAtaA_4yYzFi">Telegram grupi</a>.',
 
     footer_privacy: 'Politika privatnosti',
@@ -269,10 +260,7 @@ const translations = {
 
     signup_heading: 'Преузмите Говори',
     signup_desc: 'Govori је сада доступан бесплатно у App Store-у и на Google Play-у — за iPhone, iPad и Android.',
-    signup_btn: 'Преузмите у App Store-у',
-    signup_btn_play: 'Преузмите на Google Play-у',
     signup_note: 'Потребан iOS 16+ или Android 8+. Ради офлајн, без реклама, без налога.',
-    signup_beta: 'Желите први да испробате нове функције? Придружите се <a href="https://testflight.apple.com/join/kt29nmEd">TestFlight бети</a>.',
     signup_telegram: 'Желите да поделите утиске или пратите новости? Придружите се нашој <a href="https://t.me/+9eXsVAtaA_4yYzFi">Telegram групи</a>.',
 
     footer_privacy: 'Политика приватности',
@@ -346,16 +334,14 @@ function setLang(lang) {
   // Persist choice
   localStorage.setItem('govori-lang', lang);
 
-  // Swap the App Store badge artwork to the locale Apple provides
+  // Swap the store badge artwork to the locale the stores provide
   // (only EN and RU exist for our language set; Serbian falls back to EN)
-  const appStoreBadge = document.getElementById('appstore-badge');
-  if (appStoreBadge) {
-    appStoreBadge.src = lang === 'ru' ? 'img/appstore-badge-ru.svg' : 'img/appstore-badge-en.svg';
-  }
-  const playStoreBadge = document.getElementById('playstore-badge');
-  if (playStoreBadge) {
-    playStoreBadge.src = lang === 'ru' ? 'img/playstore-badge-ru.png' : 'img/playstore-badge-en.png';
-  }
+  document.querySelectorAll('.appstore-badge').forEach(img => {
+    img.src = lang === 'ru' ? 'img/appstore-badge-ru.svg' : 'img/appstore-badge-en.svg';
+  });
+  document.querySelectorAll('.playstore-badge').forEach(img => {
+    img.src = lang === 'ru' ? 'img/playstore-badge-ru.png' : 'img/playstore-badge-en.png';
+  });
 
   // Swap video sources based on language
   const videoFolder = lang === 'ru' ? 'video/ru/' : 'video/en/';
