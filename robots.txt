@@ -1,0 +1,11 @@
+# govoridictionaries.com
+# /w/ is the deep-link bouncer and /promo/ is a campaign landing page; both are
+# noindex in their own markup and have no search value.
+
+User-agent: *
+Allow: /
+Disallow: /w/
+Disallow: /promo/
+Disallow: /videos_full/
+
+Sitemap: https://govoridictionaries.com/sitemap.xml

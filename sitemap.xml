@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Hand-maintained: only three indexable pages exist today. /w/ and /promo/ are
+  deliberately omitted (both carry <meta name="robots" content="noindex">).
+
+  Replace this with a generated sitemap when the static generator lands — see
+  docs/roadmap/blog.md, M2. Update lastmod when a page's content changes.
+-->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://govoridictionaries.com/</loc>
+    <lastmod>2026-08-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://govoridictionaries.com/privacy.html</loc>
+    <lastmod>2026-08-04</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://govoridictionaries.com/terms.html</loc>
+    <lastmod>2026-08-04</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+</urlset>
