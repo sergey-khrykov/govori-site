@@ -16,6 +16,16 @@ git -C "$SITE_REPO" pull --ff-only 2>/dev/null || true
 # Sync files
 rsync -av --delete --exclude .git --exclude videos_full --exclude .DS_Store "$SITE_SRC/" "$SITE_REPO/"
 
+# Deep-link targets get a sibling .html twin: GitHub Pages 301-redirects /w to
+# /w/ (the directory index), and a redirecting target is what Google's link
+# checker reports as a misconfigured deep link. The twin answers /w with a 200
+# while /w/ keeps working for links already shared in that form. Generated at
+# deploy time so <page>/index.html stays the single source of truth; the
+# ../img/… paths inside resolve to /img/… from both URLs.
+for page in w promo; do
+  cp "$SITE_REPO/$page/index.html" "$SITE_REPO/$page.html"
+done
+
 # Check for changes
 cd "$SITE_REPO"
 if git diff --quiet && git diff --cached --quiet && [ -z "$(git ls-files --others --exclude-standard)" ]; then

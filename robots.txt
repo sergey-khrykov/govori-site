@@ -1,11 +1,13 @@
 # govoridictionaries.com
-# /w/ is the deep-link bouncer and /promo/ is a campaign landing page; both are
-# noindex in their own markup and have no search value.
+# /w/ (deep-link bouncer) and /promo/ (campaign landing page) stay crawlable on
+# purpose: they are the App Link / Universal Link targets, and Google's deep-link
+# validator fetches them — blocking them here is what makes Play and Analytics
+# report the links as misconfigured. They are kept out of the index by the
+# <meta name="robots" content="noindex"> in their own markup, which only works
+# if the crawler is allowed to fetch the page and read it.
 
 User-agent: *
 Allow: /
-Disallow: /w/
-Disallow: /promo/
 Disallow: /videos_full/
 
 Sitemap: https://govoridictionaries.com/sitemap.xml

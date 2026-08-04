@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Govori — open word</title>
+  <meta name="robots" content="noindex">
+  <!-- Safari's native App Store banner: shows OPEN when the app is installed,
+       GET otherwise — the most reliable iOS path into the app/store. -->
+  <meta name="apple-itunes-app" content="app-id=6758169365">
+  <link rel="icon" href="../img/app-icon-256.png">
+  <link rel="apple-touch-icon" href="../img/app-icon-256.png">
+  <style>
+    :root { color-scheme: light dark; }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      min-height: 100vh; display: flex; align-items: center; justify-content: center;
+      background: linear-gradient(160deg, #7c6fd0 0%, #5b4fa8 100%); color: #fff;
+      padding: 24px; text-align: center;
+    }
+    .card { max-width: 420px; width: 100%; }
+    .icon { width: 96px; height: 96px; border-radius: 22px; margin-bottom: 20px; }
+    h1 { font-size: 2rem; margin-bottom: 6px; overflow-wrap: break-word; }
+    .pos { opacity: 0.75; margin-bottom: 28px; font-size: 1rem; }
+    .pitch { opacity: 0.9; margin-bottom: 28px; line-height: 1.45; }
+    .btn {
+      display: block; width: 100%; padding: 14px 20px; margin-bottom: 12px;
+      border-radius: 999px; font-size: 1.05rem; font-weight: 600;
+      text-decoration: none; cursor: pointer; border: none;
+    }
+    .btn-primary { background: #fff; color: #5b4fa8; }
+    .btn-secondary { background: rgba(255,255,255,0.14); color: #fff; border: 1px solid rgba(255,255,255,0.35); }
+    .home { display: inline-block; margin-top: 16px; color: rgba(255,255,255,0.75); font-size: 0.9rem; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <img class="icon" src="../img/app-icon-256.png" alt="Govori">
+    <h1 id="word">Govori</h1>
+    <div class="pos" id="pos"></div>
+    <p class="pitch" id="pitch">This link opens a word in the Govori Serbian dictionary app.</p>
+    <button class="btn btn-primary" id="openBtn">Open in the app</button>
+    <a class="btn btn-secondary" id="getBtn" href="https://govoridictionaries.com/">Get the app</a>
+    <a class="home" href="https://govoridictionaries.com/">govoridictionaries.com</a>
+  </div>
+
+  <script>
+    // Shared word links: https://govoridictionaries.com/w?clean=…&pos=…&etym=…&full=…
+    // Mirrors the in-app govorisrb://word?… deep link (see app Deeplink.kt/swift).
+    // When the app is installed the redirect below opens it; otherwise this
+    // page pitches the app. Once the Play listing exists, point
+    // GET_APP_DEFAULT at it (and publish assetlinks.json / AASA so verified
+    // app links skip this page entirely).
+    var GET_APP_IOS = 'https://apps.apple.com/app/id6758169365';
+    var GET_APP_DEFAULT = 'https://govoridictionaries.com/';
+
+    var params = new URLSearchParams(location.search);
+    var full = params.get('full') || params.get('clean') || '';
+    var pos = params.get('pos') || '';
+    var query = location.search.replace(/^\?/, '');
+    var schemeUrl = 'govorisrb://word?' + query;
+
+    var ua = navigator.userAgent;
+    var isAndroid = /Android/i.test(ua);
+    var isIOS = /iPhone|iPad|iPod/i.test(ua);
+    var isRu = (navigator.language || '').toLowerCase().indexOf('ru') === 0;
+
+    var STRINGS = {
+      en: {
+        pitch: 'This link opens a word in Govori, the Serbian learner’s dictionary — every form, full tables, offline.',
+        open: 'Open in the app',
+        get: 'Get the app'
+      },
+      ru: {
+        pitch: 'Эта ссылка открывает слово в Govori — сербском словаре для изучающих: любая форма, полные таблицы, офлайн.',
+        open: 'Открыть в приложении',
+        get: 'Скачать приложение'
+      }
+    };
+    var t = isRu ? STRINGS.ru : STRINGS.en;
+
+    if (full) {
+      document.getElementById('word').textContent = full;
+      document.title = full + ' — Govori';
+    }
+    if (pos) document.getElementById('pos').textContent = pos.replace(/_/g, ' ');
+    document.getElementById('pitch').textContent = t.pitch;
+    document.getElementById('openBtn').textContent = t.open;
+    var getBtn = document.getElementById('getBtn');
+    getBtn.textContent = t.get;
+    getBtn.href = isIOS ? GET_APP_IOS : GET_APP_DEFAULT;
+
+    // withFallback matters: Chrome refuses gesture-less intent:// launches but
+    // still navigates to S.browser_fallback_url — so an automatic attempt WITH
+    // a fallback lands on the fallback even when the app is installed. The
+    // auto attempt therefore omits the fallback (blocked = page stays up, user
+    // taps the button), and only the button tap — a real gesture — carries it.
+    function openInApp(withFallback) {
+      if (isAndroid) {
+        var fallback = withFallback
+          ? ';S.browser_fallback_url=' + encodeURIComponent(GET_APP_DEFAULT)
+          : '';
+        location.href = 'intent://word?' + query +
+          '#Intent;scheme=govorisrb;package=com.langapp.srb' + fallback + ';end';
+      } else {
+        // iOS/other: navigating to the scheme prompts when the app is
+        // installed and silently does nothing otherwise — the page stays up
+        // with the download pitch.
+        location.href = schemeUrl;
+      }
+    }
+    document.getElementById('openBtn').addEventListener('click', function () {
+      openInApp(true);
+    });
+
+    // One automatic attempt on mobile, so tapping a shared link goes straight
+    // into the app when it's installed.
+    if ((isAndroid || isIOS) && full) {
+      setTimeout(function () { openInApp(false); }, 300);
+    }
+  </script>
+</body>
+</html>
