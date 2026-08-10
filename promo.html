@@ -36,7 +36,7 @@
     <h1>Govori</h1>
     <p class="pitch" id="pitch">This link unlocks a special offer in the Govori Serbian dictionary app for Android.</p>
     <button class="btn btn-primary" id="openBtn">Open in the app</button>
-    <a class="btn btn-secondary" id="getBtn" href="https://play.google.com/store/apps/details?id=com.langapp.srb">Get the app on Google Play</a>
+    <a class="btn btn-secondary" id="getBtn" href="https://play.google.com/store/apps/details?id=com.langapp.srb&amp;referrer=utm_source%3Dpromo%26utm_medium%3Dpromo%26utm_campaign%3Dpromo_page">Get the app on Google Play</a>
     <a class="home" href="https://govoridictionaries.com/">govoridictionaries.com</a>
   </div>
 
@@ -45,7 +45,10 @@
     // Mirrors the in-app govorisrb://promo?code=… deep link (Deeplink.kt).
     // Android-only: the discounted Play SKU has no iOS counterpart, so the
     // fallback always pitches the Play listing. Structure mirrors ../w/.
-    var GET_APP_PLAY = 'https://play.google.com/store/apps/details?id=com.langapp.srb';
+    // &referrer= carries URL-encoded UTMs: Play Console reports on utm_source
+    // and utm_campaign today, and the Adjust SDK reads the whole string later.
+    var GET_APP_PLAY = 'https://play.google.com/store/apps/details?id=com.langapp.srb' +
+      '&referrer=utm_source%3Dpromo%26utm_medium%3Dpromo%26utm_campaign%3Dpromo_page';
 
     var params = new URLSearchParams(location.search);
     var code = params.get('code') || '';

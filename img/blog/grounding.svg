@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 470" width="900" height="470"
+     font-family="Helvetica Neue, Helvetica, Arial, sans-serif" role="img"
+     aria-label="The admissibility rule: a candidate form is checked against each standard's own authority ladder. If a reference printed it, the reading is recorded and the form is admitted with that standard's status. If the ladder is silent, that silence is recorded too and nothing is invented.">
+  <style>
+    .box   { fill: #f4f5fb; stroke: #5b62a8; stroke-width: 1.5; }
+    .ok    { fill: #eef7f2; stroke: #2f7d5d; stroke-width: 1.5; }
+    .no    { fill: #fdf2ee; stroke: #b4552c; stroke-width: 1.5; }
+    .h     { fill: #23264a; font-size: 15px; font-weight: 700; }
+    .hok   { fill: #1d5a42; font-size: 15px; font-weight: 700; }
+    .hno   { fill: #8c3f1e; font-size: 15px; font-weight: 700; }
+    .t     { fill: #3d4166; font-size: 13px; }
+    .tok   { fill: #24614a; font-size: 13px; }
+    .tno   { fill: #8c4a2c; font-size: 13px; }
+    .arrow { stroke: #5b62a8; stroke-width: 2; fill: none; }
+    .head  { fill: #5b62a8; }
+    .lbl   { fill: #6f6486; font-size: 12px; font-weight: 700; }
+    .mono  { font-family: "SF Mono", Menlo, monospace; font-size: 12.5px; fill: #3d4166; }
+    @media (prefers-color-scheme: dark) {
+      .box  { fill: #23253a; stroke: #9aa0e0; }
+      .ok   { fill: #1b2e26; stroke: #6cc3a0; }
+      .no   { fill: #33221b; stroke: #e0906a; }
+      .h    { fill: #eef0ff; } .hok { fill: #9ee3c2; } .hno { fill: #f0b394; }
+      .t    { fill: #c2c6e8; } .tok { fill: #b6ddcc; } .tno { fill: #e3bda8; }
+      .arrow{ stroke: #9aa0e0; } .head { fill: #9aa0e0; }
+      .lbl  { fill: #cbb6e8; } .mono { fill: #c2c6e8; }
+    }
+  </style>
+  <defs>
+    <marker id="b" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" class="head"/>
+    </marker>
+  </defs>
+
+  <!-- candidate -->
+  <rect class="box" x="20" y="180" width="200" height="80" rx="8"/>
+  <text x="38" y="212" class="h">A candidate form</text>
+  <text x="38" y="234" class="t">e.g. a genitive plural</text>
+  <text x="38" y="252" class="t">an agent proposes.</text>
+
+  <path class="arrow" d="M220 220 L280 220" marker-end="url(#b)"/>
+
+  <!-- ladder -->
+  <rect class="box" x="280" y="120" width="230" height="200" rx="8"/>
+  <text x="298" y="150" class="h">Ask one standard&#8217;s</text>
+  <text x="298" y="170" class="h">own authority ladder</text>
+  <text x="298" y="198" class="t">Each written standard has its</text>
+  <text x="298" y="216" class="t">own ordered list of references.</text>
+  <text x="298" y="234" class="t">A neighbour&#8217;s ruling is never</text>
+  <text x="298" y="252" class="t">borrowed to fill a gap.</text>
+  <text x="298" y="282" class="lbl">Asked once per standard,</text>
+  <text x="298" y="300" class="lbl">independently.</text>
+
+  <path class="arrow" d="M510 180 L570 150" marker-end="url(#b)"/>
+  <path class="arrow" d="M510 260 L570 300" marker-end="url(#b)"/>
+  <text x="522" y="138" class="lbl">printed it</text>
+  <text x="516" y="330" class="lbl">silent</text>
+
+  <!-- admitted -->
+  <rect class="ok" x="580" y="70" width="300" height="130" rx="8"/>
+  <text x="600" y="100" class="hok">Admitted, and graded</text>
+  <text x="600" y="124" class="tok">Recorded: what it printed and how it</text>
+  <text x="600" y="142" class="tok">was read. The form carries a status</text>
+  <text x="600" y="160" class="tok">for that standard — the norm, a</text>
+  <text x="600" y="178" class="tok">dispreferred variant, or attested use</text>
+  <text x="600" y="196" class="tok">outside the norm.</text>
+
+  <!-- absent -->
+  <rect class="no" x="580" y="250" width="300" height="120" rx="8"/>
+  <text x="600" y="280" class="hno">Absence is recorded too</text>
+  <text x="600" y="304" class="tno">&#8220;Checked, not present&#8221; is a finding.</text>
+  <text x="600" y="322" class="tno">It separates <tspan font-style="italic">no source confirms</tspan></text>
+  <text x="600" y="340" class="tno"><tspan font-style="italic">this</tspan> from <tspan font-style="italic">nobody looked</tspan>. Nothing</text>
+  <text x="600" y="358" class="tno">is filled in by guesswork.</text>
+
+  <!-- gate: the build's job is to catch the ungrounded claim -->
+  <path class="arrow" d="M730 370 L730 392 L450 392 L450 406" marker-end="url(#b)"/>
+  <rect class="box" x="250" y="410" width="400" height="48" rx="8"/>
+  <text x="270" y="440" class="h">The build refuses to ship an ungrounded claim.</text>
+</svg>

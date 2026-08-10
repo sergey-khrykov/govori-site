@@ -49,10 +49,23 @@
     // Shared word links: https://govoridictionaries.com/w?clean=…&pos=…&etym=…&full=…
     // Mirrors the in-app govorisrb://word?… deep link (see app Deeplink.kt/swift).
     // When the app is installed the redirect below opens it; otherwise this
-    // page pitches the app. Once the Play listing exists, point
-    // GET_APP_DEFAULT at it (and publish assetlinks.json / AASA so verified
-    // app links skip this page entirely).
-    var GET_APP_IOS = 'https://apps.apple.com/app/id6758169365';
+    // page pitches the app.
+    //
+    // Campaign link in the exact form App Store Connect generates (Analytics →
+    // Acquisition → Campaigns): pt= is the account-wide provider token, ct= the
+    // per-placement campaign token. Both are required — ct alone reports as
+    // organic.
+    //
+    // Three destinations, not two: each mobile platform goes straight to its
+    // store carrying the word_share tag, and only desktop gets the homepage —
+    // a store page is a dead end on a laptop. Android used to fall in with
+    // desktop, which sent word-of-mouth installs through the homepage badge
+    // and booked them as web_hero.
+    var GET_APP_IOS = 'https://apps.apple.com/app/apple-store/id6758169365?pt=128478223&ct=word_share&mt=8';
+    // Source is app_share, not website: this traffic is one user sharing a word
+    // with another, and this page is only the intermediary.
+    var GET_APP_PLAY = 'https://play.google.com/store/apps/details?id=com.langapp.srb' +
+      '&referrer=utm_source%3Dapp_share%26utm_medium%3Dword_share%26utm_campaign%3Dword_share';
     var GET_APP_DEFAULT = 'https://govoridictionaries.com/';
 
     var params = new URLSearchParams(location.search);
@@ -89,7 +102,7 @@
     document.getElementById('openBtn').textContent = t.open;
     var getBtn = document.getElementById('getBtn');
     getBtn.textContent = t.get;
-    getBtn.href = isIOS ? GET_APP_IOS : GET_APP_DEFAULT;
+    getBtn.href = isIOS ? GET_APP_IOS : isAndroid ? GET_APP_PLAY : GET_APP_DEFAULT;
 
     // withFallback matters: Chrome refuses gesture-less intent:// launches but
     // still navigates to S.browser_fallback_url — so an automatic attempt WITH
@@ -99,7 +112,7 @@
     function openInApp(withFallback) {
       if (isAndroid) {
         var fallback = withFallback
-          ? ';S.browser_fallback_url=' + encodeURIComponent(GET_APP_DEFAULT)
+          ? ';S.browser_fallback_url=' + encodeURIComponent(GET_APP_PLAY)
           : '';
         location.href = 'intent://word?' + query +
           '#Intent;scheme=govorisrb;package=com.langapp.srb' + fallback + ';end';

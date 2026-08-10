@@ -48,15 +48,21 @@
         <p class="subtitle" data-i18n="hero_subtitle">Look up any word form — accusative, past tense, short adjective — and find the canonical entry. Available in Latin and Cyrillic.</p>
         <div class="cta-group">
           <!-- Official App Store badge artwork (Apple marketing-tools API,
-               self-hosted so it can't be blocked); i18n.js swaps the locale. -->
-          <a href="https://apps.apple.com/app/id6758169365" class="appstore-badge-link" aria-label="Download on the App Store">
+               self-hosted so it can't be blocked); i18n.js swaps the locale.
+               Campaign link in the exact form App Store Connect generates
+               (Analytics → Acquisition → Campaigns): pt= is the account-wide
+               provider token, ct= the per-placement campaign token. Both are
+               required — ct alone reports as organic. -->
+          <a href="https://apps.apple.com/app/apple-store/id6758169365?pt=128478223&amp;ct=web_hero&amp;mt=8" class="appstore-badge-link" aria-label="Download on the App Store">
             <img class="appstore-badge"
                  src="img/appstore-badge-en.svg"
                  alt="Download on the App Store" width="156" height="52">
           </a>
           <!-- Official Google Play badge artwork (play.google.com/badges,
-               self-hosted, padding trimmed); i18n.js swaps the locale. -->
-          <a href="https://play.google.com/store/apps/details?id=com.langapp.srb" class="appstore-badge-link" aria-label="Get it on Google Play">
+               self-hosted, padding trimmed); i18n.js swaps the locale.
+               &referrer= carries URL-encoded UTMs; Play Console reports on them
+               and the Adjust SDK will later read the same string. -->
+          <a href="https://play.google.com/store/apps/details?id=com.langapp.srb&amp;referrer=utm_source%3Dwebsite%26utm_medium%3Dbadge%26utm_campaign%3Dweb_hero" class="appstore-badge-link" aria-label="Get it on Google Play">
             <img class="playstore-badge"
                  src="img/playstore-badge-en.png"
                  alt="Get it on Google Play" width="175" height="52">
@@ -156,11 +162,11 @@
       <h2 data-i18n="signup_heading">Get Govori</h2>
       <p class="section-description" data-i18n="signup_desc">Govori is now available free on the App Store — for iPhone and iPad.</p>
       <div class="cta-group">
-        <a href="https://apps.apple.com/app/id6758169365" class="appstore-badge-link" aria-label="Download on the App Store">
+        <a href="https://apps.apple.com/app/apple-store/id6758169365?pt=128478223&amp;ct=web_footer&amp;mt=8" class="appstore-badge-link" aria-label="Download on the App Store">
           <img class="appstore-badge" src="img/appstore-badge-en.svg"
                alt="Download on the App Store" width="156" height="52">
         </a>
-        <a href="https://play.google.com/store/apps/details?id=com.langapp.srb" class="appstore-badge-link" aria-label="Get it on Google Play">
+        <a href="https://play.google.com/store/apps/details?id=com.langapp.srb&amp;referrer=utm_source%3Dwebsite%26utm_medium%3Dbadge%26utm_campaign%3Dweb_footer" class="appstore-badge-link" aria-label="Get it on Google Play">
           <img class="playstore-badge" src="img/playstore-badge-en.png"
                alt="Get it on Google Play" width="175" height="52">
         </a>
@@ -190,6 +196,10 @@
 
   <!-- ── Scripts ───────────────────────────────────── -->
   <script src="js/i18n.js?v=3"></script>
+  <!-- Forwards an inbound ?utm_source=… into the store badges, so a partner
+       link attributes to that partner rather than to the badge placement.
+       Order-independent: i18n.js only swaps badge artwork, never hrefs. -->
+  <script src="js/store-links.js?v=1"></script>
   <script>
     const playSVG = '<svg viewBox="0 0 24 24" fill="currentColor"><polygon points="8,5 19,12 8,19"/></svg>';
     const pauseSVG = '<svg viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/></svg>';

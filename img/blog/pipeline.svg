@@ -1,0 +1,99 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 690" width="900" height="690"
+     font-family="Helvetica Neue, Helvetica, Arial, sans-serif" role="img"
+     aria-label="How the dictionary is assembled: three kinds of source feed a set of task agents, which write a per-word entry store; a second pass writes the Russian side; a gated build compiles and compresses everything into the apps.">
+  <style>
+    .box   { fill: #f4f5fb; stroke: #5b62a8; stroke-width: 1.5; }
+    .accent{ fill: #5b62a8; }
+    .h     { fill: #23264a; font-size: 16px; font-weight: 700; }
+    .t     { fill: #3d4166; font-size: 13.5px; }
+    .note  { fill: #6f6486; font-size: 12.5px; font-style: italic; }
+    .arrow { stroke: #5b62a8; stroke-width: 2; fill: none; }
+    .head  { fill: #5b62a8; }
+    .stage { fill: #8a8fb5; font-size: 11px; font-weight: 700; letter-spacing: 1.2px; }
+    @media (prefers-color-scheme: dark) {
+      .box   { fill: #23253a; stroke: #9aa0e0; }
+      .accent{ fill: #9aa0e0; }
+      .h     { fill: #eef0ff; }
+      .t     { fill: #c2c6e8; }
+      .note  { fill: #cbb6e8; }
+      .arrow { stroke: #9aa0e0; }
+      .head  { fill: #9aa0e0; }
+      .stage { fill: #8f95bd; }
+    }
+  </style>
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" class="head"/>
+    </marker>
+  </defs>
+
+  <!-- STAGE 1: sources -->
+  <text x="20" y="16" class="stage">WHAT GOES IN</text>
+  <g>
+    <rect class="box" x="20"  y="26" width="273" height="86" rx="8"/>
+    <rect class="accent" x="20" y="26" width="4" height="86"/>
+    <text x="38" y="52" class="h">Wiktionary dump</text>
+    <text x="38" y="74" class="t">The lexical skeleton — entries,</text>
+    <text x="38" y="92" class="t">inflection templates, transcriptions.</text>
+
+    <rect class="box" x="313" y="26" width="273" height="86" rx="8"/>
+    <rect class="accent" x="313" y="26" width="4" height="86"/>
+    <text x="331" y="52" class="h">Web corpus</text>
+    <text x="331" y="74" class="t">Frequency ranks — decides what</text>
+    <text x="331" y="92" class="t">gets attention first.</text>
+
+    <rect class="box" x="606" y="26" width="273" height="86" rx="8"/>
+    <rect class="accent" x="606" y="26" width="4" height="86"/>
+    <text x="624" y="52" class="h">Reference dictionaries</text>
+    <text x="624" y="74" class="t">Normative authority, separately</text>
+    <text x="624" y="92" class="t">for each written standard.</text>
+  </g>
+
+  <path class="arrow" d="M156 112 L156 132 L450 132 L450 152" marker-end="url(#a)"/>
+  <path class="arrow" d="M450 112 L450 152" marker-end="url(#a)"/>
+  <path class="arrow" d="M743 112 L743 132 L450 132" />
+
+  <!-- STAGE 2: agents -->
+  <text x="170" y="176" class="stage">WHO DOES THE WORK</text>
+  <rect class="box" x="170" y="186" width="560" height="96" rx="8"/>
+  <rect class="accent" x="170" y="186" width="4" height="96"/>
+  <text x="190" y="212" class="h">Task agents</text>
+  <text x="190" y="234" class="t">One narrow job each: add a missing word · audit an existing one ·</text>
+  <text x="190" y="252" class="t">add stress marks · complete a paradigm · write usage examples.</text>
+  <text x="190" y="272" class="note">Constraint: may transcribe only what a named reference actually printed.</text>
+
+  <path class="arrow" d="M450 282 L450 322" marker-end="url(#a)"/>
+
+  <!-- STAGE 3: entry store -->
+  <text x="170" y="346" class="stage">WHAT IS KEPT</text>
+  <rect class="box" x="170" y="356" width="560" height="86" rx="8"/>
+  <rect class="accent" x="170" y="356" width="4" height="86"/>
+  <text x="190" y="382" class="h">Entry store — the source of truth</text>
+  <text x="190" y="404" class="t">One record per word, and beside it the evidence: what each reference</text>
+  <text x="190" y="422" class="t">printed, how it was read, and which references did not have the word.</text>
+
+  <path class="arrow" d="M450 442 L450 482" marker-end="url(#a)"/>
+
+  <!-- STAGE 4: meaning layer -->
+  <text x="170" y="506" class="stage">SECOND PASS</text>
+  <rect class="box" x="170" y="516" width="560" height="68" rx="8"/>
+  <rect class="accent" x="170" y="516" width="4" height="68"/>
+  <text x="190" y="542" class="h">Meaning layer</text>
+  <text x="190" y="564" class="t">Separate prompts per part of speech write the second language from</text>
+  <text x="190" y="578" class="t">the entry itself — merging senses, and writing examples from scratch.</text>
+
+  <path class="arrow" d="M450 584 L450 600 L305 600 L305 614" marker-end="url(#a)"/>
+
+  <!-- STAGE 5: build + apps -->
+  <rect class="box" x="170" y="618" width="270" height="60" rx="8"/>
+  <rect class="accent" x="170" y="618" width="4" height="60"/>
+  <text x="188" y="642" class="h">Gated build</text>
+  <text x="188" y="663" class="t">Missing evidence fails it.</text>
+
+  <rect class="box" x="460" y="618" width="270" height="60" rx="8"/>
+  <rect class="accent" x="460" y="618" width="4" height="60"/>
+  <text x="478" y="642" class="h">The apps</text>
+  <text x="478" y="663" class="t">Fully offline. No backend.</text>
+
+  <path class="arrow" d="M440 648 L456 648" marker-end="url(#a)"/>
+</svg>
