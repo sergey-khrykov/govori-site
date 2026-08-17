@@ -14,10 +14,10 @@
     <text x="450" y="262" font-size="104" font-weight="700" letter-spacing="2"
           fill="#ffffff">Govori</text>
 
-    <!-- acute over the 'o' (ink centre x=559), mirroring .accented::after:
+    <!-- acute over the second 'o' (ink centre x=682), mirroring .accented::after:
          #E8612C, weight 900, scaleX(1.3). Inner x=-5.5 cancels the glyph's
          own ink offset from the anchor once scaled. -->
-    <g transform="translate(559 265)">
+    <g transform="translate(682 265)">
       <text x="-5.5" y="0" font-size="104" font-weight="900" text-anchor="middle"
             transform="scale(1.3 1)" fill="#E8612C">´</text>
     </g>
