@@ -673,6 +673,345 @@ footer a:hover {
   color: var(--color-text);
 }
 
+/* ── FAQ Page ──────────────────────────────────────── */
+
+/* On the FAQ the switcher is a pair of links (one page per language),
+   not the in-place buttons the i18n pages use. */
+.lang-switcher a.lang-btn {
+  display: inline-block;
+  text-decoration: none;
+}
+
+/* Masthead: a compact echo of the home page hero */
+.faq-hero {
+  background: linear-gradient(135deg, #4F5BB0, #8387D4);
+  color: #fff;
+  text-align: center;
+  padding: 3rem 0 2.75rem;
+  position: relative;
+}
+
+.faq-hero-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.625rem;
+  margin-bottom: 1.5rem;
+  text-decoration: none;
+  color: #fff;
+  font-size: 1.375rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  opacity: 0.9;
+  transition: opacity 0.15s;
+}
+
+.faq-hero-brand:hover {
+  opacity: 1;
+}
+
+.faq-hero-brand img {
+  border-radius: 10px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
+}
+
+.faq-hero h1 {
+  font-size: 2rem;
+  color: #fff;
+  margin-bottom: 0.75rem;
+}
+
+.faq-hero .subtitle {
+  font-size: 1.0625rem;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.85);
+  max-width: 32rem;
+  margin: 0 auto;
+}
+
+.faq-page {
+  padding: 2.75rem var(--spacing) 4rem;
+}
+
+.faq-page a {
+  color: var(--color-accent);
+}
+
+/* Opening paragraphs, set slightly larger than answer text */
+.faq-lead {
+  margin-bottom: 2.5rem;
+}
+
+.faq-lead p {
+  font-size: 1.0625rem;
+  color: #3d434e;
+}
+
+.faq-lead p + p {
+  margin-top: 0.875rem;
+}
+
+.faq-lead p:first-child {
+  font-size: 1.1875rem;
+  font-weight: 500;
+  color: var(--color-text);
+}
+
+.faq-tools {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+}
+
+.faq-count {
+  font-size: 0.8125rem;
+  color: var(--color-muted);
+}
+
+.faq-toggle-all {
+  flex: 0 0 auto;
+  padding: 0.4375rem 0.9375rem;
+  border: 1px solid var(--color-card-border);
+  border-radius: 999px;
+  background: none;
+  font-family: inherit;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--color-muted);
+  cursor: pointer;
+  transition: color 0.15s, border-color 0.15s, background 0.15s;
+}
+
+.faq-toggle-all:hover {
+  color: var(--color-accent);
+  border-color: var(--color-accent);
+  background: rgba(37, 99, 235, 0.04);
+}
+
+/* Thematic groups — the page is long, so it reads as sections, not a list.
+   These are <section>s, so the global section padding/rule has to be undone. */
+.faq-group {
+  padding: 0;
+  border-top: none;
+}
+
+.faq-group + .faq-group {
+  margin-top: 2.5rem;
+}
+
+.faq-group-title {
+  display: flex;
+  align-items: center;
+  gap: 0.875rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  color: var(--color-muted);
+  margin-bottom: 0.875rem;
+}
+
+.faq-group-title::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--color-card-border);
+}
+
+.faq-item {
+  border: 1px solid var(--color-card-border);
+  border-radius: 14px;
+  background: var(--color-bg);
+  scroll-margin-top: 1.5rem;
+  transition: border-color 0.15s, box-shadow 0.15s, background 0.15s;
+}
+
+.faq-item + .faq-item {
+  margin-top: 0.625rem;
+}
+
+.faq-item:hover {
+  border-color: #d3d8e0;
+  box-shadow: 0 2px 10px rgba(16, 24, 40, 0.05);
+}
+
+.faq-item[open] {
+  background: var(--color-card-bg);
+  border-color: #d3d8e0;
+  box-shadow: 0 4px 16px rgba(16, 24, 40, 0.06);
+}
+
+.faq-item:target {
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+.faq-item > summary {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1.25rem;
+  font-size: 1.0625rem;
+  font-weight: 600;
+  line-height: 1.4;
+  cursor: pointer;
+  list-style: none;
+  transition: color 0.15s;
+}
+
+/* Hide the native disclosure triangle (Safari needs the -webkit- rule) */
+.faq-item > summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq-item > summary:hover {
+  color: var(--color-accent);
+}
+
+.faq-item > summary:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: -2px;
+  border-radius: 14px;
+}
+
+/* Chevron in a soft circle; [open] rotates the whole disc 180° */
+.faq-item > summary::after {
+  content: '';
+  flex: 0 0 auto;
+  width: 28px;
+  height: 28px;
+  margin-left: auto;
+  border: 1px solid var(--color-card-border);
+  border-radius: 50%;
+  background: #fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%236b7280' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E") center / 13px 13px no-repeat;
+  transition: transform 0.25s ease, border-color 0.15s;
+}
+
+.faq-item > summary:hover::after {
+  border-color: var(--color-accent);
+}
+
+.faq-item[open] > summary::after {
+  transform: rotate(180deg);
+  border-color: var(--color-accent);
+}
+
+.faq-answer {
+  margin: 0 1.25rem;
+  padding: 1rem 0 1.25rem;
+  border-top: 1px solid var(--color-card-border);
+  color: #3d434e;
+}
+
+.faq-answer p + p,
+.faq-answer ul + p,
+.faq-answer ol + p {
+  margin-top: 0.875rem;
+}
+
+.faq-answer p {
+  color: inherit;
+}
+
+.faq-answer strong {
+  color: var(--color-text);
+}
+
+.faq-answer ul,
+.faq-answer ol {
+  margin: 0.875rem 0 0;
+  padding-left: 1.25rem;
+}
+
+.faq-answer li + li {
+  margin-top: 0.5rem;
+}
+
+.faq-answer li::marker {
+  color: var(--color-muted);
+}
+
+/* Closing card — the page ends with an invitation, not a dead stop */
+.faq-cta {
+  margin-top: 3rem;
+  padding: 2.25rem 1.5rem;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #4F5BB0, #8387D4);
+  color: #fff;
+  text-align: center;
+}
+
+.faq-cta h2 {
+  font-size: 1.25rem;
+  color: #fff;
+  margin-bottom: 0.5rem;
+}
+
+.faq-cta p {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 0.9375rem;
+  max-width: 26rem;
+  margin: 0 auto 1.5rem;
+}
+
+.faq-cta-links {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.faq-btn {
+  display: inline-block;
+  padding: 0.625rem 1.25rem;
+  border-radius: 999px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.15s, border-color 0.15s;
+}
+
+/* Scoped to .faq-cta so these outrank the page's generic accent link colour */
+.faq-cta .faq-btn--solid {
+  background: #fff;
+  color: #4F5BB0;
+}
+
+.faq-cta .faq-btn--solid:hover {
+  background: rgba(255, 255, 255, 0.88);
+}
+
+.faq-cta .faq-btn--ghost {
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  color: #fff;
+}
+
+.faq-cta .faq-btn--ghost:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.8);
+}
+
+@media (max-width: 639px) {
+  .faq-hero {
+    padding: 2.25rem 0 2rem;
+  }
+
+  .faq-hero h1 {
+    font-size: 1.625rem;
+  }
+
+  .faq-item > summary {
+    padding: 0.875rem 1rem;
+    font-size: 1rem;
+    gap: 0.75rem;
+  }
+
+  .faq-answer {
+    margin: 0 1rem;
+  }
+}
+
 /* ── Responsive ────────────────────────────────────── */
 
 @media (min-width: 640px) {

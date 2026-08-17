@@ -7,7 +7,6 @@ const translations = {
     // Hero
     hero_headline: 'Learn Serbian with a dictionary that actually understands grammar.',
     hero_subtitle: 'Look up any word form — accusative, past tense, short adjective — and find the canonical entry. Available in Latin and Cyrillic.',
-    cta_beta: 'Join the Beta',
     hero_trust: 'Fully offline · No ads · No account needed',
     cta_playstore: 'Google Play',
 
@@ -50,6 +49,8 @@ const translations = {
     signup_telegram: 'Want to share feedback or follow updates? Join our <a href="https://t.me/+9eXsVAtaA_4yYzFi">Telegram group</a>.',
 
     // Footer
+    footer_faq: 'FAQ',
+    footer_faq_href: 'faq.html',
     footer_privacy: 'Privacy Policy',
     footer_terms: 'Terms of Use',
     footer_contact: 'Contact',
@@ -58,19 +59,17 @@ const translations = {
 
     // Privacy page
     priv_title: 'Privacy Policy',
-    priv_updated: 'Last updated: July 11, 2026',
+    priv_updated: 'Last updated: August 17, 2026',
     priv_collect_h: 'What we collect',
-    priv_collect_p: 'When you sign up for the beta, we collect:',
-    priv_collect_li1: 'Your email address (required)',
-    priv_collect_li2: 'How you’re learning Serbian (optional)',
+    priv_collect_site: 'This website collects nothing. There is no sign-up form, no account, and no mailing list.',
     priv_collect_app: 'The Govori app requires no account and works fully offline. To improve stability and usability, it collects anonymous crash reports and performance diagnostics (Firebase Crashlytics) and anonymous usage statistics, such as which features are used (Firebase Analytics). If you submit in-app feedback, your report and the app version are stored along with a random installation identifier. None of this data is linked to your identity or used for advertising; it is used solely to fix bugs and improve the app.',
     priv_teacher_p: 'If you contact us through the in-app "I\'m a teacher" form, the details you provide (name, email, institution, class size, message) are voluntary and are used only to respond to your inquiry.',
     priv_use_h: 'How we use it',
-    priv_use_p: 'Your email is used to send you a TestFlight beta invite and to notify you when the app launches on the App Store and Google Play. That’s it.',
+    priv_use_p: 'Diagnostics and usage statistics are used to fix crashes and decide what to improve next. Feedback you send from inside the app is used to correct dictionary entries and to reply to you if you asked something. That’s it — nothing is used for advertising, and nothing is sold.',
     priv_access_h: 'Who has access',
-    priv_access_p: 'Only the developer and <a href="https://formspree.io">Formspree</a>, which processes form submissions. Your email is not sold, shared, or used for advertising.',
+    priv_access_p: 'Only the developer (that’s me) and Google’s Firebase services, which receive crash reports, anonymous usage statistics and in-app feedback on my behalf. Nothing is sold, shared for advertising, or used to build a profile of you.',
     priv_retention_h: 'Retention',
-    priv_retention_p: 'Your data is kept until you unsubscribe or request deletion. To delete your data, email <a href="mailto:support@govoridictionaries.com">support@govoridictionaries.com</a>.',
+    priv_retention_p: 'Diagnostics and feedback are kept only as long as they are useful for fixing the app. To have anything you sent deleted, email <a href="mailto:support@govoridictionaries.com">support@govoridictionaries.com</a>.',
     priv_cookies_h: 'Cookies & tracking',
     priv_cookies_p: 'This website uses no cookies, no analytics, and no tracking scripts.',
     priv_contact_h: 'Contact',
@@ -85,7 +84,6 @@ const translations = {
 
     hero_headline: 'Сербский словарь, который понимает грамматику.',
     hero_subtitle: 'Все падежи, спряжения и времена. На латинице или кириллице. Полностью офлайн и без рекламы.',
-    cta_beta: 'Присоединиться к бета-тесту',
     hero_trust: 'Полностью офлайн · Без рекламы · Без аккаунта',
     cta_playstore: 'Google Play',
 
@@ -114,6 +112,8 @@ const translations = {
     signup_note: 'Требуется iOS 16+ или Android 8+. Полностью офлайн, без рекламы и без аккаунта.',
     signup_telegram: 'Есть идеи или нашли ошибку? Заходите в <a href="https://t.me/+9eXsVAtaA_4yYzFi">Telegram-группу</a> — там обсуждаем найденные баги и делимся идеями по улучшению.',
 
+    footer_faq: 'Вопросы и ответы',
+    footer_faq_href: 'faq-ru.html',
     footer_privacy: 'Политика конфиденциальности',
     footer_terms: 'Условия использования',
     footer_contact: 'Контакты',
@@ -121,19 +121,17 @@ const translations = {
     footer_built: 'Для iOS 16+ и Android 8+',
 
     priv_title: 'Политика конфиденциальности',
-    priv_updated: 'Последнее обновление: 11 июля 2026',
+    priv_updated: 'Последнее обновление: 17 августа 2026',
     priv_collect_h: 'Что мы собираем',
-    priv_collect_p: 'При регистрации на бета-тест мы собираем:',
-    priv_collect_li1: 'Ваш адрес электронной почты (обязательно)',
-    priv_collect_li2: 'Как вы изучаете сербский (необязательно)',
+    priv_collect_site: 'Этот сайт не собирает ничего: ни формы регистрации, ни аккаунтов, ни рассылки.',
     priv_collect_app: 'Приложение Govori не требует аккаунта и работает полностью офлайн. Для повышения стабильности и удобства оно собирает анонимные отчёты о сбоях и диагностику производительности (Firebase Crashlytics), а также анонимную статистику использования — например, какие функции используются (Firebase Analytics). Если вы отправляете отзыв из приложения, ваш отчёт и версия приложения сохраняются вместе со случайным идентификатором установки. Эти данные не связаны с вашей личностью и не используются для рекламы; они нужны исключительно для исправления ошибок и улучшения приложения.',
     priv_teacher_p: 'Если вы обращаетесь к нам через форму «Я преподаватель» в приложении, указанные вами данные (имя, эл. почта, организация, размер группы, сообщение) предоставляются добровольно и используются только для ответа на ваш запрос.',
     priv_use_h: 'Как мы используем данные',
-    priv_use_p: 'Электронная почта используется для отправки приглашения в TestFlight и уведомления о запуске в App Store и Google Play. Больше ни для чего.',
+    priv_use_p: 'Диагностика и статистика использования нужны, чтобы чинить сбои и решать, что улучшать дальше. Отзывы, отправленные из приложения, используются для исправления словарных статей и для ответа вам, если вы что-то спросили. И только — ничего не используется для рекламы и ничего не продаётся.',
     priv_access_h: 'Кто имеет доступ',
-    priv_access_p: 'Только разработчик и <a href="https://formspree.io">Formspree</a>, обрабатывающий формы. Электронная почта не продаётся, не передаётся и не используется для рекламы.',
+    priv_access_p: 'Только разработчик (то есть я) и сервисы Firebase от Google, которые по моему поручению принимают отчёты о сбоях, анонимную статистику использования и отзывы из приложения. Ничего не продаётся, не передаётся для рекламы и не используется для составления вашего профиля.',
     priv_retention_h: 'Хранение',
-    priv_retention_p: 'Данные хранятся до отписки или запроса на удаление. Для удаления напишите на <a href="mailto:support@govoridictionaries.com">support@govoridictionaries.com</a>.',
+    priv_retention_p: 'Диагностика и отзывы хранятся ровно столько, сколько они полезны для исправления приложения. Чтобы удалить отправленное вами, напишите на <a href="mailto:support@govoridictionaries.com">support@govoridictionaries.com</a>.',
     priv_cookies_h: 'Cookie и слежка',
     priv_cookies_p: 'Этот сайт не использует cookie, аналитику и скрипты отслеживания.',
     priv_contact_h: 'Контакты',
@@ -148,7 +146,6 @@ const translations = {
 
     hero_headline: 'Rečnik srpskog jezika koji zaista razume gramatiku.',
     hero_subtitle: 'Pronađite bilo koji oblik reči — akuzativ, prošlo vreme, kratki pridev — i dobijte rečnički članak. Latinica i ćirilica.',
-    cta_beta: 'Pridružite se beta testu',
     hero_trust: 'Radi oflajn · Bez reklama · Bez naloga',
     cta_playstore: 'Google Play',
 
@@ -191,6 +188,8 @@ const translations = {
     signup_note: 'Potreban iOS 16+ ili Android 8+. Radi oflajn, bez reklama, bez naloga.',
     signup_telegram: 'Želite da podelite utiske ili pratite novosti? Pridružite se našoj <a href="https://t.me/+9eXsVAtaA_4yYzFi">Telegram grupi</a>.',
 
+    footer_faq: 'Česta pitanja',
+    footer_faq_href: 'faq.html',
     footer_privacy: 'Politika privatnosti',
     footer_terms: 'Uslovi korišćenja',
     footer_contact: 'Kontakt',
@@ -198,19 +197,17 @@ const translations = {
     footer_built: 'Za iOS 16+ i Android 8+',
 
     priv_title: 'Politika privatnosti',
-    priv_updated: 'Poslednje ažuriranje: 11. jul 2026.',
+    priv_updated: 'Poslednje ažuriranje: 17. avgust 2026.',
     priv_collect_h: 'Šta prikupljamo',
-    priv_collect_p: 'Kada se prijavite za beta test, prikupljamo:',
-    priv_collect_li1: 'Vašu email adresu (obavezno)',
-    priv_collect_li2: 'Kako učite srpski (opcionalno)',
+    priv_collect_site: 'Ovaj sajt ne prikuplja ništa. Nema forme za prijavu, naloga ni mejling liste.',
     priv_collect_app: 'Aplikacija Govori ne zahteva nalog i radi potpuno oflajn. Radi poboljšanja stabilnosti i upotrebljivosti, prikuplja anonimne izveštaje o greškama i dijagnostiku performansi (Firebase Crashlytics), kao i anonimnu statistiku korišćenja — na primer, koje se funkcije koriste (Firebase Analytics). Ako pošaljete povratne informacije iz aplikacije, vaš izveštaj i verzija aplikacije čuvaju se zajedno sa nasumičnim identifikatorom instalacije. Ovi podaci nisu povezani sa vašim identitetom niti se koriste za oglašavanje; koriste se isključivo za ispravku grešaka i poboljšanje aplikacije.',
     priv_teacher_p: 'Ako nam se obratite putem forme „Ja sam predavač“ u aplikaciji, podaci koje navedete (ime, imejl, institucija, veličina grupe, poruka) daju se dobrovoljno i koriste se isključivo za odgovor na vaš upit.',
     priv_use_h: 'Kako koristimo podatke',
-    priv_use_p: 'Email se koristi za slanje TestFlight pozivnice i obaveštenja o lansiranju u App Store i Google Play. Ni za šta drugo.',
+    priv_use_p: 'Dijagnostika i statistika korišćenja služe da se otklone padovi i odluči šta sledeće poboljšati. Povratne informacije poslate iz aplikacije koriste se za ispravku rečničkih odrednica i za odgovor vama, ako ste nešto pitali. To je sve — ništa se ne koristi za oglašavanje i ništa se ne prodaje.',
     priv_access_h: 'Ko ima pristup',
-    priv_access_p: 'Samo programer i <a href="https://formspree.io">Formspree</a>, koji obrađuje forme. Email se ne prodaje, ne deli i ne koristi za reklamu.',
+    priv_access_p: 'Samo programer (to sam ja) i Google-ovi Firebase servisi, koji u moje ime primaju izveštaje o greškama, anonimnu statistiku korišćenja i povratne informacije iz aplikacije. Ništa se ne prodaje, ne deli radi oglašavanja niti koristi za pravljenje vašeg profila.',
     priv_retention_h: 'Čuvanje podataka',
-    priv_retention_p: 'Podaci se čuvaju do odjave ili zahteva za brisanje. Za brisanje pišite na <a href="mailto:support@govoridictionaries.com">support@govoridictionaries.com</a>.',
+    priv_retention_p: 'Dijagnostika i povratne informacije čuvaju se samo dok su korisne za ispravku aplikacije. Da biste obrisali ono što ste poslali, pišite na <a href="mailto:support@govoridictionaries.com">support@govoridictionaries.com</a>.',
     priv_cookies_h: 'Kolačići i praćenje',
     priv_cookies_p: 'Ovaj sajt ne koristi kolačiće, analitiku ni skripte za praćenje.',
     priv_contact_h: 'Kontakt',
@@ -225,7 +222,6 @@ const translations = {
 
     hero_headline: 'Речник српског језика који заиста разуме граматику.',
     hero_subtitle: 'Пронађите било који облик речи — акузатив, прошло време, кратки придев — и добијте речнички чланак. Латиница и ћирилица.',
-    cta_beta: 'Придружите се бета тесту',
     hero_trust: 'Ради офлајн · Без реклама · Без налога',
     cta_playstore: 'Google Play',
 
@@ -268,6 +264,8 @@ const translations = {
     signup_note: 'Потребан iOS 16+ или Android 8+. Ради офлајн, без реклама, без налога.',
     signup_telegram: 'Желите да поделите утиске или пратите новости? Придружите се нашој <a href="https://t.me/+9eXsVAtaA_4yYzFi">Telegram групи</a>.',
 
+    footer_faq: 'Честа питања',
+    footer_faq_href: 'faq.html',
     footer_privacy: 'Политика приватности',
     footer_terms: 'Услови коришћења',
     footer_contact: 'Контакт',
@@ -275,19 +273,17 @@ const translations = {
     footer_built: 'За iOS 16+ и Android 8+',
 
     priv_title: 'Политика приватности',
-    priv_updated: 'Последње ажурирање: 11. јул 2026.',
+    priv_updated: 'Последње ажурирање: 17. август 2026.',
     priv_collect_h: 'Шта прикупљамо',
-    priv_collect_p: 'Када се пријавите за бета тест, прикупљамо:',
-    priv_collect_li1: 'Вашу емаил адресу (обавезно)',
-    priv_collect_li2: 'Како учите српски (опционално)',
+    priv_collect_site: 'Овај сајт не прикупља ништа. Нема форме за пријаву, налога ни мејлинг листе.',
     priv_collect_app: 'Апликација Говори не захтева налог и ради потпуно офлајн. Ради побољшања стабилности и употребљивости, прикупља анонимне извештаје о грешкама и дијагностику перформанси (Firebase Crashlytics), као и анонимну статистику коришћења — на пример, које се функције користе (Firebase Analytics). Ако пошаљете повратне информације из апликације, ваш извештај и верзија апликације чувају се заједно са насумичним идентификатором инсталације. Ови подаци нису повезани са вашим идентитетом нити се користе за оглашавање; користе се искључиво за исправку грешака и побољшање апликације.',
     priv_teacher_p: 'Ако нам се обратите путем форме „Ја сам предавач“ у апликацији, подаци које наведете (име, имејл, институција, величина групе, порука) дају се добровољно и користе се искључиво за одговор на ваш упит.',
     priv_use_h: 'Како користимо податке',
-    priv_use_p: 'Емаил се користи за слање TestFlight позивнице и обавештења о лансирању у App Store и Google Play. Ни за шта друго.',
+    priv_use_p: 'Дијагностика и статистика коришћења служе да се отклоне падови и одлучи шта следеће побољшати. Повратне информације послате из апликације користе се за исправку речничких одредница и за одговор вама, ако сте нешто питали. То је све — ништа се не користи за оглашавање и ништа се не продаје.',
     priv_access_h: 'Ко има приступ',
-    priv_access_p: 'Само програмер и <a href="https://formspree.io">Formspree</a>, који обрађује форме. Емаил се не продаје, не дели и не користи за рекламу.',
+    priv_access_p: 'Само програмер (то сам ја) и Google-ови Firebase сервиси, који у моје име примају извештаје о грешкама, анонимну статистику коришћења и повратне информације из апликације. Ништа се не продаје, не дели ради оглашавања нити користи за прављење вашег профила.',
     priv_retention_h: 'Чување података',
-    priv_retention_p: 'Подаци се чувају до одјаве или захтева за брисање. За брисање пишите на <a href="mailto:support@govoridictionaries.com">support@govoridictionaries.com</a>.',
+    priv_retention_p: 'Дијагностика и повратне информације чувају се само док су корисне за исправку апликације. Да бисте обрисали оно што сте послали, пишите на <a href="mailto:support@govoridictionaries.com">support@govoridictionaries.com</a>.',
     priv_cookies_h: 'Колачићи и праћење',
     priv_cookies_p: 'Овај сајт не користи колачиће, аналитику ни скрипте за праћење.',
     priv_contact_h: 'Контакт',
@@ -323,6 +319,12 @@ function setLang(lang) {
   document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
     const key = el.getAttribute('data-i18n-placeholder');
     if (t[key] != null) el.placeholder = t[key];
+  });
+
+  // Update hrefs (standalone pages that exist per language, e.g. the FAQ)
+  document.querySelectorAll('[data-i18n-href]').forEach(el => {
+    const key = el.getAttribute('data-i18n-href');
+    if (t[key] != null) el.href = t[key];
   });
 
   // Update page title and meta
