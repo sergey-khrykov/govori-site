@@ -41,14 +41,18 @@
   </div>
 
   <script>
-    // Promo campaign links: https://govoridictionaries.com/promo?code=…
-    // Mirrors the in-app govorisrb://promo?code=… deep link (Deeplink.kt).
-    // Android-only: the discounted Play SKU has no iOS counterpart, so the
-    // fallback always pitches the Play listing. Structure mirrors ../w/.
+    // Partner discount links: https://govoridictionaries.com/promo?code=…
+    // Mirrors the in-app govorisrb://promo?code=… deep link (Deeplink.kt /
+    // Deeplink.swift). Both platforms since 2026-08-20 — the store fallback is
+    // therefore platform-aware. Structure mirrors ../w/.
     // &referrer= carries URL-encoded UTMs: Play Console reports on utm_source
     // and utm_campaign today, and the Adjust SDK reads the whole string later.
+    // iOS has no deferred deep linking, so an iPhone user who installs from
+    // here must come back and tap the link again — that is what pitchNoApp says.
     var GET_APP_PLAY = 'https://play.google.com/store/apps/details?id=com.langapp.srb' +
       '&referrer=utm_source%3Dpromo%26utm_medium%3Dpromo%26utm_campaign%3Dpromo_page';
+    var GET_APP_IOS =
+      'https://apps.apple.com/app/apple-store/id6758169365?pt=128478223&ct=promo_page&mt=8';
 
     var params = new URLSearchParams(location.search);
     var code = params.get('code') || '';
@@ -57,27 +61,35 @@
 
     var ua = navigator.userAgent;
     var isAndroid = /Android/i.test(ua);
+    // iPadOS 13+ reports a Mac UA, so the touch-point check is what catches it.
+    var isIOS = /iPad|iPhone|iPod/i.test(ua) ||
+      (/Macintosh/i.test(ua) && navigator.maxTouchPoints > 1);
     var isRu = (navigator.language || '').toLowerCase().indexOf('ru') === 0;
 
     var STRINGS = {
       en: {
-        pitch: 'This link unlocks a special price in Govori, the Serbian learner’s dictionary for Android — every form, full tables, offline.',
-        pitchNoApp: 'Install Govori from Google Play first, then open this link again to claim the offer.',
+        pitch: 'This link unlocks a special price in Govori, the Serbian learner’s dictionary — every form, full tables, offline.',
+        pitchNoApp: 'Install Govori first, then open this link again to claim the offer.',
         open: 'Open in the app',
-        get: 'Get the app on Google Play'
+        get: 'Get the app on Google Play',
+        getIOS: 'Download on the App Store'
       },
       ru: {
-        pitch: 'Эта ссылка открывает специальную цену в Govori — сербском словаре для изучающих на Android: любая форма, полные таблицы, офлайн.',
-        pitchNoApp: 'Сначала установите Govori из Google Play, затем откройте эту ссылку ещё раз, чтобы получить предложение.',
+        pitch: 'Эта ссылка открывает специальную цену в Govori — сербском словаре для изучающих: любая форма, полные таблицы, офлайн.',
+        pitchNoApp: 'Сначала установите Govori, затем откройте эту ссылку ещё раз, чтобы получить предложение.',
         open: 'Открыть в приложении',
-        get: 'Скачать в Google Play'
+        get: 'Скачать в Google Play',
+        getIOS: 'Загрузить в App Store'
       }
     };
     var t = isRu ? STRINGS.ru : STRINGS.en;
 
-    document.getElementById('pitch').textContent = isAndroid ? t.pitch : t.pitchNoApp;
+    document.getElementById('pitch').textContent =
+      (isAndroid || isIOS) ? t.pitch : t.pitchNoApp;
     document.getElementById('openBtn').textContent = t.open;
-    document.getElementById('getBtn').textContent = t.get;
+    var getBtn = document.getElementById('getBtn');
+    getBtn.textContent = isIOS ? t.getIOS : t.get;
+    getBtn.href = isIOS ? GET_APP_IOS : GET_APP_PLAY;
 
     // withFallback matters: Chrome refuses gesture-less intent:// launches but
     // still navigates to S.browser_fallback_url — so an automatic attempt WITH
@@ -100,7 +112,10 @@
     });
 
     // One automatic attempt on Android, so tapping a shared link goes straight
-    // into the app when it's installed.
+    // into the app when it's installed. iOS needs none: the universal link is
+    // claimed in AASA, so an installed app intercepts /promo before this page
+    // ever loads — and a gesture-less scheme navigation on iOS would only
+    // produce an "address invalid" dialog when it isn't installed.
     if (isAndroid && code) {
       setTimeout(function () { openInApp(false); }, 300);
     }
