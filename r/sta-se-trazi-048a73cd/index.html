@@ -380,26 +380,12 @@ a{color:var(--fwd)}
 <section>
   <span class="qno">Question 5 · favorites</span>
   <h2>The words people keep</h2>
-  <p class="lede">2,201 favorite adds against only 169 removes — favoriting is a one-way gesture. But it is spread across so many words that the “most favorited” list tops out at six users. Read ranks as anecdote, not consensus.</p>
+  <p class="lede">2,201 favorite adds against only 169 removes — favoriting is a one-way gesture. But it is spread across 1,768 distinct words, so the “most favorited” list tops out at six users and the tail below is 3-user ties. Read ranks as anecdote, not consensus.</p>
   <div class="card">
-    <h3>Most favorited words</h3>
-    <p class="sub">distinct users who added the word · full window</p>
-    <table>
-      <tr><th>word</th><th></th><th class="num">users</th><th class="num">adds</th></tr>
-      <tr><td><span class="hw">ipak</span> <span class="pos-i">adv.</span></td><td>“nevertheless”</td><td class="num">6</td><td class="num">6</td></tr>
-      <tr><td><span class="hw">otići</span> <span class="pos-i">v.</span></td><td>“to leave”</td><td class="num">6</td><td class="num">6</td></tr>
-      <tr><td><span class="hw">čuti</span> <span class="pos-i">v.</span></td><td>“to hear”</td><td class="num">6</td><td class="num">6</td></tr>
-      <tr><td><span class="hw">jebiga</span> <span class="pos-i">interj.</span></td><td>“screw it”</td><td class="num">5</td><td class="num">5</td></tr>
-      <tr><td><span class="hw">odlučiti</span> <span class="pos-i">v.</span> ⚠</td><td>“to decide” — onboarding showcase word; count may be seeded</td><td class="num">5</td><td class="num">5</td></tr>
-      <tr><td><span class="hw">tražiti</span> <span class="pos-i">v.</span></td><td>“to seek”</td><td class="num">4</td><td class="num">4</td></tr>
-      <tr><td><span class="hw">dakle</span> <span class="pos-i">conj.</span></td><td>“therefore”</td><td class="num">4</td><td class="num">5</td></tr>
-      <tr><td><span class="hw">osećati</span> <span class="pos-i">v.</span></td><td>“to feel”</td><td class="num">4</td><td class="num">4</td></tr>
-      <tr><td><span class="hw">odnos</span> <span class="pos-i">n.</span></td><td>“relation(ship)”</td><td class="num">4</td><td class="num">4</td></tr>
-      <tr><td><span class="hw">naći</span> <span class="pos-i">v.</span></td><td>“to find”</td><td class="num">4</td><td class="num">4</td></tr>
-      <tr><td><span class="hw">krenuti</span> <span class="pos-i">v.</span></td><td>“to set off”</td><td class="num">4</td><td class="num">4</td></tr>
-      <tr><td><span class="hw">jer</span> <span class="pos-i">conj.</span></td><td>“because”</td><td class="num">4</td><td class="num">4</td></tr>
-    </table>
-    <p class="sub" style="margin:14px 0 0">The profile differs from search: what gets <i>kept</i> skews to discourse glue (<span class="hw">ipak</span>, <span class="hw">dakle</span>, <span class="hw">jer</span>) and emotional vocabulary (<span class="hw">osećati</span>, <span class="hw">odnos</span>) — words you meet in conversation and file away, rather than the conjugation tables people re-visit without saving.</p>
+    <h3>Most favorited words <small class="unit">· top 50</small></h3>
+    <p class="sub">distinct users who added the word · full window · ⚠ = onboarding showcase word, count may be seeded</p>
+    <table id="favq"><tr><th>word</th><th></th><th class="num">users</th><th class="num">adds</th></tr></table>
+    <p class="sub" style="margin:14px 0 0">The profile differs from search: what gets <i>kept</i> skews to discourse glue (<span class="hw">ipak</span>, <span class="hw">dakle</span>, <span class="hw">jer</span>, <span class="hw">iako</span>, <span class="hw">čak</span>) and emotional vocabulary (<span class="hw">osećati</span>, <span class="hw">odnos</span>, <span class="hw">tuga</span>, <span class="hw">navika</span>) — words you meet in conversation and file away, rather than the conjugation tables people re-visit without saving. The register runs colloquial: <span class="hw">jebiga</span> at #4, slang <span class="hw">smarati</span> further down.</p>
   </div>
 </section>
 
@@ -446,6 +432,11 @@ const pos = [["noun",8540],["verb",7771],["adjective",1878],["adverb",1378],["pr
 const posEl = document.getElementById("poslist");
 const pmax = pos[0][1], ptot = pos.reduce((a,b)=>a+b[1],0);
 posEl.innerHTML = pos.map(p=>`<div class="rrow" style="grid-template-columns:110px 1fr 110px"><span class="w" style="font-size:14px">${p[0]}</span><div class="bar f" style="width:${(p[1]/pmax*100).toFixed(1)}%"></div><span class="val">${p[1].toLocaleString("en-US")} <small style="color:var(--ink-3)">${(p[1]/ptot*100).toFixed(1)}%</small></span></div>`).join("");
+
+// ---------- favorites ----------
+const favq = [["ipak","adv.","nevertheless",6,6,0],["otići","v.","to leave",6,6,0],["čuti","v.","to hear",6,6,0],["jebiga","interj.","screw it",5,5,0],["odlučiti","v.","to decide",5,5,1],["tražiti","v.","to seek",4,4,0],["dakle","conj.","therefore",4,5,0],["osećati","v.","to feel",4,4,0],["odnos","n.","relation(ship)",4,4,0],["naći","v.","to find",4,4,0],["krenuti","v.","to set off",4,4,0],["jer","conj.","because",4,4,0],["ići","v.","to go",4,4,0],["steći","v.","to acquire",4,4,0],["koristiti","v.","to use",4,4,0],["pokušati","v.","to try",4,4,0],["biti","v.","to be",4,4,0],["govoriti","v.","to speak",3,4,0],["ljubav","n.","love",3,3,1],["uzeti","v.","to take",3,3,0],["pratiti","v.","to follow",3,3,0],["kula","n.","tower",3,3,0],["platiti","v.","to pay",3,3,0],["stići","v.","to arrive",3,3,0],["tuga","n.","sorrow",3,4,0],["sigurno","adv.","surely",3,3,0],["ticati se","v.","to concern",3,3,0],["pokušavati","v.","to keep trying",3,3,0],["proći","v.","to pass",3,3,0],["baviti se","v.","to engage in",3,3,0],["raditi","v.","to work",3,3,0],["prednost","n.","advantage",3,3,0],["uspeti","v.","to succeed",3,3,0],["trenutak","n.","moment",3,3,0],["smarati","v.","to bore, to bug (slang)",3,3,0],["skupiti","v.","to gather",3,3,0],["onda","adv.","then",3,3,0],["iskati","v.","to seek (archaic)",3,3,0],["onako","adv.","like that",3,3,0],["iako","conj.","although",3,3,0],["stizati","v.","to be arriving",3,3,0],["navika","n.","habit",3,3,0],["čak","adv.","even",3,3,0],["provesti","v.","to spend (time)",3,3,0],["jesti","v.","to eat",3,3,0],["već","adv.","already",3,3,0],["vlast","n.","power, authority",3,3,0],["veoma","adv.","very",3,3,0],["dati","v.","to give",3,3,0],["želeti","v.","to want",3,3,0]];
+document.getElementById("favq").insertAdjacentHTML("beforeend",
+  favq.map(r=>`<tr><td><span class="hw">${r[0]}</span> <span class="pos-i">${r[1]}</span>${r[5]?" ⚠":""}</td><td><span class="pos-i">${r[2]}</span></td><td class="num">${r[3]}</td><td class="num">${r[4]}</td></tr>`).join(""));
 
 // ---------- geo bars ----------
 const geo = [["Serbia",832],["Russia",160],["United States",86],["Montenegro",84],["Slovenia",63],["United Kingdom",21],["Netherlands",20],["Germany",18]];
