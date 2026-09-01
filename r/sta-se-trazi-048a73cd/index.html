@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="What people looked up in the Govori Serbian dictionary — searches, favorites, language and time-of-day, July–August 2026.">
+<title>Šta se traži — Govori usage report</title>
+<link rel="icon" href="/img/app-icon-256.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,400..700;1,7..72,400..600&family=Source+Sans+3:ital,wght@0,400..700;1,400..600&display=swap">
+<style>
+:root{
+  --page:#fbfaf8; --surface:#ffffff; --ink:#191813; --ink-2:#55534b; --ink-3:#8b887e;
+  --grid:#e5e3da; --rule:#d8d5ca; --card-ring:rgba(25,24,19,.08);
+  --fwd:#2a78d6; --rev:#eb6834; --fwd-soft:rgba(42,120,214,.12); --rev-soft:rgba(235,104,52,.12);
+  --note:#faf6ec; --note-ring:#e7dfc8;
+  --good:#0ca30c; --warn-ink:#8a6100;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --page:#121110; --surface:#1b1a18; --ink:#f2f0e8; --ink-2:#b9b6aa; --ink-3:#87847a;
+    --grid:#2d2c28; --rule:#3a3833; --card-ring:rgba(255,255,255,.09);
+    --fwd:#3987e5; --rev:#d95926; --fwd-soft:rgba(57,135,229,.18); --rev-soft:rgba(217,89,38,.16);
+    --note:#201e18; --note-ring:#3b3729;
+    --warn-ink:#d9a63f;
+  }
+}
+:root[data-theme="dark"]{
+  --page:#121110; --surface:#1b1a18; --ink:#f2f0e8; --ink-2:#b9b6aa; --ink-3:#87847a;
+  --grid:#2d2c28; --rule:#3a3833; --card-ring:rgba(255,255,255,.09);
+  --fwd:#3987e5; --rev:#d95926; --fwd-soft:rgba(57,135,229,.18); --rev-soft:rgba(217,89,38,.16);
+  --note:#201e18; --note-ring:#3b3729;
+  --warn-ink:#d9a63f;
+}
+*{box-sizing:border-box}
+body{
+  margin:0; background:var(--page); color:var(--ink);
+  font:16px/1.6 "Source Sans 3", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+.wrap{max-width:940px; margin:0 auto; padding:48px 24px 80px}
+h1,h2,h3{font-family:"Literata", Georgia, serif; text-wrap:balance; margin:0}
+.eyebrow{font-size:12px; letter-spacing:.14em; text-transform:uppercase; color:var(--ink-3); font-weight:600}
+header.masthead{border-bottom:2px solid var(--ink); padding-bottom:24px; margin-bottom:8px}
+header.masthead h1{font-size:52px; font-weight:600; line-height:1.08; margin:10px 0 6px; font-variant-ligatures:common-ligatures}
+.subtitle{font-size:18px; color:var(--ink-2); max-width:64ch; margin:0}
+.meta-line{display:flex; flex-wrap:wrap; gap:6px 22px; margin-top:16px; font-size:13.5px; color:var(--ink-3)}
+.meta-line b{color:var(--ink-2); font-weight:600}
+
+section{margin-top:52px}
+section > h2{font-size:27px; font-weight:600; margin-bottom:4px}
+.qno{font-family:"Source Sans 3",sans-serif; font-size:12px; letter-spacing:.14em; text-transform:uppercase; color:var(--fwd); font-weight:700; display:block; margin-bottom:6px}
+.lede{color:var(--ink-2); max-width:70ch; margin:6px 0 20px}
+p{max-width:70ch}
+.hw{font-family:"Literata",Georgia,serif; font-weight:600; font-style:normal}
+.pos-i{font-style:italic; color:var(--ink-3); font-size:.88em}
+small.unit{color:var(--ink-3); font-weight:400}
+
+/* answers-at-a-glance : dictionary entries */
+.answers{border-top:1px solid var(--rule); margin-top:34px}
+.entry{display:grid; grid-template-columns:200px 1fr; gap:6px 28px; padding:15px 0; border-bottom:1px solid var(--rule)}
+.entry dt{font-family:"Literata",Georgia,serif; font-weight:600; font-size:18px}
+.entry dt .pos-i{display:block; font-size:13px; margin-top:1px}
+.entry dd{margin:0; color:var(--ink-2)}
+.entry dd b{color:var(--ink); font-weight:600}
+@media (max-width:640px){ .entry{grid-template-columns:1fr} }
+
+/* usage notes (caveats) */
+.notes{background:var(--note); border:1px solid var(--note-ring); border-radius:8px; padding:20px 24px; margin-top:20px}
+.notes h3{font-size:15px; letter-spacing:.1em; text-transform:uppercase; font-family:"Source Sans 3",sans-serif; font-weight:700; color:var(--warn-ink); margin-bottom:10px}
+.notes ol{margin:0; padding-left:20px; display:grid; gap:9px; font-size:14.5px; color:var(--ink-2)}
+.notes li::marker{font-weight:700; color:var(--warn-ink)}
+.notes b{color:var(--ink)}
+
+/* stat tiles */
+.stats{display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:12px; margin:22px 0 8px}
+.stat{background:var(--surface); border:1px solid var(--card-ring); border-radius:8px; padding:14px 16px}
+.stat .v{font-size:29px; font-weight:700; line-height:1.15; letter-spacing:-.01em}
+.stat .l{font-size:12.5px; color:var(--ink-3); margin-top:3px; line-height:1.35}
+
+/* generic card */
+.card{background:var(--surface); border:1px solid var(--card-ring); border-radius:10px; padding:22px 24px; margin-top:18px; overflow-x:auto}
+.card h3{font-size:16px; font-weight:600; font-family:"Source Sans 3",sans-serif; margin-bottom:2px}
+.card .sub{font-size:13px; color:var(--ink-3); margin:0 0 14px}
+.grid-2{display:grid; grid-template-columns:1fr 1fr; gap:18px}
+@media (max-width:720px){ .grid-2{grid-template-columns:1fr} }
+
+/* ranked bar list */
+.rank{display:grid; gap:7px; font-variant-numeric:tabular-nums}
+.rrow{display:grid; grid-template-columns:26px minmax(96px,auto) 1fr 46px; gap:10px; align-items:center; font-size:14.5px}
+.rrow .n{color:var(--ink-3); font-size:12.5px; text-align:right}
+.rrow .w{white-space:nowrap}
+.rrow .w .hw{font-size:15.5px}
+.bar{height:8px; border-radius:0 4px 4px 0; min-width:2px}
+.bar.f{background:var(--fwd)} .bar.r{background:var(--rev)}
+.rrow .val{text-align:right; color:var(--ink-2); font-size:13.5px}
+.legend{display:flex; gap:18px; flex-wrap:wrap; font-size:13px; color:var(--ink-2); margin-top:14px}
+.chip{display:inline-flex; align-items:center; gap:7px}
+.chip i{width:10px;height:10px;border-radius:3px;display:inline-block}
+.chip i.f{background:var(--fwd)} .chip i.r{background:var(--rev)}
+
+/* tables */
+table{border-collapse:collapse; width:100%; font-size:14.5px; font-variant-numeric:tabular-nums}
+th{font-size:12px; letter-spacing:.08em; text-transform:uppercase; color:var(--ink-3); text-align:left; font-weight:600; padding:6px 12px 6px 0; border-bottom:1px solid var(--rule)}
+td{padding:6.5px 12px 6.5px 0; border-bottom:1px solid var(--grid); vertical-align:baseline}
+td.num,th.num{text-align:right; padding-right:0}
+tr:last-child td{border-bottom:none}
+
+/* dir × lang matrix */
+.mrow{display:grid; grid-template-columns:88px 1fr; gap:14px; align-items:center; margin-top:14px}
+.mrow .lab{font-weight:600; font-size:14.5px}
+.mrow .lab small{display:block; font-weight:400; color:var(--ink-3); font-size:12px}
+.mbars{display:grid; gap:6px}
+.mbar{display:grid; grid-template-columns:1fr; position:relative}
+.mbar .bar{height:16px}
+.mbar span{position:absolute; left:calc(var(--w) + 8px); top:50%; transform:translateY(-50%); font-size:12.5px; color:var(--ink-2); white-space:nowrap; font-variant-numeric:tabular-nums}
+.mbar span.in{left:auto; right:calc(100% - var(--w) + 8px); color:#fff}
+
+/* hour chart */
+#hourchart{width:100%; height:auto; display:block}
+.tip{position:fixed; pointer-events:none; background:var(--ink); color:var(--page); font-size:12.5px; padding:5px 9px; border-radius:5px; opacity:0; transition:opacity .12s; z-index:9; font-variant-numeric:tabular-nums}
+@media (prefers-reduced-motion: reduce){ .tip{transition:none} }
+
+/* pos section */
+.pos-grid{display:grid; grid-template-columns:repeat(auto-fill,minmax(200px,1fr)); gap:3px 26px; margin-top:6px}
+.pos-cell{display:flex; justify-content:space-between; gap:10px; padding:8px 0; border-bottom:1px solid var(--grid); font-size:14.5px}
+.pos-cell .hw{font-size:15.5px}
+.pos-cell .u{color:var(--ink-3); font-size:13px; white-space:nowrap; font-variant-numeric:tabular-nums}
+
+footer{margin-top:64px; border-top:2px solid var(--ink); padding-top:16px; font-size:13.5px; color:var(--ink-3)}
+footer code{font-family:ui-monospace,Menlo,monospace; font-size:12.5px; color:var(--ink-2); background:var(--surface); padding:1px 5px; border-radius:4px; border:1px solid var(--card-ring)}
+a{color:var(--fwd)}
+.callout{border-left:3px solid var(--fwd); padding:2px 0 2px 16px; margin:18px 0; color:var(--ink-2); font-size:15px; max-width:66ch}
+.callout b{color:var(--ink)}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="masthead">
+  <div class="eyebrow">Govori · BCMS dictionary apps · ground data for the socio-lexical review</div>
+  <h1>Šta se traži</h1>
+  <p class="subtitle">What 1,800 people looked up in a Serbian dictionary — every search, tap, and favorite from the analytics export, July&thinsp;3 – August&thinsp;30, 2026.</p>
+  <div class="meta-line">
+    <span><b>Source</b> anonymized in-app usage analytics</span>
+    <span><b>Compiled</b> 2026-09-01</span>
+    <span><b>Scope</b> iOS + Android, Serbian app</span>
+  </div>
+</header>
+
+<!-- ══════════════ ANSWERS AT A GLANCE ══════════════ -->
+<section>
+  <h2 style="font-size:22px">Answers at a glance</h2>
+  <dl class="answers" style="margin-bottom:0">
+    <div class="entry">
+      <dt>most looked-up word <span class="pos-i">forward, SR&thinsp;→&thinsp;gloss</span></dt>
+      <dd><b class="hw">biti</b> <span class="pos-i">v.</span> “to be” — 70 distinct users tapped it from search, nearly 30% ahead of <span class="hw">ići</span> (54). The entire forward top&nbsp;10 is verbs.</dd>
+    </div>
+    <div class="entry">
+      <dt>most looked-up word <span class="pos-i">reverse, gloss&thinsp;→&thinsp;SR</span></dt>
+      <dd><b class="hw">ići</b> <span class="pos-i">v.</span> “to go” (22 users), then <span class="hw">jesti</span>, <span class="hw">biti</span>, <span class="hw">naći</span>. Top typed Russian queries: <b>идти</b> and <b>привет</b> (18 users each); top English: <b>there</b>, <b>man</b> (4 each).</dd>
+    </div>
+    <div class="entry">
+      <dt>search language</dt>
+      <dd>Russian glosses carry <b>87%</b> of all terminal searches (46,263 vs 6,879 English). Both audiences split the same way: two-thirds forward, one-third reverse.</dd>
+    </div>
+    <div class="entry">
+      <dt>time of day <span class="pos-i">CET</span></dt>
+      <dd>Evening 18–23&thinsp;h holds <b>36%</b> of searching, midday 12–17&thinsp;h another 35%. Peak hour is <b>18:00</b>; there is a genuine after-midnight tail.</dd>
+    </div>
+    <div class="entry">
+      <dt>parts of speech</dt>
+      <dd>Nouns take <b>41%</b> of result taps, verbs 37% — but verbs own the head of the distribution. Most-tapped noun: <span class="hw">posao</span>; adjective: <span class="hw">dobar</span>; adverb: <span class="hw">ipak</span>.</dd>
+    </div>
+    <div class="entry">
+      <dt>most favorited</dt>
+      <dd><span class="hw">ipak</span>, <span class="hw">otići</span>, <span class="hw">čuti</span> — 6 users each. 2,201 adds spread so thin that no word reached 7 people: favoriting is idiosyncratic, not consensual.</dd>
+    </div>
+  </dl>
+</section>
+
+<!-- ══════════════ USAGE NOTES ══════════════ -->
+<div class="notes">
+  <h3>Usage notes — read before quoting any number</h3>
+  <ol>
+    <li><b>July is iOS-only; Android exists in the data only from Aug&nbsp;13.</b> An analytics-export misconfiguration (since fixed) kept Android usage out of the record until then. Never read Android’s smaller totals as lower engagement, and never trend Android month-over-month.</li>
+    <li><b>“Most looked-up” is measured by result taps, not card opens.</b> Both apps’ onboarding plants a showcase word into recents — <span class="hw">ljubav</span> got 96 card opens (49 Android users in August) but only <b>7</b> users ever reached it via search. Tap counts are immune; card-open counts are contaminated for the 16 showcase words.</li>
+    <li><b>Searches are logged per keystroke</b>, so query counts use the terminal-query collapse (a query is dropped if a later one in the same session extends it). Many surviving queries are 1–2-letter prefixes — users tap results mid-typing — so typed-query rankings below are filtered to ≥3 characters.</li>
+    <li><b>Counting unit is distinct users</b >, not events, wherever a ranking is shown — one enthusiast tapping <span class="hw">biti</span> 46 times in July would otherwise own the chart.</li>
+    <li>Window: <b>Jul 3 – Aug 30</b> (July 1–2 aged out of retention; Aug 31 not yet exported). Hours are Europe/Belgrade — right for ~80% of users, see audience below.</li>
+  </ol>
+</div>
+
+<!-- ══════════════ VOLUME ══════════════ -->
+<section>
+  <span class="qno">Denominators</span>
+  <h2>How much looking-up happened</h2>
+  <div class="stats">
+    <div class="stat"><div class="v">53,142</div><div class="l">terminal searches</div></div>
+    <div class="stat"><div class="v">21,006</div><div class="l">results tapped</div></div>
+    <div class="stat"><div class="v">28,918</div><div class="l">word cards opened</div></div>
+    <div class="stat"><div class="v">2,201</div><div class="l">favorite adds <small class="unit">(169 removes)</small></div></div>
+    <div class="stat"><div class="v">19.9%</div><div class="l">of terminal searches found nothing</div></div>
+  </div>
+  <p class="lede" style="margin-top:14px">Monthly search volume: <b>19,437</b> terminal searches in July (iOS only) → <b>27,262</b> iOS + <b>6,443</b> Android in August. Roughly 420–500 people search on iOS in any month; Android added ~300 searching users once its data began flowing.</p>
+</section>
+
+<!-- ══════════════ Q1 TOP WORDS ══════════════ -->
+<section>
+  <span class="qno">Question 1 · both directions</span>
+  <h2>The words people look up</h2>
+  <p class="lede">Top 50 in each direction, ranked by distinct users who tapped the word in search results. Blue is forward lookup (typing Serbian), orange is reverse (typing Russian or English and choosing a Serbian result).</p>
+
+  <div class="card">
+    <div class="grid-2">
+      <div>
+        <h3>Forward — Serbian → gloss</h3>
+        <p class="sub">users tapping · (total taps)</p>
+        <div class="rank" id="fwdlist"></div>
+      </div>
+      <div>
+        <h3>Reverse — gloss → Serbian</h3>
+        <p class="sub">users tapping · (total taps)</p>
+        <div class="rank" id="revlist"></div>
+      </div>
+    </div>
+    <div class="legend">
+      <span class="chip"><i class="f"></i>forward (Serbian → translation)</span>
+      <span class="chip"><i class="r"></i>reverse (translation → Serbian)</span>
+    </div>
+  </div>
+
+  <div class="callout"><b>Verbs own the head.</b> All ten of the forward top 10 are verbs — and 40 of the top 50. People don’t open <span class="hw">biti</span> to learn what “to be” means — they come for <i>sam · si · je · smo</i>, the conjugation. The high-frequency lookup is inflection anxiety, not meaning. The reverse list is more mixed (32 verbs of 50): deeper down, concrete daily life surfaces — <span class="hw">pas</span>, <span class="hw">mačka</span>, <span class="hw">čajnik</span>, <span class="hw">baterija</span>, <span class="hw">vruć</span> — the words you need when the kettle breaks or the dog needs a vet, which is exactly what a reverse dictionary is for.</div>
+
+  <div class="card">
+    <div class="grid-2">
+      <div>
+        <h3>What they actually type — Russian, reverse</h3>
+        <p class="sub">top 50 terminal queries ≥3 chars, by distinct users — all 50 found results</p>
+        <table id="ruq"><tr><th>query</th><th></th><th class="num">users</th></tr></table>
+      </div>
+      <div>
+        <h3>— and English, reverse</h3>
+        <p class="sub">top 50 · a far smaller audience: 1,511 terminal EN reverse searches all told · ⌀ = found nothing</p>
+        <table id="enq"><tr><th>query</th><th class="num">users</th></tr></table>
+      </div>
+    </div>
+  </div>
+  <p class="lede" style="margin-top:16px">The Russian list reads like the first week of settling in: greeting people (<i>привет, спасибо, до свидания</i>), moving around (<i>идти, ехать</i>), the household (<i>дом, лампа, одеяло, полотенце</i>), the August weather (<i>жарко, жара</i>), orienting in time (<i>вчера, завтра, сегодня, уже</i>). All 50 found results — the dictionary answers its Russian head demand in full. Two curiosities: <i>privet</i> — Russian typed in Latin letters — makes the top 20, and Serbian words (<i>posle</i>, and English-side <i>pijem</i>, which found nothing) show up typed into the wrong search direction: the пролив shape, users forgetting which way the toggle points.</p>
+</section>
+
+<!-- ══════════════ Q2 SLICES ══════════════ -->
+<section>
+  <span class="qno">Question 2 · month × platform × language</span>
+  <h2>The same words, sliced</h2>
+
+  <div class="card">
+    <h3>By month — the head barely moves</h3>
+    <p class="sub">top tapped words by distinct users; July is iOS-only by construction</p>
+    <div class="grid-2">
+      <table>
+        <tr><th>july</th><th class="num">users</th></tr>
+        <tr><td><span class="hw">ići</span> <span class="pos-i">v.</span></td><td class="num">35</td></tr>
+        <tr><td><span class="hw">voleti</span> <span class="pos-i">v.</span> “to love”</td><td class="num">24</td></tr>
+        <tr><td><span class="hw">raditi</span> <span class="pos-i">v.</span></td><td class="num">23</td></tr>
+        <tr><td><span class="hw">doći</span> <span class="pos-i">v.</span></td><td class="num">21</td></tr>
+        <tr><td><span class="hw">biti</span> <span class="pos-i">v.</span></td><td class="num">20</td></tr>
+        <tr><td><span class="hw">govoriti</span> <span class="pos-i">v.</span></td><td class="num">20</td></tr>
+      </table>
+      <table>
+        <tr><th>august</th><th class="num">users</th></tr>
+        <tr><td><span class="hw">biti</span> <span class="pos-i">v.</span></td><td class="num">66</td></tr>
+        <tr><td><span class="hw">ići</span> <span class="pos-i">v.</span></td><td class="num">41</td></tr>
+        <tr><td><span class="hw">otići</span> <span class="pos-i">v.</span></td><td class="num">31</td></tr>
+        <tr><td><span class="hw">čuti</span> <span class="pos-i">v.</span></td><td class="num">30</td></tr>
+        <tr><td><span class="hw">raditi</span> <span class="pos-i">v.</span></td><td class="num">28</td></tr>
+        <tr><td><span class="hw">jesti</span> <span class="pos-i">v.</span></td><td class="num">27</td></tr>
+      </table>
+    </div>
+    <p class="sub" style="margin:12px 0 0">The July/August difference is mostly audience growth, not lexical drift — the same conjugation-heavy verbs, reshuffled. <span class="hw">biti</span>’s July count hides a quirk: 20 users but 46 taps, one person hammering the entry.</p>
+  </div>
+
+  <div class="card">
+    <h3>By platform — fair window only (Aug 13–30, both platforms live)</h3>
+    <p class="sub">top tapped words by distinct users</p>
+    <div class="grid-2">
+      <table>
+        <tr><th>ios</th><th class="num">users</th></tr>
+        <tr><td><span class="hw">biti</span> <span class="pos-i">v.</span></td><td class="num">29</td></tr>
+        <tr><td><span class="hw">ići</span> <span class="pos-i">v.</span></td><td class="num">14</td></tr>
+        <tr><td><span class="hw">jesti</span> <span class="pos-i">v.</span></td><td class="num">14</td></tr>
+        <tr><td><span class="hw">raditi</span> <span class="pos-i">v.</span></td><td class="num">13</td></tr>
+        <tr><td><span class="hw">čuti</span> <span class="pos-i">v.</span></td><td class="num">13</td></tr>
+        <tr><td><span class="hw">posao</span> <span class="pos-i">n.</span> “job”</td><td class="num">13</td></tr>
+      </table>
+      <table>
+        <tr><th>android</th><th class="num">users</th></tr>
+        <tr><td><span class="hw">biti</span> <span class="pos-i">v.</span></td><td class="num">12</td></tr>
+        <tr><td><span class="hw">čuti</span> <span class="pos-i">v.</span></td><td class="num">10</td></tr>
+        <tr><td><span class="hw">ići</span> <span class="pos-i">v.</span></td><td class="num">9</td></tr>
+        <tr><td><span class="hw">doći</span> <span class="pos-i">v.</span></td><td class="num">8</td></tr>
+        <tr><td><span class="hw">jesti</span> <span class="pos-i">v.</span></td><td class="num">7</td></tr>
+        <tr><td><span class="hw">osećati</span> <span class="pos-i">v.</span> “to feel”</td><td class="num">7</td></tr>
+      </table>
+    </div>
+    <p class="sub" style="margin:12px 0 0">Same head on both platforms. The platform difference is intensity, not vocabulary: in this window iOS produced 17,559 terminal searches from ~350 users; Android 6,443 from ~270 — iOS users search roughly twice as much per person.</p>
+  </div>
+
+  <div class="card">
+    <h3>By search language</h3>
+    <p class="sub">terminal searches, full window · bar length = volume</p>
+    <div class="mrow">
+      <div class="lab">Russian<small>46,263 · 87%</small></div>
+      <div class="mbars">
+        <div class="mbar" style="--w:100%"><div class="bar f" style="width:100%"></div><span class="in">forward 30,128 · 17.4% empty</span></div>
+        <div class="mbar" style="--w:53.6%"><div class="bar r" style="width:53.6%"></div><span>reverse 16,135 · 24.6% empty</span></div>
+      </div>
+    </div>
+    <div class="mrow">
+      <div class="lab">English<small>6,879 · 13%</small></div>
+      <div class="mbars">
+        <div class="mbar" style="--w:17.8%"><div class="bar f" style="width:17.8%"></div><span>forward 5,368 · 19.7% empty</span></div>
+        <div class="mbar" style="--w:5.0%"><div class="bar r" style="width:5.0%"></div><span>reverse 1,511 · 20.4% empty</span></div>
+      </div>
+    </div>
+    <div class="legend">
+      <span class="chip"><i class="f"></i>forward (typing Serbian)</span>
+      <span class="chip"><i class="r"></i>reverse (typing the gloss language)</span>
+      <span class="chip">“empty” = zero-result share</span>
+    </div>
+    <p class="sub" style="margin:14px 0 0">Russian-gloss reverse search is both the second-largest slice <i>and</i> the leakiest — one in four Russian reverse searches finds nothing. That 24.6% is where dictionary-coverage work has the most users waiting.</p>
+  </div>
+</section>
+
+<!-- ══════════════ Q3 TIME OF DAY ══════════════ -->
+<section>
+  <span class="qno">Question 3 · time of day</span>
+  <h2>When the dictionary gets opened</h2>
+  <p class="lede">All 178k raw search events by hour, Europe/Belgrade time. The dictionary is an afternoon-and-evening tool: usage climbs through the morning, plateaus after lunch, and peaks at 18:00 — then holds up past midnight.</p>
+  <div class="card">
+    <h3>Searches by hour <small class="unit">· CET</small></h3>
+    <p class="sub">hover a bar for exact counts</p>
+    <svg id="hourchart" viewBox="0 0 880 240" role="img" aria-label="Bar chart of search volume by hour of day, peaking at 18:00"></svg>
+    <div class="legend" id="hourlegend"></div>
+  </div>
+  <div class="callout"><b>The midnight tail is real:</b> 5,290 searches in the 00:00 hour — twice the 01:00 volume and more than any hour before 08:00. A late-evening study habit that spills across midnight, not an artifact.</div>
+</section>
+
+<!-- ══════════════ Q4 POS ══════════════ -->
+<section>
+  <span class="qno">Question 4 · parts of speech</span>
+  <h2>What kind of words</h2>
+  <div class="card">
+    <h3>Result taps by part of speech</h3>
+    <p class="sub">share of 21,006 taps, full window</p>
+    <div class="rank" id="poslist"></div>
+    <p class="sub" style="margin:14px 0 0">Nouns beat verbs in total volume but lose the head: noun demand is a long tail of thousands of concrete words, while verb demand piles onto a short list of everyday-motion and modal verbs whose conjugations people re-check.</p>
+  </div>
+  <div class="card">
+    <h3>The champion of each class</h3>
+    <p class="sub">most-tapped word per POS, by distinct users</p>
+    <div class="pos-grid">
+      <div class="pos-cell"><span><span class="pos-i">v.</span> <span class="hw">biti</span></span><span class="u">86 users</span></div>
+      <div class="pos-cell"><span><span class="pos-i">n.</span> <span class="hw">posao</span></span><span class="u">38</span></div>
+      <div class="pos-cell"><span><span class="pos-i">adj.</span> <span class="hw">dobar</span></span><span class="u">21</span></div>
+      <div class="pos-cell"><span><span class="pos-i">adv.</span> <span class="hw">ipak</span></span><span class="u">22</span></div>
+      <div class="pos-cell"><span><span class="pos-i">pron.</span> <span class="hw">on</span></span><span class="u">18</span></div>
+      <div class="pos-cell"><span><span class="pos-i">prep.</span> <span class="hw">nakon</span>, <span class="hw">preko</span>, <span class="hw">za</span></span><span class="u">12 each</span></div>
+      <div class="pos-cell"><span><span class="pos-i">conj.</span> <span class="hw">jer</span></span><span class="u">10</span></div>
+      <div class="pos-cell"><span><span class="pos-i">num.</span> <span class="hw">dva</span></span><span class="u">10</span></div>
+      <div class="pos-cell"><span><span class="pos-i">part.</span> <span class="hw">neka</span></span><span class="u">9</span></div>
+      <div class="pos-cell"><span><span class="pos-i">interj.</span> <span class="hw">jebiga</span></span><span class="u">15</span></div>
+      <div class="pos-cell"><span><span class="pos-i">prop.&nbsp;n.</span> <span class="hw">Srbija</span></span><span class="u">5</span></div>
+      <div class="pos-cell"><span><span class="pos-i">phr.</span> <span class="hw">dobar dan</span></span><span class="u">5</span></div>
+    </div>
+    <p class="sub" style="margin:14px 0 0">The interjection column is candid: <span class="hw">jebiga</span> beats <span class="hw">ćao</span> and <span class="hw">zdravo</span>. People look up what the street says, not what the textbook opens with — the top phrases show the same pattern.</p>
+  </div>
+</section>
+
+<!-- ══════════════ Q5 FAVORITES ══════════════ -->
+<section>
+  <span class="qno">Question 5 · favorites</span>
+  <h2>The words people keep</h2>
+  <p class="lede">2,201 favorite adds against only 169 removes — favoriting is a one-way gesture. But it is spread across so many words that the “most favorited” list tops out at six users. Read ranks as anecdote, not consensus.</p>
+  <div class="card">
+    <h3>Most favorited words</h3>
+    <p class="sub">distinct users who added the word · full window</p>
+    <table>
+      <tr><th>word</th><th></th><th class="num">users</th><th class="num">adds</th></tr>
+      <tr><td><span class="hw">ipak</span> <span class="pos-i">adv.</span></td><td>“nevertheless”</td><td class="num">6</td><td class="num">6</td></tr>
+      <tr><td><span class="hw">otići</span> <span class="pos-i">v.</span></td><td>“to leave”</td><td class="num">6</td><td class="num">6</td></tr>
+      <tr><td><span class="hw">čuti</span> <span class="pos-i">v.</span></td><td>“to hear”</td><td class="num">6</td><td class="num">6</td></tr>
+      <tr><td><span class="hw">jebiga</span> <span class="pos-i">interj.</span></td><td>“screw it”</td><td class="num">5</td><td class="num">5</td></tr>
+      <tr><td><span class="hw">odlučiti</span> <span class="pos-i">v.</span> ⚠</td><td>“to decide” — onboarding showcase word; count may be seeded</td><td class="num">5</td><td class="num">5</td></tr>
+      <tr><td><span class="hw">tražiti</span> <span class="pos-i">v.</span></td><td>“to seek”</td><td class="num">4</td><td class="num">4</td></tr>
+      <tr><td><span class="hw">dakle</span> <span class="pos-i">conj.</span></td><td>“therefore”</td><td class="num">4</td><td class="num">5</td></tr>
+      <tr><td><span class="hw">osećati</span> <span class="pos-i">v.</span></td><td>“to feel”</td><td class="num">4</td><td class="num">4</td></tr>
+      <tr><td><span class="hw">odnos</span> <span class="pos-i">n.</span></td><td>“relation(ship)”</td><td class="num">4</td><td class="num">4</td></tr>
+      <tr><td><span class="hw">naći</span> <span class="pos-i">v.</span></td><td>“to find”</td><td class="num">4</td><td class="num">4</td></tr>
+      <tr><td><span class="hw">krenuti</span> <span class="pos-i">v.</span></td><td>“to set off”</td><td class="num">4</td><td class="num">4</td></tr>
+      <tr><td><span class="hw">jer</span> <span class="pos-i">conj.</span></td><td>“because”</td><td class="num">4</td><td class="num">4</td></tr>
+    </table>
+    <p class="sub" style="margin:14px 0 0">The profile differs from search: what gets <i>kept</i> skews to discourse glue (<span class="hw">ipak</span>, <span class="hw">dakle</span>, <span class="hw">jer</span>) and emotional vocabulary (<span class="hw">osećati</span>, <span class="hw">odnos</span>) — words you meet in conversation and file away, rather than the conjugation tables people re-visit without saving.</p>
+  </div>
+</section>
+
+<!-- ══════════════ AUDIENCE ══════════════ -->
+<section>
+  <span class="qno">Context · who is looking</span>
+  <h2>The audience behind the numbers</h2>
+  <div class="card">
+    <h3>Active users by country <small class="unit">· August</small></h3>
+    <p class="sub">of 1,475 user-rows; both platforms</p>
+    <div class="rank" id="geolist"></div>
+    <p class="sub" style="margin:14px 0 0">Serbia itself is 56% of usage, with Russia second. Put beside the 87% Russian-gloss share, the picture is coherent: <b>the core audience is Russian speakers living in Serbia</b>, learning the language of the place they moved to. Montenegro and Slovenia round out the region; the diaspora (US, UK, NL, DE) is a visible but thin tail — and it is where most of the English-gloss searching plausibly lives.</p>
+  </div>
+</section>
+
+<footer>
+  <p style="max-width:none">Compiled from the Govori apps’ anonymized usage analytics, July&nbsp;3&nbsp;–&nbsp;August&nbsp;30, 2026. Counting conventions: searches collapsed to the final query of each typing burst; rankings by distinct users; internal test traffic excluded. Every number traces to the underlying extracts held by the team. This page is unlisted — please don’t share the link beyond the review.</p>
+</footer>
+</div>
+
+<div class="tip" id="tip"></div>
+
+<script>
+// ---------- ranked word lists ----------
+const fwd = [["biti","v.",70,121],["ići","v.",54,73],["raditi","v.",41,59],["doći","v.",35,46],["voleti","v.",35,47],["otići","v.",34,36],["čuti","v.",31,43],["govoriti","v.",30,36],["reći","v.",28,36],["hteti","v.",28,32],["posao","n.",27,30],["moći","v.",26,37],["stići","v.",26,28],["krenuti","v.",26,29],["kupiti","v.",25,44],["pričati","v.",24,26],["morati","v.",24,26],["imati","v.",21,21],["dobiti","v.",19,23],["dolaziti","v.",19,20],["misliti","v.",19,20],["ipak","adv.",18,20],["jesti","v.",18,19],["piti","v.",18,19],["kuća","n.",18,22],["dobar","adj.",17,25],["videti","v.",17,19],["živeti","v.",17,18],["čuvati","v.",17,19],["učiti","v.",17,18],["pomoći","v.",16,26],["deca","n.",16,19],["dati","v.",16,19],["sav","pron.",16,22],["obući","v.",16,19],["želeti","v.",16,21],["pisati","v.",15,18],["uzeti","v.",15,18],["stvar","n.",15,17],["slagati","v.",15,17],["zvati","v.",15,19],["zaboraviti","v.",15,15],["reč","n.",15,18],["naći","v.",15,19],["odgovarati","v.",15,15],["čekati","v.",15,16],["kuvati","v.",14,15],["doneti","v.",14,17],["jebiga","interj.",14,17],["on","pron.",14,16]];
+const rev = [["ići","v.",22,26],["jesti","v.",17,20],["biti","v.",16,19],["naći","v.",15,16],["uzeti","v.",13,14],["platiti","v.",12,12],["pas","n.",12,14],["kuća","n.",11,11],["posao","n.",11,15],["bojati se","v.",11,12],["čuti","v.",11,12],["doći","v.",11,11],["voleti","v.",10,11],["znati","v.",10,10],["otići","v.",10,13],["spavati","v.",10,11],["hteti","v.",10,11],["raditi","v.",10,10],["reći","v.",9,12],["zdravo","interj.",9,10],["dobiti","v.",9,9],["nedelja","n.",9,9],["moliti","v.",9,10],["govoriti","v.",9,10],["živeti","v.",8,15],["posle","prep.",8,8],["tražiti","v.",8,9],["mačka","n.",8,8],["sada","adv.",8,10],["kupiti","v.",8,8],["pronaći","v.",8,9],["vruć","adj.",8,9],["moj","pron.",8,9],["kuvati","v.",7,21],["čajnik","n.",7,8],["dete","n.",7,9],["baterija","n.",7,10],["već","adv.",7,9],["dati","v.",7,7],["piti","v.",7,9],["dva","num.",7,9],["više","adv.",7,8],["delati","v.",7,8],["plav","adj.",7,11],["osećati","v.",7,9],["nalaziti","v.",7,7],["početi","v.",7,8],["juče","adv.",7,8],["slušati","v.",7,7],["poslati","v.",7,7]];
+function ranklist(el, rows, cls){
+  const max = rows[0][2];
+  el.innerHTML = rows.map((r,i)=>`<div class="rrow"><span class="n">${i+1}</span><span class="w"><span class="hw">${r[0]}</span> <span class="pos-i">${r[1]}</span></span><div class="bar ${cls}" style="width:${(r[2]/max*100).toFixed(1)}%"></div><span class="val">${r[2]} <small style="color:var(--ink-3)">(${r[3]})</small></span></div>`).join("");
+}
+ranklist(document.getElementById("fwdlist"), fwd, "f");
+ranklist(document.getElementById("revlist"), rev, "r");
+
+// ---------- typed reverse queries ----------
+const ruq = [["идти","to go",18],["привет","hi",18],["вчера","yesterday",15],["дом","house",13],["быть","to be",12],["найти","to find",12],["сейчас","now",11],["больше","more",11],["получить","to receive",10],["завтра","tomorrow",10],["хотеть","to want",10],["говорить","to speak",10],["очень","very",10],["уже","already",10],["искать","to look for",9],["собака","dog",9],["почти","almost",9],["privet","«привет» in Latin script",9],["лампа","lamp",9],["есть","to eat / there is",9],["кошка","cat",9],["делать","to do",9],["ехать","to go (by vehicle)",9],["одеяло","blanket",8],["знать","to know",8],["спасибо","thank you",8],["забрать","to pick up",8],["кот","tomcat",8],["маленький","small",8],["жена","wife",8],["два","two",8],["жарко","hot (weather)",8],["добрый день","good day",7],["любить","to love",7],["posle","Serbian “after”, wrong direction",7],["сегодня","today",7],["полотенце","towel",7],["ужин","dinner",7],["нравится","to like",7],["работа","work",7],["всегда","always",7],["мама","mom",7],["сосед","neighbor",7],["про","about",7],["бежать","to run",7],["жара","heat",7],["бояться","to fear",7],["до свидания","goodbye",7],["взять","to take",7],["когда","when",7]];
+const enq = [["there",4,0],["man",4,0],["big",3,0],["to go",3,0],["dog",3,0],["this",3,0],["now",3,0],["will",3,0],["woman",3,0],["after",3,0],["third",3,0],["milk",3,0],["what",3,0],["to be",2,0],["house",2,0],["find",2,0],["bla",2,0],["prepare",2,0],["night",2,0],["army",2,0],["week",2,0],["word",2,0],["pijem",2,1],["drink",2,0],["for",2,0],["hello",2,0],["fifth",2,0],["to g",2,0],["friend",2,0],["spider",2,0],["beans",2,0],["fire",2,0],["bed",2,0],["clean",2,0],["appointment",2,0],["hope",2,0],["book",2,0],["pak",2,0],["words",2,0],["during",2,0],["world",2,0],["start",2,0],["you",2,0],["taj",2,0],["exchange",2,0],["meet",2,0],["was",2,0],["tale",2,0],["fourth",2,0],["adore",2,0]];
+document.getElementById("ruq").insertAdjacentHTML("beforeend",
+  ruq.map(r=>`<tr><td>${r[0]}</td><td><span class="pos-i">${r[1]}</span></td><td class="num">${r[2]}</td></tr>`).join(""));
+document.getElementById("enq").insertAdjacentHTML("beforeend",
+  enq.map(r=>`<tr><td>${r[0]}${r[2]?" <span class=\"pos-i\">⌀</span>":""}</td><td class="num">${r[1]}</td></tr>`).join(""));
+
+// ---------- POS bars ----------
+const pos = [["noun",8540],["verb",7771],["adjective",1878],["adverb",1378],["pronoun",349],["preposition",257],["interjection",219],["conjunction",185],["proper noun",150],["numeral",104],["phrase",84],["particle",82],["proverb",9]];
+const posEl = document.getElementById("poslist");
+const pmax = pos[0][1], ptot = pos.reduce((a,b)=>a+b[1],0);
+posEl.innerHTML = pos.map(p=>`<div class="rrow" style="grid-template-columns:110px 1fr 110px"><span class="w" style="font-size:14px">${p[0]}</span><div class="bar f" style="width:${(p[1]/pmax*100).toFixed(1)}%"></div><span class="val">${p[1].toLocaleString("en-US")} <small style="color:var(--ink-3)">${(p[1]/ptot*100).toFixed(1)}%</small></span></div>`).join("");
+
+// ---------- geo bars ----------
+const geo = [["Serbia",832],["Russia",160],["United States",86],["Montenegro",84],["Slovenia",63],["United Kingdom",21],["Netherlands",20],["Germany",18]];
+const gEl = document.getElementById("geolist"), gmax = geo[0][1], gtot = 1475;
+gEl.innerHTML = geo.map(g=>`<div class="rrow" style="grid-template-columns:130px 1fr 100px"><span class="w" style="font-size:14px">${g[0]}</span><div class="bar f" style="width:${(g[1]/gmax*100).toFixed(1)}%"></div><span class="val">${g[1]} <small style="color:var(--ink-3)">${(g[1]/gtot*100).toFixed(0)}%</small></span></div>`).join("");
+
+// ---------- hour chart ----------
+const hours = [5290,2796,1335,641,1130,1709,1570,2598,6113,7043,9937,10899,11170,10294,9522,9614,10127,12000,15164,10940,9902,10610,10371,7397];
+const parts = [["night 0–5",0,6,"7.2%"],["morning 6–11",6,12,"21.4%"],["day 12–17",12,18,"35.2%"],["evening 18–23",18,24,"36.1%"]];
+(function(){
+  const svg = document.getElementById("hourchart");
+  const W=880, H=240, padL=8, padR=8, padT=30, padB=26;
+  const iw=(W-padL-padR)/24, max=15164;
+  const css = getComputedStyle(document.documentElement);
+  let s = "";
+  // day-part separators + labels
+  parts.forEach((p,pi)=>{
+    const x0 = padL + p[1]*iw, x1 = padL + p[2]*iw;
+    if(pi>0) s += `<line x1="${x0}" y1="${padT-18}" x2="${x0}" y2="${H-padB}" stroke="var(--grid)" stroke-width="1"/>`;
+    s += `<text x="${(x0+x1)/2}" y="${padT-14}" text-anchor="middle" font-size="11.5" fill="var(--ink-3)">${p[0]}</text>`;
+    s += `<text x="${(x0+x1)/2}" y="${padT-1}" text-anchor="middle" font-size="12.5" font-weight="700" fill="var(--ink)">${p[3]}</text>`;
+  });
+  // gridlines
+  [5000,10000,15000].forEach(v=>{
+    const y = H-padB-(v/max)*(H-padT-padB);
+    s += `<line x1="${padL}" y1="${y}" x2="${W-padR}" y2="${y}" stroke="var(--grid)" stroke-width="1"/>`;
+  });
+  // bars
+  hours.forEach((v,i)=>{
+    const h=(v/max)*(H-padT-padB), x=padL+i*iw+2, y=H-padB-h;
+    const peak = v===max;
+    s += `<path d="M${x} ${H-padB} V${y+4} Q${x} ${y} ${x+4} ${y} H${x+iw-8} Q${x+iw-4} ${y} ${x+iw-4} ${y+4} V${H-padB} Z" fill="var(--fwd)" opacity="${peak?1:.78}" data-h="${i}" data-v="${v}"/>`;
+    if(peak) s += `<text x="${x+(iw-4)/2}" y="${y-6}" text-anchor="middle" font-size="12" font-weight="700" fill="var(--ink)">15,164</text>`;
+  });
+  // axis labels
+  [0,6,12,18,23].forEach(hh=>{
+    s += `<text x="${padL+hh*iw+iw/2}" y="${H-8}" text-anchor="middle" font-size="11" fill="var(--ink-3)">${String(hh).padStart(2,"0")}</text>`;
+  });
+  s += `<line x1="${padL}" y1="${H-padB}" x2="${W-padR}" y2="${H-padB}" stroke="var(--rule)" stroke-width="1"/>`;
+  svg.innerHTML = s;
+  const tip = document.getElementById("tip");
+  svg.addEventListener("pointermove", e=>{
+    const t = e.target.closest("path[data-h]");
+    if(!t){ tip.style.opacity=0; return; }
+    const hh = +t.dataset.h;
+    tip.textContent = `${String(hh).padStart(2,"0")}:00–${String(hh).padStart(2,"0")}:59 · ${(+t.dataset.v).toLocaleString("en-US")} searches`;
+    tip.style.opacity=1;
+    tip.style.left=(e.clientX+14)+"px"; tip.style.top=(e.clientY-10)+"px";
+  });
+  svg.addEventListener("pointerleave", ()=>{ tip.style.opacity=0; });
+})();
+</script>
+</body>
+</html>
