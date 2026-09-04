@@ -139,7 +139,7 @@ a{color:var(--fwd)}
 <header class="masthead">
   <div class="eyebrow">Govori · BCMS dictionary apps · ground data for the socio-lexical review</div>
   <h1>Šta se traži</h1>
-  <p class="subtitle">What 1,800 people looked up in a Serbian dictionary — every search, tap, and favorite from the analytics export, July&thinsp;3 – August&thinsp;30, 2026.</p>
+  <p class="subtitle">What 1,800 people looked up in a Serbian dictionary — every search, tap, favorite — and random-word card — from the analytics export, July&thinsp;3 – August&thinsp;30, 2026.</p>
   <div class="meta-line">
     <span><b>Source</b> anonymized in-app usage analytics</span>
     <span><b>Compiled</b> 2026-09-01</span>
@@ -175,6 +175,10 @@ a{color:var(--fwd)}
       <dt>most favorited</dt>
       <dd><span class="hw">ipak</span>, <span class="hw">otići</span>, <span class="hw">čuti</span> — 6 users each. 2,201 adds spread so thin that no word reached 7 people: favoriting is idiosyncratic, not consensual.</dd>
     </div>
+    <div class="entry">
+      <dt>random-word card</dt>
+      <dd>People open the card words they <b>half-know</b> and roll away the rare ones: open rate 49% for top-1,000 words, <b>25%</b> past rank 5,000, rising with search demand. What differs is what follows — a card word gets its grammar table opened <b>twice as often</b> as a searched one.</dd>
+    </div>
   </dl>
 </section>
 
@@ -186,6 +190,7 @@ a{color:var(--fwd)}
     <li><b>“Most looked-up” is measured by result taps, not card opens.</b> Both apps’ onboarding plants a showcase word into recents — <span class="hw">ljubav</span> got 96 card opens (49 Android users in August) but only <b>7</b> users ever reached it via search. Tap counts are immune; card-open counts are contaminated for the 16 showcase words.</li>
     <li><b>Searches are logged per keystroke</b>, so query counts use the terminal-query collapse (a query is dropped if a later one in the same session extends it). Many surviving queries are 1–2-letter prefixes — users tap results mid-typing — so typed-query rankings below are filtered to ≥3 characters.</li>
     <li><b>Counting unit is distinct users</b >, not events, wherever a ranking is shown — one enthusiast tapping <span class="hw">biti</span> 46 times in July would otherwise own the chart.</li>
+    <li><b>The random-word card section (Question 6) uses its own window, Jul 5 – Sep 2</b>, and counts two gestures: opening the card, and rolling it away — the rolled-away word is the one that was on screen, not the one that replaced it. Cards ignored without either gesture are invisible. The card shows common words several times more often than rare ones, so raw open counts are exposure; the open <i>rate</i> is the comparable number.</li>
     <li>Window: <b>Jul 3 – Aug 30</b> (July 1–2 aged out of retention; Aug 31 not yet exported). Hours are Europe/Belgrade — right for ~80% of users, see audience below.</li>
   </ol>
 </div>
@@ -389,6 +394,93 @@ a{color:var(--fwd)}
   </div>
 </section>
 
+<!-- ══════════════ RANDOM-WORD CARD ══════════════ -->
+<section id="card">
+  <span class="qno">Question 6 · the random-word card</span>
+  <h2>The words people open without searching</h2>
+  <p class="lede">Every app launch shows one random word — a noun or verb from the top 5,000, weighted toward the common end — that the user can open or roll away. It is the only place people meet a word they did not ask for. Hypothesis under test: <i>the words people open from the card are the ones they don’t know.</i> This section has its own window, <b>Jul&nbsp;5&nbsp;–&nbsp;Sep&nbsp;2</b>, split by the gloss language the user works in.</p>
+
+  <div class="stats">
+    <div class="stat"><div class="v">2,516</div><div class="l">card words opened <small>· 726 users</small></div></div>
+    <div class="stat"><div class="v">3,201</div><div class="l">rolled away</div></div>
+    <div class="stat"><div class="v">44%</div><div class="l">of decided cards were opened <small>· RU 46%, EN 33%</small></div></div>
+    <div class="stat"><div class="v">1,458</div><div class="l">distinct words opened</div></div>
+  </div>
+
+  <div class="card">
+    <h3>Most-opened card words</h3>
+    <p class="sub">distinct users who opened the word from the card · (opens) · (rolled away) — the English list is ten two-user ties; read it as texture, not rank</p>
+    <div class="grid-2">
+      <table style="align-self:start">
+        <tr><th>russian-gloss users</th><th class="num">users</th><th class="num">opens</th><th class="num">rolled</th></tr>
+        <tr><td><span class="hw">put</span> <span class="pos-i">n.</span> “road”</td><td class="num">8</td><td class="num">12</td><td class="num">6</td></tr>
+        <tr><td><span class="hw">plaćati</span> <span class="pos-i">v.</span> “to pay”</td><td class="num">6</td><td class="num">8</td><td class="num">1</td></tr>
+        <tr><td><span class="hw">reći</span> <span class="pos-i">v.</span> “to say”</td><td class="num">6</td><td class="num">8</td><td class="num">2</td></tr>
+        <tr><td><span class="hw">tražiti</span> <span class="pos-i">v.</span> “to look for”</td><td class="num">6</td><td class="num">8</td><td class="num">5</td></tr>
+        <tr><td><span class="hw">tržište</span> <span class="pos-i">n.</span> “market”</td><td class="num">6</td><td class="num">7</td><td class="num">2</td></tr>
+        <tr><td><span class="hw">činjenica</span> <span class="pos-i">n.</span> “fact”</td><td class="num">6</td><td class="num">6</td><td class="num">0</td></tr>
+        <tr><td><span class="hw">odnos</span> <span class="pos-i">n.</span> “relationship”</td><td class="num">6</td><td class="num">6</td><td class="num">2</td></tr>
+        <tr><td><span class="hw">bar</span> <span class="pos-i">n.</span> “bar, pub”</td><td class="num">6</td><td class="num">6</td><td class="num">7</td></tr>
+        <tr><td><span class="hw">baviti</span> <span class="pos-i">v.</span> “to engage in”</td><td class="num">5</td><td class="num">7</td><td class="num">3</td></tr>
+        <tr><td><span class="hw">lek</span> <span class="pos-i">n.</span> “medicine”</td><td class="num">5</td><td class="num">6</td><td class="num">3</td></tr>
+        <tr><td><span class="hw">tok</span> <span class="pos-i">n.</span> “flow”</td><td class="num">5</td><td class="num">5</td><td class="num">2</td></tr>
+        <tr><td><span class="hw">donesti</span> <span class="pos-i">v.</span> “to bring”</td><td class="num">5</td><td class="num">5</td><td class="num">2</td></tr>
+        <tr><td><span class="hw">morati</span> <span class="pos-i">v.</span> “to have to”</td><td class="num">5</td><td class="num">5</td><td class="num">3</td></tr>
+        <tr><td><span class="hw">medij</span> <span class="pos-i">n.</span> “medium”</td><td class="num">4</td><td class="num">7</td><td class="num">1</td></tr>
+        <tr><td><span class="hw">rad</span> <span class="pos-i">n.</span> “work”</td><td class="num">4</td><td class="num">7</td><td class="num">4</td></tr>
+      </table>
+      <table style="align-self:start">
+        <tr><th>english-gloss users</th><th class="num">users</th><th class="num">opens</th><th class="num">rolled</th></tr>
+        <tr><td><span class="hw">osećati</span> <span class="pos-i">v.</span> “to feel”</td><td class="num">2</td><td class="num">5</td><td class="num">3</td></tr>
+        <tr><td><span class="hw">resiti</span> <span class="pos-i">v.</span> “to decorate”</td><td class="num">2</td><td class="num">3</td><td class="num">0</td></tr>
+        <tr><td><span class="hw">zemlja</span> <span class="pos-i">n.</span> “earth”</td><td class="num">2</td><td class="num">2</td><td class="num">0</td></tr>
+        <tr><td><span class="hw">poštovati</span> <span class="pos-i">v.</span> “to respect”</td><td class="num">2</td><td class="num">2</td><td class="num">0</td></tr>
+        <tr><td><span class="hw">čamac</span> <span class="pos-i">n.</span> “boat”</td><td class="num">2</td><td class="num">2</td><td class="num">1</td></tr>
+        <tr><td><span class="hw">pas</span> <span class="pos-i">n.</span> “dog”</td><td class="num">2</td><td class="num">2</td><td class="num">1</td></tr>
+        <tr><td><span class="hw">razgovor</span> <span class="pos-i">n.</span> “conversation”</td><td class="num">2</td><td class="num">2</td><td class="num">1</td></tr>
+        <tr><td><span class="hw">uključivati</span> <span class="pos-i">v.</span> “to include”</td><td class="num">2</td><td class="num">2</td><td class="num">1</td></tr>
+        <tr><td><span class="hw">istaći</span> <span class="pos-i">v.</span> “to point out”</td><td class="num">2</td><td class="num">2</td><td class="num">1</td></tr>
+        <tr><td><span class="hw">podatak</span> <span class="pos-i">n.</span> “piece of data”</td><td class="num">2</td><td class="num">2</td><td class="num">3</td></tr>
+      </table>
+    </div>
+    <p class="sub" style="margin:12px 0 0">The head is ordinary vocabulary — <span class="hw">put</span>, <span class="hw">reći</span>, <span class="hw">morati</span>, <span class="hw">rad</span> — because the card shows common words several times more often than rare ones, and an opens-ranking mostly replays that. Seven of the Russian-side top 50 are also in the search top 50 above. The fair measure is the <i>open rate</i> below: of the cards a user decided on, how many did they open rather than roll away?</p>
+  </div>
+
+  <div class="card">
+    <h3>Open rate by how common the word is</h3>
+    <p class="sub">opens ÷ (opens + rolled away) · frequency rank of the word shown</p>
+    <table>
+      <tr><th>word’s frequency rank</th><th class="num">russian-gloss users</th><th class="num">english-gloss users</th></tr>
+      <tr><td>top 1,000</td><td class="num">49%</td><td class="num">36%</td></tr>
+      <tr><td>1,000 – 2,499</td><td class="num">48%</td><td class="num">38%</td></tr>
+      <tr><td>2,500 – 4,999</td><td class="num">45%</td><td class="num">30%</td></tr>
+      <tr><td>5,000 and rarer</td><td class="num"><b>25%</b></td><td class="num"><b>19%</b></td></tr>
+    </table>
+    <p class="sub" style="margin:14px 0 8px">and by how many people <i>search</i> for the same word (from Question&nbsp;1’s tap data):</p>
+    <table>
+      <tr><th>users who searched the word</th><th class="num">russian-gloss users</th><th class="num">english-gloss users</th></tr>
+      <tr><td>none</td><td class="num">40%</td><td class="num">27%</td></tr>
+      <tr><td>1 – 2</td><td class="num">44%</td><td class="num">30%</td></tr>
+      <tr><td>3 – 9</td><td class="num">51%</td><td class="num">41%</td></tr>
+      <tr><td>10 or more</td><td class="num"><b>55%</b></td><td class="num"><b>45%</b></td></tr>
+    </table>
+    <div class="callout" style="margin-bottom:0"><b>The hypothesis fails at the tap.</b> Users open the card words they half-know and roll away the obscure ones: the open rate is flat through rank 5,000, then halves, and it climbs steadily with how many other people look the word up. Both audiences show the same slope; English-gloss users simply open less of everything.</div>
+  </div>
+
+  <div class="card">
+    <h3>What happens after the open</h3>
+    <p class="sub">share of opens followed within 90 seconds by the action · each action credited to the nearest preceding open, so a favorite counts once · search-result opens are the baseline</p>
+    <table>
+      <tr><th>opened from</th><th>users</th><th class="num">opens</th><th class="num">favorited</th><th class="num">grammar table opened</th></tr>
+      <tr><td>random-word card</td><td>russian-gloss</td><td class="num">2,229</td><td class="num">9.5%</td><td class="num"><b>11.4%</b></td></tr>
+      <tr><td>random-word card</td><td>english-gloss</td><td class="num">251</td><td class="num">13.1%</td><td class="num"><b>9.2%</b></td></tr>
+      <tr><td>search result</td><td>russian-gloss</td><td class="num">20,042</td><td class="num">6.4%</td><td class="num">6.0%</td></tr>
+      <tr><td>search result</td><td>english-gloss</td><td class="num">2,842</td><td class="num"><b>22.2%</b></td><td class="num">5.1%</td></tr>
+    </table>
+    <p class="sub" style="margin:14px 0 0">Here the card does differ. A card word gets its conjugation or declension table opened about <b>twice as often</b> as a searched word, in both languages — the same inflection reflex that drives Question&nbsp;1, now aimed at a word the user did not choose. Favoriting rises for Russian-gloss users (9.5% vs 6.4%) but not for English-gloss users, who already favorite a fifth of what they search — the striking English number is the search habit, not the card. Reading for product: the card’s bias toward ranks 100–2,000 is right; rarer words are shown seldom and rejected twice as often, so pushing the card toward the unknown would mostly raise the roll-away rate.</p>
+  </div>
+</section>
+
 <!-- ══════════════ AUDIENCE ══════════════ -->
 <section>
   <span class="qno">Context · who is looking</span>
@@ -402,7 +494,7 @@ a{color:var(--fwd)}
 </section>
 
 <footer>
-  <p style="max-width:none">Compiled from the Govori apps’ anonymized usage analytics, July&nbsp;3&nbsp;–&nbsp;August&nbsp;30, 2026. Counting conventions: searches collapsed to the final query of each typing burst; rankings by distinct users; internal test traffic excluded. Every number traces to the underlying extracts held by the team. This page is unlisted — please don’t share the link beyond the review.</p>
+  <p style="max-width:none">Compiled from the Govori apps’ anonymized usage analytics, July&nbsp;3&nbsp;–&nbsp;August&nbsp;30, 2026. The random-word card section (Question&nbsp;6) was added on September&nbsp;4 and covers July&nbsp;5&nbsp;–&nbsp;September&nbsp;2. Counting conventions: searches collapsed to the final query of each typing burst; rankings by distinct users; internal test traffic excluded. Every number traces to the underlying extracts held by the team. This page is unlisted — please don’t share the link beyond the review.</p>
 </footer>
 </div>
 
