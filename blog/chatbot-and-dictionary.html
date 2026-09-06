@@ -33,15 +33,22 @@
     figure { margin: 2rem 0; }
     figure svg { width: 100%; height: auto; display: block; color: var(--color-text); }
     figcaption { font-size: 0.9rem; color: var(--color-muted); margin-top: 0.6rem; line-height: 1.5; }
-    .shot { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; align-items: start; margin: 1.75rem 0 2.25rem; }
-    .shot .quote { background: var(--color-card-bg); border: 1px solid var(--color-card-border); border-radius: 12px; padding: 1rem 1.1rem; font-size: 0.95rem; }
-    .shot .quote h4, .shot .app h4 { margin: 0 0 0.5rem; font-size: 0.8rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--color-muted); }
-    .shot .quote blockquote { margin: 0 0 0.6rem; padding-left: 0.8rem; border-left: 3px solid var(--color-card-border); font-style: italic; }
-    .shot .quote p { margin: 0 0 0.5rem; font-size: 0.95rem; }
-    .shot .quote .said { font-style: normal; }
-    .shot .app img { width: 100%; border-radius: 18px; border: 1px solid var(--color-card-border); display: block; }
-    .shot .app p { font-size: 0.9rem; color: var(--color-muted); margin: 0.5rem 0 0; }
-    @media (max-width: 640px) { .shot { grid-template-columns: 1fr; } }
+    .evidence { margin: 1.75rem 0 2.5rem; }
+    .evidence .pair { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; align-items: start; }
+    .evidence .card { border: 1px solid var(--color-card-border); border-radius: 12px; padding: 1rem 1.1rem; font-size: 0.95rem; }
+    .evidence .card h4 { margin: 0 0 0.6rem; font-size: 0.8rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--color-muted); }
+    .evidence .bot { background: #fff7ed; border-color: #fdba74; }
+    .evidence .bot blockquote { margin: 0 0 0.6rem; padding-left: 0.8rem; border-left: 3px solid #fdba74; font-style: italic; font-size: 1rem; }
+    .evidence .bot .verdict { display: inline-block; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: #9a3412; border: 1px solid #fdba74; border-radius: 999px; padding: 0.1rem 0.6rem; margin-top: 0.4rem; }
+    .evidence .app { background: var(--color-card-bg); }
+    .evidence .app img { width: 100%; border-radius: 18px; border: 1px solid var(--color-card-border); display: block; }
+    .evidence .app p { font-size: 0.9rem; color: var(--color-muted); margin: 0.6rem 0 0; }
+    .evidence .refs { margin-top: 1.25rem; padding: 1rem 1.1rem; border: 1px solid var(--color-card-border); border-radius: 12px; font-size: 0.95rem; }
+    .evidence .refs h4 { margin: 0 0 0.6rem; font-size: 0.8rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--color-muted); }
+    .evidence .refs blockquote { margin: 0 0 0.35rem; padding-left: 0.8rem; border-left: 3px solid var(--color-card-border); font-style: italic; }
+    .evidence .refs p { margin: 0 0 0.7rem; }
+    .evidence .refs p:last-child { margin-bottom: 0; }
+    @media (max-width: 640px) { .evidence .pair { grid-template-columns: 1fr; } }
     table.results { width: 100%; border-collapse: collapse; font-size: 0.95rem; margin: 1.25rem 0 1.75rem; }
     table.results th, table.results td { text-align: left; padding: 0.5rem 0.6rem; border-bottom: 1px solid var(--color-card-border); vertical-align: top; }
     table.results th { font-size: 0.8rem; letter-spacing: 0.05em; text-transform: uppercase; color: var(--color-muted); }
@@ -198,25 +205,32 @@
 
     <h2>Four failures worth learning from</h2>
 
-    <p>Each of the cases below is one a learner would actually ask about. For each we show what the reference prints, with a link, and what Govori shows, with a link that opens the entry in the app.</p>
+    <p>Each of the cases below is one a learner would actually ask about. For each: what the chatbot answered, what Govori shows for the same word (tap the screenshot to open the entry in the app), and then what the printed references say, with links to the exact pages.</p>
 
     <h3>1. An invented verb, conjugated with confidence</h3>
 
     <p>Asked directly, in both passes, “Is there a Serbian verb <em>ljubomorisati</em>? What does it mean and how is it conjugated?”, the chatbot answered yes both times. With reasoning on it produced a present tense (<em>ljubomorišem, ljubomorišeš…</em>), a perfect, and two imperatives. A second invented verb, <em>zavidovati</em> for “to envy”, got the same treatment, hedged as “rare and bookish”. The real verb is <em>zavideti</em>.</p>
 
-    <div class="shot">
-      <div class="quote">
+    <div class="evidence">
+      <div class="pair">
+        <div class="card bot">
+          <h4>What the chatbot said</h4>
+          <blockquote>«Да, в сербском языке есть глагол <em>ljubomorisati</em> (кирилл. љубоморисати). Это разговорный глагол со значением „ревновать“ … ja ljubomorišem, ti ljubomorišeš, on ljubomoriše … ljubomoriši! — ревнуй!»</blockquote>
+          <p>Extended-reasoning mode, asked point-blank whether the verb exists. The default run gave the same verb; a third run gave a second non-word, <em>ljubomoriti</em>.</p>
+          <span class="verdict">Fabricated</span>
+        </div>
+        <div class="card app">
+          <h4>What Govori shows</h4>
+          <a href="https://govoridictionaries.com/w?clean=ljubomoran&amp;pos=adjective&amp;etym=1"><img src="../img/blog/search-ljubomor.png" alt="Govori search for “ljubomor” returns three entries: the adjective ljubomoran, the noun ljubomora and the adverb ljubomorno. No verb." loading="lazy"></a>
+          <p>Search for <em>ljubomor</em>: adjective, noun, adverb. No verb. <a href="https://govoridictionaries.com/w?clean=ljubomoran&amp;pos=adjective&amp;etym=1">Open <em>ljubomoran</em> in the app</a>.</p>
+        </div>
+      </div>
+      <div class="refs">
         <h4>What the references say</h4>
         <blockquote>“ljubòmoran … koji pati od ljubomore”</blockquote>
         <p>— <a href="https://hjp.znanje.hr/index.php?show=search_by_id&amp;id=e11lXRQ%3D">HJP, entry <em>ljubomoran</em></a>. The portal has the adjective and the noun <em>ljubomora</em>; no verb is listed under either.</p>
         <blockquote>“There were no results matching the query.”</blockquote>
         <p>— <a href="https://en.wiktionary.org/w/index.php?search=ljubomorisati&amp;title=Special%3ASearch&amp;ns0=1">Wiktionary search for <em>ljubomorisati</em></a>. The Matica srpska dictionary likewise lists <em>љубомора, љубоморан, љубоморно</em> and no verb.</p>
-        <p class="said">What the chatbot said: <em>“Да, в сербском языке есть глагол ljubomorisati … ja ljubomorišem, ti ljubomorišeš …”</em></p>
-      </div>
-      <div class="app">
-        <h4>What Govori shows</h4>
-        <a href="https://govoridictionaries.com/w?clean=ljubomoran&amp;pos=adjective&amp;etym=1"><img src="../img/blog/search-ljubomor.png" alt="Govori search for “ljubomor” returns three entries: the adjective ljubomoran, the noun ljubomora and the adverb ljubomorno. No verb." loading="lazy"></a>
-        <p>Search for <em>ljubomor</em>: adjective, noun, adverb. A dictionary that does not have a word says so by returning nothing. <a href="https://govoridictionaries.com/w?clean=ljubomoran&amp;pos=adjective&amp;etym=1">Open <em>ljubomoran</em> in the app</a>.</p>
       </div>
     </div>
 
@@ -226,17 +240,24 @@
 
     <p><em>Vratiti</em> (“to return”) is a first-year verb. Its accent is a long rising tone on the first syllable, <em>vrátiti</em>. The chatbot placed it on the last syllable in the default pass and on the second syllable, with a falling tone, in the reasoning pass. Both are impossible in standard Serbian: a falling accent can sit only on the first syllable, and the infinitive ending is never stressed. A learner who knows those two rules would have caught it. The chatbot did not.</p>
 
-    <div class="shot">
-      <div class="quote">
+    <div class="evidence">
+      <div class="pair">
+        <div class="card bot">
+          <h4>What the chatbot said</h4>
+          <blockquote>Default: «ударение падает на последний слог <em>-ti</em> … vratíti». Extended reasoning: «второй слог, краткий нисходящий: <em>vratȉti</em>».</blockquote>
+          <p>Two runs, two different syllables, neither of them the first. A falling accent on a non-initial syllable does not occur in standard Serbian.</p>
+          <span class="verdict">Wrong, both runs</span>
+        </div>
+        <div class="card app">
+          <h4>What Govori shows</h4>
+          <a href="https://govoridictionaries.com/w?clean=vratiti&amp;pos=verb&amp;etym=1"><img src="../img/blog/vratiti-accent.png" alt="Govori entry for vrátiti with the long rising accent mark on the first syllable, perfective, with the imperfective pair vraćati linked." loading="lazy"></a>
+          <p><em>vrátiti</em>: long rising on the first syllable, and every form in the tables carries its own mark. <a href="https://govoridictionaries.com/w?clean=vratiti&amp;pos=verb&amp;etym=1">Open <em>vratiti</em> in the app</a>.</p>
+        </div>
+      </div>
+      <div class="refs">
         <h4>What the references say</h4>
         <blockquote>“vrátiti (se) … svrš.”</blockquote>
         <p>— <a href="https://hjp.znanje.hr/index.php?show=search_by_id&amp;id=f19vUBd%2F">HJP, entry <em>vratiti</em></a>: long rising on the first syllable. Matica srpska prints <em>вра́тити</em>, the same accent.</p>
-        <p class="said">What the chatbot said, default: <em>“ударение на последний слог -ti … vratíti”</em>. With reasoning on: <em>“второй слог, краткий нисходящий: vratȉti”</em>.</p>
-      </div>
-      <div class="app">
-        <h4>What Govori shows</h4>
-        <a href="https://govoridictionaries.com/w?clean=vratiti&amp;pos=verb&amp;etym=1"><img src="../img/blog/vratiti-accent.png" alt="Govori entry for vrátiti with the long rising accent mark on the first syllable, perfective, with the imperfective pair vraćati linked." loading="lazy"></a>
-        <p>The headword carries the accent mark and every form in the tables carries its own. <a href="https://govoridictionaries.com/w?clean=vratiti&amp;pos=verb&amp;etym=1">Open <em>vratiti</em> in the app</a>.</p>
       </div>
     </div>
 
@@ -246,39 +267,72 @@
 
     <p>“What is the comparative of <em>gorak</em> (bitter)?” The answer both times was <em>gori</em>. But <em>gori</em> is the comparative of <em>zao</em> and <em>loš</em>, “worse”. The comparative of <em>gorak</em> is <em>gorči</em>. The chatbot even wrote a sample sentence, <em>Ovaj lek je gori od onog</em>, which a Serbian speaker reads as “this medicine is worse than that one”, not “more bitter”. With reasoning on it listed the superlative as “najgorči or najgori”, contradicting its own comparative in the same answer.</p>
 
-    <div class="shot">
-      <div class="quote">
+    <div class="evidence">
+      <div class="pair">
+        <div class="card bot">
+          <h4>What the chatbot said</h4>
+          <blockquote>«Сравнительная степень сербского прилагательного <em>gorak</em> («горький») — <em>gori</em>. … <em>Ovaj lek je gori od onog.</em> — Это лекарство горше того. … najgorči / najgori — самый горький».</blockquote>
+          <p>Same answer in both runs. The sample sentence actually says “this medicine is worse than that one”, and the superlative it offers contradicts its own comparative.</p>
+          <span class="verdict">Wrong, both runs</span>
+        </div>
+        <div class="card app">
+          <h4>What Govori shows</h4>
+          <a href="https://govoridictionaries.com/w?clean=gorak&amp;pos=adjective&amp;etym=1"><img src="../img/blog/gorak-comparative.png" alt="Govori entry for górak with the comparative panel open: gȍrčī, gȍrčēg, gȍrčēm and the rest of the declension." loading="lazy"></a>
+          <p>The comparative panel of <em>górak</em>: <em>gȍrčī</em>, declined through every case. <a href="https://govoridictionaries.com/w?clean=gorak&amp;pos=adjective&amp;etym=1">Open <em>gorak</em> in the app</a>.</p>
+        </div>
+      </div>
+      <div class="refs">
         <h4>What the references say</h4>
         <blockquote>“górak … comparative gȍrčī”</blockquote>
         <p>— <a href="https://en.wiktionary.org/wiki/gorak">Wiktionary, <em>gorak</em></a> (CC BY-SA). Matica srpska prints <em>горак … комп. горчи</em>.</p>
-        <p class="said">What the chatbot said: <em>“Сравнительная степень … gorak → gori → najgorči / najgori”</em>.</p>
-      </div>
-      <div class="app">
-        <h4>What Govori shows</h4>
-        <a href="https://govoridictionaries.com/w?clean=gorak&amp;pos=adjective&amp;etym=1"><img src="../img/blog/gorak-comparative.png" alt="Govori entry for górak with the comparative panel open: gȍrčī, gȍrčēg, gȍrčēm and the rest of the declension." loading="lazy"></a>
-        <p>The comparative panel of <em>górak</em>: <em>gȍrčī</em>, declined through every case. <a href="https://govoridictionaries.com/w?clean=gorak&amp;pos=adjective&amp;etym=1">Open <em>gorak</em> in the app</a>.</p>
       </div>
     </div>
 
     <h3>4. Same question, different answer, both wrong</h3>
 
-    <p>“Is <em>čuti</em> (to hear) perfective or imperfective?” The default pass said perfective only. The reasoning pass said imperfective, with <em>začuti</em> as its perfective partner. The dictionaries say it is both: <em>čuti</em> is one of the biaspectual verbs, and <em>Čuo sam</em> can mean “I heard” or “I was hearing” depending on context. Two confident, contradictory answers to one question is a pattern we saw more than once: the accent of <em>htenje</em> flipped from short falling to long falling between passes (it is long rising, so both were wrong), and the genitive plural of <em>noga</em> came out as <em>nogu</em> in one chat and “<em>noga</em>, like <em>ruka → ruka</em>” in another, where <em>ruka → ruka</em> is simply wrong (it is <em>ruku</em>).</p>
+    <p>“Is <em>čuti</em> (to hear) perfective or imperfective?” The default pass said perfective only. The reasoning pass said imperfective, with <em>začuti</em> as its perfective partner. The dictionaries say it is both: <em>čuti</em> is one of the biaspectual verbs, and <em>Čuo sam</em> can mean “I heard” or “I was hearing” depending on context. Two confident, contradictory answers to one question is a pattern we saw more than once: the accent of <em>htenje</em> flipped from short falling to long falling between passes, and it is in fact long rising, so both were wrong.</p>
 
-    <div class="shot">
-      <div class="quote">
+    <div class="evidence">
+      <div class="pair">
+        <div class="card bot">
+          <h4>What the chatbot said</h4>
+          <blockquote>Default: «<em>čuti</em> — глагол совершенного вида». Extended reasoning: «глагол несовершенного вида (nesvršeni glagol) … его типичный видовой коррелят <em>začuti</em> — совершенный».</blockquote>
+          <p>Two runs, two opposite labels, each stated as the dictionary classification.</p>
+          <span class="verdict">Wrong, both runs</span>
+        </div>
+        <div class="card app">
+          <h4>What Govori shows</h4>
+          <a href="https://govoridictionaries.com/w?clean=%C4%8Duti&amp;pos=verb&amp;etym=1"><img src="../img/blog/cuti-biaspectual.png" alt="Govori entry for čȕti with the badge “biaspectual” next to the headword, seven senses and the present-tense table." loading="lazy"></a>
+          <p>The aspect badge reads <em>biaspectual</em>. <a href="https://govoridictionaries.com/w?clean=%C4%8Duti&amp;pos=verb&amp;etym=1">Open <em>čuti</em> in the app</a>.</p>
+        </div>
+      </div>
+      <div class="refs">
         <h4>What the references say</h4>
         <blockquote>“čȕti (koga, što) dv.”</blockquote>
         <p>— <a href="https://hjp.znanje.hr/index.php?show=search_by_id&amp;id=f1pjUBA%3D">HJP, entry <em>čuti</em></a>. The label <em>dv.</em> is <em>dvovidan</em>, “biaspectual”. Matica srpska: <em>чути … свр. и несвр.</em></p>
-        <blockquote>“nòga ž 〈… G nȍgū/nógā reg. knjiš.〉”</blockquote>
-        <p>— <a href="https://hjp.znanje.hr/index.php?show=search_by_id&amp;id=eF1vWxY%3D">HJP, entry <em>noga</em></a>: <em>nogu</em> is the form, <em>noga</em> is marked regional and bookish.</p>
-        <p class="said">What the chatbot said about <em>čuti</em>: <em>“совершенного вида”</em> in one pass, <em>“несовершенного вида … začuti — совершенный”</em> in the other.</p>
       </div>
-      <div class="app">
-        <h4>What Govori shows</h4>
-        <a href="https://govoridictionaries.com/w?clean=%C4%8Duti&amp;pos=verb&amp;etym=1"><img src="../img/blog/cuti-biaspectual.png" alt="Govori entry for čȕti with the badge “biaspectual” next to the headword, seven senses and the present-tense table." loading="lazy"></a>
-        <p>The aspect badge reads <em>biaspectual</em>. <a href="https://govoridictionaries.com/w?clean=%C4%8Duti&amp;pos=verb&amp;etym=1">Open <em>čuti</em> in the app</a>.</p>
-        <a href="https://govoridictionaries.com/w?clean=noga&amp;pos=noun&amp;etym=1"><img src="../img/blog/noga-gen-pl.png" alt="Govori declension table for nòga: genitive plural nȍgū, with nógā marked as rarer." loading="lazy"></a>
-        <p>Genitive plural <em>nȍgū</em>, with <em>nógā</em> shown as the rarer variant. <a href="https://govoridictionaries.com/w?clean=noga&amp;pos=noun&amp;etym=1">Open <em>noga</em> in the app</a>.</p>
+    </div>
+
+    <p>The genitive plural of <em>noga</em> went the same way: <em>nogu</em> in one chat, “<em>noga</em>, like <em>ruka → ruka</em>” in another, where <em>ruka → ruka</em> is simply wrong (it is <em>ruku</em>).</p>
+
+    <div class="evidence">
+      <div class="pair">
+        <div class="card bot">
+          <h4>What the chatbot said</h4>
+          <blockquote>«форма родительного падежа множественного числа — <em>noga</em>. … Это типично для многих сербских существительных женского рода на -a: žena → žena, <em>ruka → ruka</em> («рук»), knjiga → knjiga.»</blockquote>
+          <p>Extended-reasoning run. The default run had given <em>nogu</em> two chats earlier.</p>
+          <span class="verdict">Partial: the rarer variant, presented as the only one</span>
+        </div>
+        <div class="card app">
+          <h4>What Govori shows</h4>
+          <a href="https://govoridictionaries.com/w?clean=noga&amp;pos=noun&amp;etym=1"><img src="../img/blog/noga-gen-pl.png" alt="Govori declension table for nòga: genitive plural nȍgū, with nógā marked as rarer." loading="lazy"></a>
+          <p>Genitive plural <em>nȍgū</em>, with <em>nógā</em> shown as the rarer variant. <a href="https://govoridictionaries.com/w?clean=noga&amp;pos=noun&amp;etym=1">Open <em>noga</em> in the app</a>.</p>
+        </div>
+      </div>
+      <div class="refs">
+        <h4>What the references say</h4>
+        <blockquote>“nòga ž 〈… G nȍgū/nógā reg. knjiš.〉”</blockquote>
+        <p>— <a href="https://hjp.znanje.hr/index.php?show=search_by_id&amp;id=eF1vWxY%3D">HJP, entry <em>noga</em></a>: <em>nogu</em> is the form, <em>noga</em> is marked regional and bookish. Matica srpska: <em>нога ж (… мн. ноге, ген. ногу)</em>.</p>
       </div>
     </div>
 
