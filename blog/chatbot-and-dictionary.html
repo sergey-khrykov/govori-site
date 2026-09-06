@@ -80,13 +80,14 @@
       <h2>TL;DR</h2>
       <ul>
         <li>For everyday translation and regular grammar the chatbot is excellent: 23 of 25 translations and 24 of 25 regular genitive plurals were right without any special settings.</li>
-        <li>It fails where a learner most needs a source of record: accent placement was wrong on 20 of 25 words, and it confidently conjugated two verbs that do not exist, in both test runs.</li>
-        <li>Its extended-reasoning mode fixes many form questions (27 wrong answers became 18) but not the invented words and only half of the accent errors.</li>
+        <li>It fails where a learner most needs a source of record: accent placement was wrong on 20 of 25 words, it invented a verb and conjugated it in full in both runs, and it offered a reality-TV slang verb as the word for “to be jealous” without a word about register.</li>
+        <li>Its extended-reasoning mode fixes many form questions (27 wrong answers became 18) but not the invented verb and only half of the accent errors.</li>
+        <li>The point is not which model. Stronger models score higher, but no model can tell what it knows from what it is completing unless it is grounded in a source. A dictionary is that source.</li>
         <li>The right split: ask the chatbot to <em>explain, exemplify and correct</em>; ask the dictionary <em>what the word is, how it is stressed, how it inflects and whether it exists</em>. Check every word form the chatbot produces against the dictionary before you learn it.</li>
       </ul>
     </section>
 
-    <p>A learner sent us a screenshot this month. They had asked a chatbot how to say “to be jealous” in Serbian. It replied with a verb, <em>ljubomorisati</em>, gave the first person, and offered to conjugate it. The verb does not exist. Serbian says <em>biti ljubomoran</em> (“to be jealous”, with an adjective), and no dictionary we could find lists any verb built on <em>ljubomora</em>.</p>
+    <p>A learner sent us a screenshot this month. They had asked a chatbot how to say “to be jealous” in Serbian. It replied with a verb, <em>ljubomorisati</em>, gave the first person, and offered to conjugate it. The first version of this article said the verb does not exist. Readers corrected us, and they were right: it is in no dictionary, but it is alive in one specific register, reality-TV recaps and tabloid headlines. Standard Serbian says <em>biti ljubomoran</em>, with an adjective. The chatbot said neither of those things. It did not warn that the word is colloquial, and when asked where to look it up, it named a dictionary that does not have it.</p>
 
     <p>That is one anecdote. We wanted to know how typical it is, and, more usefully, what a learner should and should not delegate to a general-purpose chatbot. So we ran a small, controlled test and scored it against the dictionaries a Serbian lexicographer would use.</p>
 
@@ -136,8 +137,8 @@
         <tr><td>Irregular genitive plural</td><td class="num">12</td><td class="num">8</td><td class="num">11</td><td>secondary form given as the only one</td></tr>
         <tr><td>Norm questions</td><td class="num">16</td><td class="num">11</td><td class="num">13</td><td>aspect of <em>čuti</em>, comparative of <em>gorak</em>, gender of <em>auto</em>: wrong in both passes</td></tr>
         <tr><td>Accent and tone</td><td class="num">25</td><td class="num">4</td><td class="num">11</td><td>wrong syllable, wrong tone, or both</td></tr>
-        <tr><td>Does this verb exist?</td><td class="num">8</td><td class="num">4</td><td class="num">5</td><td>3 verbs invented and conjugated, in both passes</td></tr>
-        <tr><th>All</th><th class="num">161</th><th class="num">114</th><th class="num">133</th><th></th></tr>
+        <tr><td>Does this verb exist?</td><td class="num">8</td><td class="num">4</td><td class="num">6</td><td>one verb invented in both passes; a slang verb given with no register warning</td></tr>
+        <tr><th>All</th><th class="num">161</th><th class="num">114</th><th class="num">134</th><th></th></tr>
       </tbody>
     </table>
     </div>
@@ -184,8 +185,8 @@
           </g>
           <g transform="translate(0,212)">
             <text x="240" y="14" text-anchor="end">Does the verb exist?</text>
-            <rect x="250" y="2" width="190" height="9" fill="url(#hatch)" opacity="0.8"/><rect x="250" y="13" width="238" height="9" fill="currentColor" opacity="0.55"/>
-            <text x="496" y="20" font-size="12">50% · 63%</text>
+            <rect x="250" y="2" width="190" height="9" fill="url(#hatch)" opacity="0.8"/><rect x="250" y="13" width="285" height="9" fill="currentColor" opacity="0.55"/>
+            <text x="543" y="20" font-size="12">50% · 75%</text>
           </g>
           <g transform="translate(0,244)">
             <text x="240" y="14" text-anchor="end">Accent and tone</text>
@@ -201,28 +202,30 @@
       <figcaption>Figure 2. Correct answers by question type. Hatched: default settings. Solid: extended-reasoning mode. Regular grammar is a solved problem; accent and word existence are not.</figcaption>
     </figure>
 
-    <p>Three things stand out. First, <strong>depth of vocabulary is not the problem.</strong> Words from the rarest band (ranks 15,000–40,000) were answered as well as the 500 most common ones, 22 of 25 right with reasoning on. Second, <strong>the errors cluster in exactly the places a learner cannot check by ear</strong>: where the stress sits and which tone it carries, whether a word exists at all, and a few normative facts that native speakers themselves get wrong. Third, <strong>the extended-reasoning mode helps with forms and does nothing for invention</strong>: it raised the overall score from 114 to 133 correct, but all three invented verbs survived it with full conjugation tables.</p>
+    <p>Three things stand out. First, <strong>depth of vocabulary is not the problem.</strong> Words from the rarest band (ranks 15,000–40,000) were answered as well as the 500 most common ones, 22 of 25 right with reasoning on. Second, <strong>the errors cluster in exactly the places a learner cannot check by ear</strong>: where the stress sits and which tone it carries, whether a word exists at all, and a few normative facts that native speakers themselves get wrong. Third, <strong>the extended-reasoning mode helps with forms and does little for invention or register</strong>: it raised the overall score from 114 to 134 correct, but the one invented verb survived it with a full conjugation table, and only the reasoning run thought to call <em>ljubomorisati</em> colloquial.</p>
 
     <h2>Four failures worth learning from</h2>
 
     <p>Each of the cases below is one a learner would actually ask about. For each: what the chatbot answered, what Govori shows for the same word (tap the screenshot to open the entry in the app), and then what the printed references say, with links to the exact pages.</p>
 
-    <h3>1. An invented verb, conjugated with confidence</h3>
+    <h3>1. A slang verb sold as the standard word</h3>
 
-    <p>Asked directly, in both passes, “Is there a Serbian verb <em>ljubomorisati</em>? What does it mean and how is it conjugated?”, the chatbot answered yes both times. With reasoning on it produced a present tense (<em>ljubomorišem, ljubomorišeš…</em>), a perfect, and two imperatives. A second invented verb, <em>zavidovati</em> for “to envy”, got the same treatment, hedged as “rare and bookish”. The real verb is <em>zavideti</em>.</p>
+    <p>Asked how to say “to be jealous”, the chatbot answered <em>ljubomorisati</em>. Asked point-blank in a later chat whether that verb exists, it said yes in both passes and conjugated it. Here we made a mistake of our own: the first version of this article called the verb invented. It is not. No standard dictionary lists it, but a large web corpus of Serbian has it about 800 times, and its forms turn up in reality-TV recaps and tabloid headlines. It is slang, roughly “to make a jealous scene”. That puts the failure where it belongs: register. In the default run the chatbot presented it as the translation, full stop. Asked where to look it up, that run named the Matica srpska dictionary and Wiktionary, neither of which has it. Only the extended-reasoning run added the one word that matters, <em>разговорный</em>, colloquial, and even it did not say that no dictionary lists the verb.</p>
+
+    <p>A chatbot that knows a slang word is useful. A chatbot that does not tell you it is slang teaches you to say, at a job interview, what people say on reality TV. The genuinely invented verb in our set was a different one: <em>zavidovati</em> for “to envy”, hedged as “rare and bookish” and conjugated in full. No dictionary and no corpus we checked has it; the verb is <em>zavideti</em>.</p>
 
     <div class="evidence">
       <div class="pair">
         <div class="card bot">
           <h4>What the chatbot said</h4>
-          <blockquote>«Да, в сербском языке есть глагол <em>ljubomorisati</em> (кирилл. љубоморисати). Это разговорный глагол со значением „ревновать“ … ja ljubomorišem, ti ljubomorišeš, on ljubomoriše … ljubomoriši! — ревнуй!»</blockquote>
-          <p>Extended-reasoning mode, asked point-blank whether the verb exists. The default run gave the same verb; a third run gave a second non-word, <em>ljubomoriti</em>.</p>
-          <span class="verdict">Fabricated</span>
+          <blockquote>«По-сербски «ревновать» — <em>ljubomorisati</em> (љубоморисати).» … asked where to find it: «Речник српскога језика — академический словарь сербского языка; это один из самых авторитетных вариантов. Викиречник — удобно для быстрого просмотра форм и спряжения.»</blockquote>
+          <p>Default run, two turns. No register warning, and the dictionary it names does not list the word. The extended-reasoning run, in a separate chat, did call the verb <em>разговорный</em>.</p>
+          <span class="verdict">Partial: real slang, no register warning; false citation</span>
         </div>
         <div class="card app">
           <h4>What Govori shows</h4>
           <a href="https://govoridictionaries.com/w?clean=ljubomoran&amp;pos=adjective&amp;etym=1"><img src="../img/blog/search-ljubomor.png" alt="Govori search for “ljubomor” returns three entries: the adjective ljubomoran, the noun ljubomora and the adverb ljubomorno. No verb." loading="lazy"></a>
-          <p>Search for <em>ljubomor</em>: adjective, noun, adverb. No verb. <a href="https://govoridictionaries.com/w?clean=ljubomoran&amp;pos=adjective&amp;etym=1">Open <em>ljubomoran</em> in the app</a>.</p>
+          <p>Search for <em>ljubomor</em>: adjective, noun, adverb. The slang verb is not in Govori either, because Govori follows the standard dictionaries. We will add it, labelled colloquial, so that the register is the first thing you see. <a href="https://govoridictionaries.com/w?clean=ljubomoran&amp;pos=adjective&amp;etym=1">Open <em>ljubomoran</em> in the app</a>.</p>
         </div>
       </div>
       <div class="refs">
@@ -231,10 +234,14 @@
         <p>— <a href="https://hjp.znanje.hr/index.php?show=search_by_id&amp;id=e11lXRQ%3D">HJP, entry <em>ljubomoran</em></a>. The portal has the adjective and the noun <em>ljubomora</em>; no verb is listed under either.</p>
         <blockquote>“There were no results matching the query.”</blockquote>
         <p>— <a href="https://en.wiktionary.org/w/index.php?search=ljubomorisati&amp;title=Special%3ASearch&amp;ns0=1">Wiktionary search for <em>ljubomorisati</em></a>. The Matica srpska dictionary likewise lists <em>љубомора, љубоморан, љубоморно</em> and no verb.</p>
+        <blockquote>“ljubomorisati” — 796 occurrences; for scale, “zavideti” — 20,849</blockquote>
+        <p>— lemma frequency list of the <a href="https://www.clarin.si/noske/">CLASSLA-web.sr corpus</a> (CLARIN.SI), the same export Govori uses for its frequency ranks. Real, and about 26 times rarer than the standard verb for envy.</p>
+        <blockquote>“Alibaba uleteo Aneli u krevet i zabranio joj da mu ljubomoriše” … “Nemoj meni da ljubomorišeš”</blockquote>
+        <p>— <a href="https://www.pink.rs/zadruga/738969/prekucao-igricu-alibaba-uleteo-aneli-u-krevet-i-zabranio-joj-da-mu-ljubomorise-ona-ga-oduvala-video">a reality-show recap on pink.rs</a>. This is the register the word lives in.</p>
       </div>
     </div>
 
-    <p>This is the single most important failure mode for a learner, because it is invisible. The invented verb is well formed, it follows a productive pattern, and it comes with examples. Nothing in the answer signals that it was made up. Only a source that can return “no such word” protects you here.</p>
+    <p>This is the failure mode a learner cannot detect. The word is well formed, it follows a productive pattern, it comes with examples, and it is even real. Nothing in the answer tells you which room you can say it in. A dictionary that lacks the word tells you something too: if a common-looking verb is in no dictionary, it is new, slang or invented, and all three call for care.</p>
 
     <h3>2. Accent on a syllable that cannot carry it</h3>
 
@@ -342,7 +349,7 @@
 
     <ol>
       <li><strong>Ask for usage, not for facts about the word.</strong> “Give me five sentences with <em>vratiti</em> in the perfect tense, about travel” is a great prompt. “Where is the accent in <em>vratiti</em>?” is a coin toss.</li>
-      <li><strong>Treat every new word as unverified until a dictionary has it.</strong> If the chatbot offers a word you have never met, look it up before you memorise it. If the dictionary returns nothing, the word probably does not exist, however plausible its conjugation looked.</li>
+      <li><strong>Treat every new word as unverified until a dictionary has it, and ask about register when it does not.</strong> If the chatbot offers a word you have never met, look it up before you memorise it. If the dictionary returns nothing, the word is new, slang or invented. Ask the chatbot directly: is this standard, colloquial or slang, and where would I hear it? A good answer names the register; a bad one repeats the conjugation.</li>
       <li><strong>Never take accent or tone from a chatbot.</strong> In our test it was wrong more often than right even with reasoning on, and a wrong accent learned early is expensive to unlearn. Accent is dictionary territory.</li>
       <li><strong>Switch reasoning on for forms.</strong> Across the whole test it improved the verdict on 23 items and worsened it on 4, and almost all of the gains were form questions. It is slower and worth it for anything you will write down.</li>
       <li><strong>Ask the same question twice in fresh chats.</strong> If the two answers disagree, you have learned something more useful than either answer: this is a question for a reference.</li>
@@ -354,7 +361,7 @@
 
     <h2>How the two tools fit together</h2>
 
-    <p>A dictionary and a chatbot fail in opposite directions. A dictionary is silent about anything it does not contain, and it will not explain why a form is the way it is or produce a sentence for you. A chatbot is never silent. It will always produce something, and the something is fluent, well formed and occasionally invented. Put together, each covers the other’s gap: the dictionary is the source of record for what a word is, the chatbot is the tutor for how to use it.</p>
+    <p>A dictionary and a chatbot fail in opposite directions. A dictionary is silent about anything it does not contain, and it will not explain why a form is the way it is or produce a sentence for you. A chatbot is never silent. It will always produce something, and the something is fluent, well formed, occasionally invented, and occasionally slang with the label left off. Put together, each covers the other’s gap: the dictionary is the source of record for what a word is, the chatbot is the tutor for how to use it.</p>
 
     <figure>
       <svg viewBox="0 0 720 420" role="img" aria-labelledby="fig3t">
@@ -397,11 +404,19 @@
 
     <p>In practice the loop looks like this. You hear <em>vrati se</em> in a film. The dictionary finds <em>vratiti</em> from the inflected form, tells you it is perfective, shows the accent and the pair <em>vraćati</em>. Now you know what you have. You ask the chatbot for six sentences contrasting <em>vratiti</em> and <em>vraćati</em>, and it gives you a good mini-lesson on aspect. You spot a form in its sentences you have not seen, <em>vraćao sam se</em>, and you check it in the dictionary’s past-tense table. It is there. You learn it.</p>
 
-    <p>Reverse the order and the loop breaks. Ask the chatbot first how to say “to be jealous”, learn <em>ljubomorisati</em>, and there is no later step that catches it, because you will not look up a word you believe you already know.</p>
+    <p>Reverse the order and the loop breaks. Ask the chatbot first how to say “to be jealous”, learn <em>ljubomorisati</em> as if it were the standard word, and there is no later step that catches the register, because you will not look up a word you believe you already know.</p>
+
+    <h2>What about better models?</h2>
+
+    <p>Two objections reached us within a day of publishing. The first, that <em>ljubomorisati</em> exists, was right and is dealt with above. The second: “I asked a stronger model about those accents and it got them right.” We believe it. Our own reasoning pass got seven more accents right than the default pass, and paid tiers and frontier models are better still. That is not the point of this test. We tested what most learners actually use: the free tier of the most popular chatbot, with the settings it comes with. That is the tool the learner in our first paragraph had in their hand.</p>
+
+    <p>But suppose you have the best model there is, and it answers every accent question correctly. The structural problem is untouched. A language model has no way to tell what it knows from what it is completing. When it writes <em>vrátiti</em> it produces the same kind of confident text as when it writes <em>vratȉti</em>; there is no internal flag that says “this one I looked up, this one I made to fit the pattern”. Its fluency is constant, its knowledge is not, and nothing in the output marks the boundary. The same applies to register: the model that knew <em>ljubomorisati</em> from reality-TV recaps had no way to know that it knew it <em>from</em> reality-TV recaps.</p>
+
+    <p>In our data the better-model effect and the grounding effect are easy to tell apart. When the reasoning run got an accent right that the default run had got wrong, it had often searched the web and was citing a page. When it reasoned unaided it fell back on the most common pattern, first syllable, short falling, and was wrong. Grounding, not size, fixed those answers. A dictionary is grounding in its purest form: a closed inventory, every claim traceable to a printed page, a register label on every sense, and a real “nothing here” when the word is absent. That last property is the one no model has by itself, and it is the one that turns “here is a word” into “here is a word, and here is what kind of word it is”. The chatbot and the dictionary are not rivals. A chatbot with a dictionary open is what a good tutor looks like.</p>
 
     <h2>What this test does not show</h2>
 
-    <p>This was 161 questions on one day in September 2026, on the free tier of one product, asked in Russian, scored by one lexicographer against the references we use to build Govori. Paid tiers, other chatbots and other languages may do better or worse. Our own data is not beyond question either: three of the 322 answers sent us back to the printed sources to re-check entries of ours; two entries changed as a result, and one chatbot answer we had provisionally accepted turned out to be supported by no reference at all. Every transcript, verdict and reference is on file, and we will publish the full table when the paper is finished.</p>
+    <p>This was 161 questions on one day in September 2026, on the free tier of one product, asked in Russian, scored by one lexicographer against the references we use to build Govori. Paid tiers, other chatbots and other languages may do better or worse. Our own data is not beyond question either: three of the 322 answers sent us back to the printed sources to re-check entries of ours, two entries changed as a result, one chatbot answer we had provisionally accepted turned out to be supported by no reference, and a reader’s objection sent us to a web corpus and turned an “invented” verb into a slang one. The verdicts in this article are the corrected ones. Every transcript, verdict and reference is on file, and we will publish the full table when the paper is finished.</p>
 
     <p class="note">Govori’s entries are compiled from Wiktionary (CC BY-SA), checked against the <em>Rečnik srpskoga jezika</em> (Matica srpska, 2011) and the Croatian Language Portal, with the reading of each reference recorded per entry. Links to HJP and Wiktionary above open the pages we quoted.</p>
 
