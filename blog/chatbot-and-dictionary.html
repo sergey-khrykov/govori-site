@@ -87,7 +87,7 @@
       </ul>
     </section>
 
-    <p>A learner sent us a screenshot this month. They had asked a chatbot how to say “to be jealous” in Serbian. It replied with a verb, <em>ljubomorisati</em>, gave the first person, and offered to conjugate it. The first version of this article said the verb does not exist. Readers corrected us, and they were right: it is in no dictionary, but it is alive in one specific register, reality-TV recaps and tabloid headlines. Standard Serbian says <em>biti ljubomoran</em>, with an adjective. The chatbot said neither of those things. It did not warn that the word is colloquial, and when asked where to look it up, it named a dictionary that does not have it.</p>
+    <p>A learner sent us a screenshot. They had asked a chatbot how to say “to be jealous” in Serbian. It replied with a verb, <em>ljubomorisati</em>, gave the first person, and offered to conjugate it. The first version of this article said the verb does not exist. Readers corrected us, and they were right: it is in no dictionary, but it is alive in one specific register, reality-TV recaps and tabloid headlines. Standard Serbian says <em>biti ljubomoran</em>, with an adjective. The chatbot said neither of those things. It did not warn that the word is colloquial, and when asked where to look it up, it named a dictionary that does not have it.</p>
 
     <p>That is one anecdote. We wanted to know how typical it is, and, more usefully, what a learner should and should not delegate to a general-purpose chatbot. So we ran a small, controlled test and scored it against the dictionaries a Serbian lexicographer would use.</p>
 
@@ -225,7 +225,7 @@
         <div class="card app">
           <h4>What Govori shows</h4>
           <a href="https://govoridictionaries.com/w?clean=ljubomorisati&amp;pos=verb&amp;etym=1"><img src="../img/blog/ljubomorisati-card.png" alt="Govori entry for ljubomorisati: imperfective verb, sense “to be jealous; to act jealously, to make a jealous scene” marked colloq, a usage-notes panel, and the present tense ljubomorišem, ljubomorišeš, ljubomoriše." loading="lazy"></a>
-          <p>Until this week Govori did not have the verb either, because it follows the standard dictionaries. It does now: the sense carries the <em>colloq</em> label, and the usage note says that no dictionary lists it, where it is used, and that the standard expression is <em>biti ljubomoran</em>. The register is the first thing you see. <a href="https://govoridictionaries.com/w?clean=ljubomorisati&amp;pos=verb&amp;etym=1">Open <em>ljubomorisati</em> in the app</a>.</p>
+          <p>Govori follows the standard dictionaries, so it lacked the verb too until this study added it. The sense carries the <em>colloq</em> label, and the usage note says that no dictionary lists it, where it is used, and that the standard expression is <em>biti ljubomoran</em>. The register is the first thing you see. <a href="https://govoridictionaries.com/w?clean=ljubomorisati&amp;pos=verb&amp;etym=1">Open <em>ljubomorisati</em> in the app</a>.</p>
         </div>
       </div>
       <div class="refs">
@@ -410,7 +410,7 @@
 
     <h2>What about better models?</h2>
 
-    <p>Two objections reached us within a day of publishing. The first, that <em>ljubomorisati</em> exists, was right and is dealt with above. The second: “I asked a stronger model about those accents and it got them right.” We believe it. Our own reasoning pass got seven more accents right than the default pass, and paid tiers and frontier models are better still. That is not the point of this test. We tested what most learners actually use: the free tier of the most popular chatbot, with the settings it comes with. That is the tool the learner in our first paragraph had in their hand.</p>
+    <p>Two objections reached us after the first version of this article. The first, that <em>ljubomorisati</em> exists, was right and is dealt with above. The second: “I asked a stronger model about those accents and it got them right.” We believe it. Our own reasoning pass got seven more accents right than the default pass, and paid tiers and frontier models are better still. That is not the point of this test. We tested what most learners actually use: the free tier of the most popular chatbot, with the settings it comes with. That is the tool the learner in our first paragraph had in their hand.</p>
 
     <p>But suppose you have the best model there is, and it answers every accent question correctly. The structural problem is untouched. A language model has no way to tell what it knows from what it is completing. When it writes <em>vrátiti</em> it produces the same kind of confident text as when it writes <em>vratȉti</em>; there is no internal flag that says “this one I looked up, this one I made to fit the pattern”. Its fluency is constant, its knowledge is not, and nothing in the output marks the boundary. The same applies to register: the model that knew <em>ljubomorisati</em> from reality-TV recaps had no way to know that it knew it <em>from</em> reality-TV recaps.</p>
 
