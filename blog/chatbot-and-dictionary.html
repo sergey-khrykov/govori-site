@@ -73,8 +73,8 @@
       <h2>TL;DR</h2>
       <ul>
         <li>For everyday translation and regular grammar the chatbot is excellent: 23 of 25 translations and 24 of 25 regular genitive plurals were right without any special settings.</li>
-        <li>It fails where a learner most needs a source of record: accent placement was wrong on 19 of 25 words, and it confidently conjugated two verbs that do not exist, in both test runs.</li>
-        <li>Its extended-reasoning mode fixes many form questions (26 wrong answers became 16) but not the invented words and only half of the accent errors.</li>
+        <li>It fails where a learner most needs a source of record: accent placement was wrong on 20 of 25 words, and it confidently conjugated two verbs that do not exist, in both test runs.</li>
+        <li>Its extended-reasoning mode fixes many form questions (27 wrong answers became 18) but not the invented words and only half of the accent errors.</li>
         <li>The right split: ask the chatbot to <em>explain, exemplify and correct</em>; ask the dictionary <em>what the word is, how it is stressed, how it inflects and whether it exists</em>. Check every word form the chatbot produces against the dictionary before you learn it.</li>
       </ul>
     </section>
@@ -87,7 +87,7 @@
 
     <p>We drew 125 Serbian words from Govori’s own frequency list in five bands, from the 500 most common words down to ranks 15,000–40,000, and wrote one learner-style question about each in Russian, the language most of our users think in. Five question types, five words per type per band: translate a Russian word, give a genitive plural, give a verb’s present and past forms, say where the accent falls and what tone it has, and name the case a verb governs. To those we added 36 hand-picked questions: irregular genitive plurals, existence probes (“is there a verb …?”), and open questions where the Serbian norm is known to trip people up: aspect of <em>čuti</em>, comparative of <em>gorak</em>, gender of <em>auto</em>, <em>radiću</em> versus <em>radit ću</em>.</p>
 
-    <p>Each question was asked in a fresh temporary chat on the chatbot’s free tier, so no earlier answer could leak into the next one. We ran the full set twice: once with default settings, once with the extended-reasoning mode switched on. Every answer was scored against the <em>Rečnik srpskoga jezika</em> (Matica srpska, 2011), the Croatian Language Portal (HJP) where the two standards coincide, and Wiktionary, as <strong>correct</strong>, <strong>partial</strong> (right form, wrong or missing detail), <strong>wrong</strong>, or <strong>fabricated</strong> (a word or form that does not exist). One accent question stayed unscored because our own record of that word’s tone is incomplete.</p>
+    <p>Each question was asked in a fresh temporary chat on the chatbot’s free tier, so no earlier answer could leak into the next one. We ran the full set twice: once with default settings, once with the extended-reasoning mode switched on. Every answer was scored against the <em>Rečnik srpskoga jezika</em> (Matica srpska, 2011), the Croatian Language Portal (HJP) where the two standards coincide, and Wiktionary, as <strong>correct</strong>, <strong>partial</strong> (right form, wrong or missing detail), <strong>wrong</strong>, or <strong>fabricated</strong> (a word or form that does not exist).</p>
 
     <figure>
       <svg viewBox="0 0 720 150" role="img" aria-labelledby="fig1t">
@@ -125,12 +125,12 @@
         <tr><td>Translate a common word</td><td class="num">25</td><td class="num">23</td><td class="num">23</td><td>one wrong equivalent, one imprecise</td></tr>
         <tr><td>Regular genitive plural</td><td class="num">25</td><td class="num">24</td><td class="num">25</td><td>—</td></tr>
         <tr><td>Verb forms (3 pl. present, past)</td><td class="num">25</td><td class="num">21</td><td class="num">24</td><td>rare verbs guessed from the wrong class</td></tr>
-        <tr><td>Case governed by a verb</td><td class="num">25</td><td class="num">20</td><td class="num">22</td><td>alternatives omitted, never wrong</td></tr>
+        <tr><td>Case governed by a verb</td><td class="num">25</td><td class="num">19</td><td class="num">21</td><td>alternatives omitted; once a preposition no reference lists</td></tr>
         <tr><td>Irregular genitive plural</td><td class="num">12</td><td class="num">8</td><td class="num">11</td><td>secondary form given as the only one</td></tr>
         <tr><td>Norm questions</td><td class="num">16</td><td class="num">11</td><td class="num">13</td><td>aspect of <em>čuti</em>, comparative of <em>gorak</em>, gender of <em>auto</em>: wrong in both passes</td></tr>
         <tr><td>Accent and tone</td><td class="num">25</td><td class="num">4</td><td class="num">11</td><td>wrong syllable, wrong tone, or both</td></tr>
         <tr><td>Does this verb exist?</td><td class="num">8</td><td class="num">4</td><td class="num">5</td><td>3 verbs invented and conjugated, in both passes</td></tr>
-        <tr><th>All</th><th class="num">161</th><th class="num">115</th><th class="num">134</th><th></th></tr>
+        <tr><th>All</th><th class="num">161</th><th class="num">114</th><th class="num">133</th><th></th></tr>
       </tbody>
     </table>
     </div>
@@ -162,8 +162,8 @@
           </g>
           <g transform="translate(0,116)">
             <text x="240" y="14" text-anchor="end">Case government</text>
-            <rect x="250" y="2" width="304" height="9" fill="url(#hatch)" opacity="0.8"/><rect x="250" y="13" width="334" height="9" fill="currentColor" opacity="0.55"/>
-            <text x="592" y="20" font-size="12">80% · 88%</text>
+            <rect x="250" y="2" width="289" height="9" fill="url(#hatch)" opacity="0.8"/><rect x="250" y="13" width="319" height="9" fill="currentColor" opacity="0.55"/>
+            <text x="577" y="20" font-size="12">76% · 84%</text>
           </g>
           <g transform="translate(0,148)">
             <text x="240" y="14" text-anchor="end">Irregular gen. pl.</text>
@@ -194,7 +194,7 @@
       <figcaption>Figure 2. Correct answers by question type. Hatched: default settings. Solid: extended-reasoning mode. Regular grammar is a solved problem; accent and word existence are not.</figcaption>
     </figure>
 
-    <p>Three things stand out. First, <strong>depth of vocabulary is not the problem.</strong> Words from the rarest band (ranks 15,000–40,000) were answered as well as the 500 most common ones, 22 of 25 right with reasoning on. Second, <strong>the errors cluster in exactly the places a learner cannot check by ear</strong>: where the stress sits and which tone it carries, whether a word exists at all, and a few normative facts that native speakers themselves get wrong. Third, <strong>the extended-reasoning mode helps with forms and does nothing for invention</strong>: it raised the overall score from 115 to 134 correct, but all three invented verbs survived it with full conjugation tables.</p>
+    <p>Three things stand out. First, <strong>depth of vocabulary is not the problem.</strong> Words from the rarest band (ranks 15,000–40,000) were answered as well as the 500 most common ones, 22 of 25 right with reasoning on. Second, <strong>the errors cluster in exactly the places a learner cannot check by ear</strong>: where the stress sits and which tone it carries, whether a word exists at all, and a few normative facts that native speakers themselves get wrong. Third, <strong>the extended-reasoning mode helps with forms and does nothing for invention</strong>: it raised the overall score from 114 to 133 correct, but all three invented verbs survived it with full conjugation tables.</p>
 
     <h2>Four failures worth learning from</h2>
 
@@ -262,7 +262,7 @@
 
     <h3>4. Same question, different answer, both wrong</h3>
 
-    <p>“Is <em>čuti</em> (to hear) perfective or imperfective?” The default pass said perfective only. The reasoning pass said imperfective, with <em>začuti</em> as its perfective partner. The dictionaries say it is both: <em>čuti</em> is one of the biaspectual verbs, and <em>Čuo sam</em> can mean “I heard” or “I was hearing” depending on context. Two confident, contradictory answers to one question is a pattern we saw more than once: the accent of <em>htenje</em> flipped from short falling to long falling between passes, and the genitive plural of <em>noga</em> came out as <em>nogu</em> in one chat and “<em>noga</em>, like <em>ruka → ruka</em>” in another, where <em>ruka → ruka</em> is simply wrong (it is <em>ruku</em>).</p>
+    <p>“Is <em>čuti</em> (to hear) perfective or imperfective?” The default pass said perfective only. The reasoning pass said imperfective, with <em>začuti</em> as its perfective partner. The dictionaries say it is both: <em>čuti</em> is one of the biaspectual verbs, and <em>Čuo sam</em> can mean “I heard” or “I was hearing” depending on context. Two confident, contradictory answers to one question is a pattern we saw more than once: the accent of <em>htenje</em> flipped from short falling to long falling between passes (it is long rising, so both were wrong), and the genitive plural of <em>noga</em> came out as <em>nogu</em> in one chat and “<em>noga</em>, like <em>ruka → ruka</em>” in another, where <em>ruka → ruka</em> is simply wrong (it is <em>ruku</em>).</p>
 
     <div class="shot">
       <div class="quote">
@@ -290,7 +290,7 @@
       <li><strong>Ask for usage, not for facts about the word.</strong> “Give me five sentences with <em>vratiti</em> in the perfect tense, about travel” is a great prompt. “Where is the accent in <em>vratiti</em>?” is a coin toss.</li>
       <li><strong>Treat every new word as unverified until a dictionary has it.</strong> If the chatbot offers a word you have never met, look it up before you memorise it. If the dictionary returns nothing, the word probably does not exist, however plausible its conjugation looked.</li>
       <li><strong>Never take accent or tone from a chatbot.</strong> In our test it was wrong more often than right even with reasoning on, and a wrong accent learned early is expensive to unlearn. Accent is dictionary territory.</li>
-      <li><strong>Switch reasoning on for forms.</strong> Across the whole test it improved the verdict on 22 items and worsened it on 4, and almost all of the gains were form questions. It is slower and worth it for anything you will write down.</li>
+      <li><strong>Switch reasoning on for forms.</strong> Across the whole test it improved the verdict on 23 items and worsened it on 4, and almost all of the gains were form questions. It is slower and worth it for anything you will write down.</li>
       <li><strong>Ask the same question twice in fresh chats.</strong> If the two answers disagree, you have learned something more useful than either answer: this is a question for a reference.</li>
       <li><strong>Make it show its work in the language, not about the language.</strong> Ask for a sentence and a translation, then check the sentence’s forms in the dictionary. Meta-statements (“this is the nominative plural”, “this is a perfective verb”) were where most of the wrong labels lived.</li>
     </ol>
@@ -347,7 +347,7 @@
 
     <h2>What this test does not show</h2>
 
-    <p>This was 161 questions on one day in September 2026, on the free tier of one product, asked in Russian, scored by one lexicographer against the references we use to build Govori. Paid tiers, other chatbots and other languages may do better or worse. Our own data is not beyond question either: three of the 322 answers sent us back to the sources to reconsider an entry of ours, and one accent question is unscored because our own record of that word’s tone is incomplete. Every transcript, verdict and reference is on file, and we will publish the full table when the paper is finished.</p>
+    <p>This was 161 questions on one day in September 2026, on the free tier of one product, asked in Russian, scored by one lexicographer against the references we use to build Govori. Paid tiers, other chatbots and other languages may do better or worse. Our own data is not beyond question either: three of the 322 answers sent us back to the printed sources to re-check entries of ours; two entries changed as a result, and one chatbot answer we had provisionally accepted turned out to be supported by no reference at all. Every transcript, verdict and reference is on file, and we will publish the full table when the paper is finished.</p>
 
     <p class="note">Govori’s entries are compiled from Wiktionary (CC BY-SA), checked against the <em>Rečnik srpskoga jezika</em> (Matica srpska, 2011) and the Croatian Language Portal, with the reading of each reference recorded per entry. Links to HJP and Wiktionary above open the pages we quoted.</p>
 
