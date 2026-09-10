@@ -19,6 +19,28 @@
   --color-success: #059669;
   --max-width: 720px;
   --spacing: 1.5rem;
+
+  /* Brand: each dictionary's page recolours these (see body.theme-mne).
+     The defaults are the Serbian app's search-panel gradient. */
+  --brand-start: #4F5BB0;
+  --brand-end: #8387D4;
+  --brand: #4F5BB0;
+  --brand-hover: #434da0;
+  --brand-mark: #E8612C;   /* the acute over the o in the wordmark */
+  --brand-gradient: linear-gradient(135deg, var(--brand-start), var(--brand-end));
+}
+
+/* Montenegrin: the app's red gradient (Brand.swift panelGradientStart/End)
+   and the icon's yellow for the accent mark. */
+body.theme-mne {
+  --brand-start: #C33638;
+  --brand-end: #B24B6F;
+  --brand: #C33638;
+  --brand-hover: #a92e30;
+  --brand-mark: #FECB00;
+  /* Re-declared: a var() inside a custom property is resolved where that
+     property is declared, so the :root gradient would keep the :root stops. */
+  --brand-gradient: linear-gradient(135deg, var(--brand-start), var(--brand-end));
 }
 
 html {
@@ -92,9 +114,7 @@ p {
 }
 
 .lang-switcher--header {
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
+  flex: 0 0 auto;
   border: 1px solid rgba(255, 255, 255, 0.25);
 }
 
@@ -184,10 +204,82 @@ header {
 }
 
 .hero-gradient {
-  background: linear-gradient(135deg, #4F5BB0, #8387D4);
-  padding: 5rem 0 2.5rem;
+  background: var(--brand-gradient);
+  padding: 1rem 0 2.5rem;
   color: #fff;
   position: relative;
+}
+
+/* Top bar: app selector left, language switcher right. On narrow screens
+   the two stack, the app row scrolling sideways if it must. */
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.75rem 1rem;
+  flex-wrap: wrap;
+  padding: 0 1rem;
+  margin-bottom: 2.75rem;
+}
+
+.app-switcher {
+  display: flex;
+  gap: 0;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 6px;
+  overflow-x: auto;
+  max-width: 100%;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.app-switcher::-webkit-scrollbar {
+  display: none;
+}
+
+.app-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  padding: 0.375rem 0.75rem;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  line-height: 1;
+  white-space: nowrap;
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+  transition: background 0.15s, color 0.15s;
+}
+
+.app-btn + .app-btn {
+  border-left: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+a.app-btn:hover {
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+}
+
+.app-btn.active {
+  background: rgba(255, 255, 255, 0.25);
+  color: #fff;
+}
+
+.app-btn--soon {
+  color: rgba(255, 255, 255, 0.4);
+  cursor: default;
+}
+
+.app-btn--soon em {
+  font-style: normal;
+  font-size: 0.5625rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 2px 5px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: rgba(255, 255, 255, 0.55);
 }
 
 .hero-icon {
@@ -211,7 +303,7 @@ header {
 
 .accented::after {
   content: '\B4';
-  color: #E8612C;
+  color: var(--brand-mark);
   position: absolute;
   left: 50%;
   transform: translateX(-30%) scaleX(1.3);
@@ -287,8 +379,9 @@ header .subtitle {
   position: absolute;
   top: -8px;
   right: -12px;
-  background: #6b71a8;
-  color: rgba(255, 255, 255, 0.7);
+  background: #fff;
+  color: var(--brand);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
   font-size: 0.625rem;
   font-weight: 600;
   text-transform: uppercase;
@@ -315,17 +408,17 @@ header .subtitle {
 }
 
 .btn-primary {
-  background: #4F5BB0;
+  background: var(--brand);
   color: #fff;
 }
 
 .btn-primary:hover {
-  background: #434da0;
+  background: var(--brand-hover);
 }
 
 .hero-gradient .btn-primary {
   background: #fff;
-  color: #4F5BB0;
+  color: var(--brand);
 }
 
 .hero-gradient .btn-primary:hover {
@@ -396,50 +489,45 @@ header .subtitle {
 .feature-media {
   width: 60%;
   max-width: 260px;
+  /* A flex item's min-width is its content's intrinsic width by default,
+     and a 1179px-wide capture would push the column out to that. */
+  min-width: 0;
 }
 
-.feature-media video {
-  width: 100%;
-  border-radius: 12px;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
-  cursor: pointer;
-}
-
-.carousel-track .video-wrap {
+/* Screenshot carousel: one <figure class="shot"> per slide — the capture
+   with device-ish corners and a caption underneath. */
+.shot-carousel {
   position: relative;
+  width: 100%;
+  min-width: 0;
+}
+
+.carousel-track .shot {
   flex: 0 0 100%;
   width: 100%;
   min-width: 0;
+  margin: 0;
   scroll-snap-align: start;
-  overflow: hidden;
 }
 
-.feature-media > .video-wrap {
-  position: relative;
+.shot img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  border-radius: 28px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12), 0 0 0 1px rgba(0, 0, 0, 0.06);
+  background: #f3f3f5;
 }
 
-.video-overlay {
-  position: absolute;
-  inset: 0;
-  border-radius: 12px;
-  background: rgba(0, 0, 0, 0.35);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  opacity: 0;
-  transition: opacity 0.2s;
-  pointer-events: none;
-}
-
-.video-wrap:hover .video-overlay {
-  opacity: 1;
-}
-
-.video-overlay svg {
-  width: 48px;
-  height: 48px;
-  color: #fff;
-  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+.shot figcaption {
+  margin-top: 0.875rem;
+  padding: 0 0.5rem;
+  min-height: 2.6em;
+  text-align: center;
+  font-size: 0.875rem;
+  line-height: 1.35;
+  color: var(--color-muted);
 }
 
 /* ── Dark Feature Row ──────────────────────────────── */
@@ -449,7 +537,7 @@ header .subtitle {
   margin-right: calc(-50vw + 50%);
   padding-left: calc(50vw - 50%);
   padding-right: calc(50vw - 50%);
-  background: linear-gradient(135deg, #4F5BB0, #8387D4);
+  background: var(--brand-gradient);
   border-top: none;
 }
 
@@ -461,8 +549,13 @@ header .subtitle {
   color: #fff;
 }
 
-.feature-item--dark p {
+.feature-item--dark p,
+.feature-item--dark .shot figcaption {
   color: rgba(255, 255, 255, 0.7);
+}
+
+.feature-item--dark .shot img {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
 }
 
 .feature-item--dark .carousel-dot {
@@ -481,11 +574,7 @@ header .subtitle {
   color: #fff;
 }
 
-/* ── Video Carousel ───────────────────────────────── */
-
-.video-carousel {
-  position: relative;
-}
+/* ── Carousel ─────────────────────────────────────── */
 
 .carousel-track {
   display: flex;
@@ -499,12 +588,6 @@ header .subtitle {
 
 .carousel-track::-webkit-scrollbar {
   display: none;
-}
-
-.carousel-track video {
-  width: 100%;
-  border-radius: 12px;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
 }
 
 .carousel-nav {
@@ -553,13 +636,13 @@ header .subtitle {
 }
 
 .carousel-dot.active {
-  background: var(--color-accent);
+  background: var(--brand);
 }
 
 /* ── Audience ──────────────────────────────────────── */
 
 #audience {
-  background: linear-gradient(135deg, #4F5BB0, #8387D4);
+  background: var(--brand-gradient);
   margin-left: calc(-50vw + 50%);
   margin-right: calc(-50vw + 50%);
   padding-left: calc(50vw - 50%);
@@ -600,6 +683,189 @@ header .subtitle {
 .audience-item p {
   color: var(--color-muted);
   font-size: 1.0625rem;
+}
+
+/* ── Pricing ───────────────────────────────────────── */
+
+#pricing h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 0.75rem;
+}
+
+#pricing .section-description {
+  text-align: center;
+  color: var(--color-muted);
+  font-size: 1.0625rem;
+  max-width: 540px;
+  margin: 0 auto 2.5rem;
+}
+
+.plans {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  margin-bottom: 2.5rem;
+}
+
+.plan {
+  position: relative;
+  padding: 1.5rem 1.25rem 1.375rem;
+  border: 1px solid var(--color-card-border);
+  border-radius: 16px;
+  background: var(--color-card-bg);
+  text-align: center;
+}
+
+.plan--featured {
+  background: var(--brand-gradient);
+  border-color: transparent;
+  color: #fff;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+}
+
+.plan-badge {
+  position: absolute;
+  top: -0.75rem;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 0.25rem 0.75rem;
+  border-radius: 999px;
+  background: #fff;
+  color: var(--brand);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  white-space: nowrap;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+}
+
+.plan-name {
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.plan-kind {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-muted);
+  margin-top: 0.125rem;
+}
+
+.plan--featured .plan-kind {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.plan-price {
+  margin-top: 0.875rem;
+  font-size: 2.25rem;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+.plan-price small {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--color-muted);
+  letter-spacing: 0;
+}
+
+.plan--featured .plan-price small {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.plan-billing {
+  margin-top: 0.625rem;
+  font-size: 0.875rem;
+  color: var(--color-muted);
+}
+
+.plan--featured .plan-billing {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+/* Feature breakdown — a plain table, scrolls sideways only if a phone is
+   narrower than its two tick columns allow. */
+.pricing-table-wrap {
+  overflow-x: auto;
+  border: 1px solid var(--color-card-border);
+  border-radius: 16px;
+}
+
+.pricing-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9375rem;
+}
+
+.pricing-table th,
+.pricing-table td {
+  padding: 0.75rem 1rem;
+  border-top: 1px solid var(--color-card-border);
+  text-align: left;
+  vertical-align: middle;
+}
+
+.pricing-table thead th {
+  border-top: none;
+  background: var(--color-card-bg);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-muted);
+}
+
+.pricing-table th:nth-child(n+2),
+.pricing-table td:nth-child(n+2) {
+  width: 5.5rem;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.pricing-table thead th.col-plus {
+  color: var(--brand);
+}
+
+.pricing-table td.yes::before {
+  content: '';
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  vertical-align: middle;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23059669' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='4 12.5 9.5 18 20 6.5'/%3E%3C/svg%3E") center / contain no-repeat;
+}
+
+.pricing-table td.no::before {
+  content: '—';
+  color: var(--color-card-border);
+  font-weight: 700;
+}
+
+.pricing-table td.trial span {
+  display: inline-block;
+  padding: 0.125rem 0.5rem;
+  border-radius: 999px;
+  background: var(--color-card-bg);
+  border: 1px solid var(--color-card-border);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  color: var(--color-muted);
+  white-space: nowrap;
+}
+
+.pricing-table tr.plus-row td:first-child {
+  font-weight: 600;
+}
+
+#pricing .form-note {
+  margin-top: 1.25rem;
 }
 
 /* ── Signup Form ───────────────────────────────────── */
@@ -684,7 +950,7 @@ footer a:hover {
 
 /* Masthead: a compact echo of the home page hero */
 .faq-hero {
-  background: linear-gradient(135deg, #4F5BB0, #8387D4);
+  background: var(--brand-gradient);
   color: #fff;
   text-align: center;
   padding: 3rem 0 2.75rem;
@@ -937,7 +1203,7 @@ footer a:hover {
   margin-top: 3rem;
   padding: 2.25rem 1.5rem;
   border-radius: 16px;
-  background: linear-gradient(135deg, #4F5BB0, #8387D4);
+  background: var(--brand-gradient);
   color: #fff;
   text-align: center;
 }
@@ -975,7 +1241,7 @@ footer a:hover {
 /* Scoped to .faq-cta so these outrank the page's generic accent link colour */
 .faq-cta .faq-btn--solid {
   background: #fff;
-  color: #4F5BB0;
+  color: var(--brand);
 }
 
 .faq-cta .faq-btn--solid:hover {
@@ -1047,4 +1313,43 @@ footer a:hover {
   section {
     padding: 5rem 0;
   }
+
+  .plans {
+    grid-template-columns: repeat(3, 1fr);
+    align-items: stretch;
+  }
+
+  .topbar {
+    margin-bottom: 3.25rem;
+  }
 }
+
+/* Narrow screens: the app selector wraps into pills instead of scrolling
+   sideways, so the "soon" entries stay visible. */
+@media (max-width: 639px) {
+  .app-switcher {
+    flex-wrap: wrap;
+    gap: 0.375rem;
+    border: none;
+    border-radius: 0;
+    overflow: visible;
+  }
+
+  .app-btn,
+  .app-btn + .app-btn {
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 6px;
+  }
+
+  .app-btn.active {
+    border-color: transparent;
+  }
+}
+
+/* The badge of a store the app is not on yet: the artwork stays for
+   recognition, dimmed and unlinked, with a "soon" tag. */
+.btn-badge-wrap .appstore-badge,
+.btn-badge-wrap .playstore-badge {
+  opacity: 0.45;
+}
+

@@ -1,34 +1,36 @@
 <!DOCTYPE html>
-<html lang="en" data-app="srb">
+<html lang="en" data-app="hrv" data-site-root="../">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Govori — Serbian Learner's Dictionary</title>
-  <meta name="description" content="Look up any Serbian word form — accusative, past tense, short adjective — and find the canonical entry. Latin and Cyrillic. Offline. No ads.">
-  <link rel="stylesheet" href="css/style.css?v=4">
-  <link rel="icon" href="img/app-icon-256.png">
-  <link rel="apple-touch-icon" href="img/app-icon-256.png">
-  <link rel="canonical" href="https://govoridictionaries.com/">
+  <title>Govori — Croatian Learner's Dictionary</title>
+  <meta name="description" content="Look up any Croatian word form — accusative, past tense, short adjective — and find the canonical entry. Offline. No ads.">
+  <!-- Draft: the Croatian app has not shipped, so this page is not indexed or linked from the header yet. -->
+  <meta name="robots" content="noindex">
+  <link rel="stylesheet" href="../css/style.css?v=4">
+  <link rel="icon" href="../img/app-icon-hrv-256.png">
+  <link rel="apple-touch-icon" href="../img/app-icon-hrv-256.png">
+  <link rel="canonical" href="https://govoridictionaries.com/hrv/">
 
-  <!-- Open Graph. og:image is 1200x630, regenerate with ./make-og-image.sh -->
+  <!-- Open Graph. og:image is 1200x630, regenerate with ../make-og-image.sh hrv -->
   <meta property="og:site_name" content="Govori">
-  <meta property="og:title" content="Govori — Serbian Learner's Dictionary">
-  <meta property="og:description" content="Look up any Serbian word form and find the canonical entry. Full declensions, conjugations, English + Russian meanings. Offline and without ads.">
+  <meta property="og:title" content="Govori — Croatian Learner's Dictionary">
+  <meta property="og:description" content="Look up any Croatian word form and find the canonical entry. Full declensions and conjugations, English + Russian meanings. Offline and without ads.">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://govoridictionaries.com/">
+  <meta property="og:url" content="https://govoridictionaries.com/hrv/">
   <meta property="og:locale" content="en_US">
-  <meta property="og:image" content="https://govoridictionaries.com/img/og-image.png">
+  <meta property="og:image" content="https://govoridictionaries.com/img/og-image-hrv.png">
   <meta property="og:image:type" content="image/png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="Govori — Serbian Learner's Dictionary. Any word form to the canonical entry.">
+  <meta property="og:image:alt" content="Govori — Croatian Learner's Dictionary. Any word form to the canonical entry.">
 
   <!-- Twitter/X reads its own namespace; without these it falls back to a small card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Govori — Serbian Learner's Dictionary">
-  <meta name="twitter:description" content="Look up any Serbian word form and find the canonical entry. Full declensions, conjugations, English + Russian meanings. Offline and without ads.">
-  <meta name="twitter:image" content="https://govoridictionaries.com/img/og-image.png">
-  <meta name="twitter:image:alt" content="Govori — Serbian Learner's Dictionary. Any word form to the canonical entry.">
+  <meta name="twitter:title" content="Govori — Croatian Learner's Dictionary">
+  <meta name="twitter:description" content="Look up any Croatian word form and find the canonical entry. Full declensions and conjugations, English + Russian meanings. Offline and without ads.">
+  <meta name="twitter:image" content="https://govoridictionaries.com/img/og-image-hrv.png">
+  <meta name="twitter:image:alt" content="Govori — Croatian Learner's Dictionary. Any word form to the canonical entry.">
 </head>
 <body>
 
@@ -40,23 +42,22 @@
              links (data-app-link — i18n.js appends ?lang= so the language
              carries over). Croatian and Slovenian are placeholders. -->
         <nav class="app-switcher" aria-label="Dictionaries">
-          <span class="app-btn active" aria-current="page" data-i18n="app_srb">Serbian</span>
-          <a class="app-btn" href="mne/" data-app-link="mne/" data-i18n="app_mne">Montenegrin</a>
-          <span class="app-btn app-btn--soon" aria-disabled="true"><span data-i18n="app_hrv">Croatian</span> <em data-i18n="app_soon">soon</em></span>
+          <a class="app-btn" href="../" data-app-link="../" data-i18n="app_srb">Serbian</a>
+          <a class="app-btn" href="../mne/" data-app-link="../mne/" data-i18n="app_mne">Montenegrin</a>
+          <span class="app-btn active" aria-current="page" data-i18n="app_hrv">Croatian</span>
           <span class="app-btn app-btn--soon" aria-disabled="true"><span data-i18n="app_slv">Slovenian</span> <em data-i18n="app_soon">soon</em></span>
         </nav>
         <nav class="lang-switcher lang-switcher--header" aria-label="Language">
           <button class="lang-btn active" data-lang="en">EN</button>
           <button class="lang-btn" data-lang="ru">RU</button>
-          <button class="lang-btn" data-lang="sr-latn">SR</button>
-          <button class="lang-btn" data-lang="sr-cyrl">СР</button>
+          <button class="lang-btn" data-lang="hr">HR</button>
         </nav>
       </div>
       <div class="container">
-        <img src="img/app-icon-256.png" alt="Govori app icon" class="hero-icon" width="120" height="120">
+        <img src="../img/app-icon-hrv-256.png" alt="Govori Croatian app icon" class="hero-icon" width="120" height="120">
         <p class="hero-app-name">Gov<span class="accented">o</span>ri</p>
-        <h1 data-i18n="hero_headline">Learn Serbian with a dictionary that actually understands grammar.</h1>
-        <p class="subtitle" data-i18n="hero_subtitle">Look up any word form — accusative, past tense, short adjective — and find the canonical entry. Available in Latin and Cyrillic.</p>
+        <h1 data-i18n="hero_headline">Learn Croatian with a dictionary that actually understands grammar.</h1>
+        <p class="subtitle" data-i18n="hero_subtitle">Look up any word form — accusative, past tense, short adjective — and find the canonical entry.</p>
         <div class="cta-group">
           <!-- Official App Store badge artwork (Apple marketing-tools API,
                self-hosted so it can't be blocked); i18n.js swaps the locale.
@@ -64,20 +65,22 @@
                (Analytics → Acquisition → Campaigns): pt= is the account-wide
                provider token, ct= the per-placement campaign token. Both are
                required — ct alone reports as organic. -->
-          <a href="https://apps.apple.com/app/apple-store/id6758169365?pt=128478223&amp;ct=web_hero&amp;mt=8" class="appstore-badge-link" aria-label="Download on the App Store">
+          <span class="btn-badge-wrap" aria-label="App Store — coming soon">
             <img class="appstore-badge"
-                 src="img/appstore-badge-en.svg"
-                 alt="Download on the App Store" width="156" height="52">
-          </a>
+                 src="../img/appstore-badge-en.svg"
+                 alt="App Store — coming soon" width="156" height="52">
+            <span class="badge-soon" data-i18n="app_soon">soon</span>
+          </span>
           <!-- Official Google Play badge artwork (play.google.com/badges,
                self-hosted, padding trimmed); i18n.js swaps the locale.
                &referrer= carries URL-encoded UTMs; Play Console reports on them
                and the Adjust SDK will later read the same string. -->
-          <a href="https://play.google.com/store/apps/details?id=com.langapp.srb&amp;referrer=utm_source%3Dwebsite%26utm_medium%3Dbadge%26utm_campaign%3Dweb_hero" class="appstore-badge-link" aria-label="Get it on Google Play">
+          <span class="btn-badge-wrap" aria-label="Google Play — coming soon">
             <img class="playstore-badge"
-                 src="img/playstore-badge-en.png"
-                 alt="Get it on Google Play" width="175" height="52">
-          </a>
+                 src="../img/playstore-badge-en.png"
+                 alt="Google Play — coming soon" width="175" height="52">
+            <span class="badge-soon" data-i18n="app_soon">soon</span>
+          </span>
         </div>
         <p class="hero-trust" data-i18n="hero_trust">Fully offline &middot; No ads &middot; No account needed</p>
       </div>
@@ -85,9 +88,9 @@
   </header>
 
   <!-- ── Features ──────────────────────────────────── -->
-  <!-- Screenshots are captured from the iOS simulator with
-       scripts/screenshot_app.py (Plus on, so no trial or paywall UI is in
-       frame); i18n.js resolves each data-shot to img/screens/srb/<en|ru>/. -->
+  <!-- No screenshots yet: scripts/screenshot_app.py only targets srb/mne.
+       When the Croatian target builds, add the feature-media carousels as on
+       ../mne/index.html and the shot_* captions to js/strings-hrv.js. -->
   <section id="features">
     <div class="container features-container">
       <h2 data-i18n="features_heading">See what Govori can do</h2>
@@ -95,54 +98,21 @@
       <div class="feature-item">
         <div class="feature-text">
           <h3 data-i18n="group1_title">Find it your way</h3>
-          <p data-i18n="group1_desc">Search in Latin or Cyrillic, with or without diacritics. Look up any word form &mdash; even conjugated verbs or declined nouns &mdash; or search by English or Russian translation. Govori figures out what you mean.</p>
-        </div>
-        <div class="feature-media">
-          <div class="shot-carousel">
-            <div class="carousel-track">
-              <figure class="shot"><img data-shot="search_zena" width="1179" height="2556" alt=""><figcaption data-i18n="shot_search_zena"></figcaption></figure>
-              <figure class="shot"><img data-shot="search_cyrillic" width="1179" height="2556" alt="" loading="lazy"><figcaption data-i18n="shot_search_cyrillic"></figcaption></figure>
-              <figure class="shot"><img data-shot="search_nodiacritics" width="1179" height="2556" alt="" loading="lazy"><figcaption data-i18n="shot_search_nodiacritics"></figcaption></figure>
-              <figure class="shot"><img data-shot="search_form_ljudi" width="1179" height="2556" alt="" loading="lazy"><figcaption data-i18n="shot_search_form_ljudi"></figcaption></figure>
-              <figure class="shot"><img data-shot="search_form_zavolela" width="1179" height="2556" alt="" loading="lazy"><figcaption data-i18n="shot_search_form_zavolela"></figcaption></figure>
-              <figure class="shot"><img data-shot="search_translation" width="1179" height="2556" alt="" loading="lazy"><figcaption data-i18n="shot_search_translation"></figcaption></figure>
-            </div>
-            <div class="carousel-dots"></div>
-          </div>
+          <p data-i18n="group1_desc">Search with or without diacritics. Look up any word form &mdash; even conjugated verbs or declined nouns &mdash; or search by English or Russian translation. Govori figures out what you mean.</p>
         </div>
       </div>
 
       <div class="feature-item feature-item--dark">
         <div class="feature-text">
           <h3 data-i18n="group2_title">Understand the full picture</h3>
-          <p data-i18n="group2_desc">Interactive tables show every case, tense, and number at once. Each entry highlights accent, gender, transitivity, register, and dialect &mdash; plus real usage examples in Serbian, English, and Russian.</p>
-        </div>
-        <div class="feature-media">
-          <div class="shot-carousel">
-            <div class="carousel-track">
-              <figure class="shot"><img data-shot="tables_verb" width="1179" height="2556" alt="" loading="lazy"><figcaption data-i18n="shot_tables_verb"></figcaption></figure>
-              <figure class="shot"><img data-shot="tables_adjective" width="1179" height="2556" alt="" loading="lazy"><figcaption data-i18n="shot_tables_adjective"></figcaption></figure>
-              <figure class="shot"><img data-shot="labels_bread" width="1179" height="2556" alt="" loading="lazy"><figcaption data-i18n="shot_labels_bread"></figcaption></figure>
-              <figure class="shot"><img data-shot="examples" width="1179" height="2556" alt="" loading="lazy"><figcaption data-i18n="shot_examples"></figcaption></figure>
-            </div>
-            <div class="carousel-dots"></div>
-          </div>
+          <p data-i18n="group2_desc">Interactive tables show every case, tense, and number at once. Each entry highlights accent, gender, transitivity and register, and labels where Serbian or Bosnian usage differs &mdash; plus real usage examples in Croatian, English, and Russian.</p>
         </div>
       </div>
 
       <div class="feature-item">
         <div class="feature-text">
           <h3 data-i18n="group3_title">Make it yours</h3>
-          <p data-i18n="group3_desc">Your recent lookups and favorites are always one tap away. Switch between Latin and Cyrillic anytime &mdash; the entire app switches instantly.</p>
-        </div>
-        <div class="feature-media">
-          <div class="shot-carousel">
-            <div class="carousel-track">
-              <figure class="shot"><img data-shot="favorites" width="1179" height="2556" alt="" loading="lazy"><figcaption data-i18n="shot_favorites"></figcaption></figure>
-              <figure class="shot"><img data-shot="scripts_cyrillic" width="1179" height="2556" alt="" loading="lazy"><figcaption data-i18n="shot_scripts_cyrillic"></figcaption></figure>
-            </div>
-            <div class="carousel-dots"></div>
-          </div>
+          <p data-i18n="group3_desc">Your recent lookups and favorites are always one tap away.</p>
         </div>
       </div>
 
@@ -156,15 +126,15 @@
       <div class="audience-list">
         <div class="audience-item">
           <strong data-i18n="aud1_title">Language learners</strong>
-          <p data-i18n="aud1_desc">Quickly check an accent, look up a tricky case ending, or explore verb forms mid-lesson. A handy companion whether you're hanging around in Belgrade or doing your homework.</p>
+          <p data-i18n="aud1_desc">Quickly check an accent, look up a tricky case ending, or explore verb forms mid-lesson. A handy companion whether you're wandering around Zagreb or doing your homework.</p>
         </div>
         <div class="audience-item">
           <strong data-i18n="aud2_title">Heritage speakers</strong>
-          <p data-i18n="aud2_desc">You grew up hearing Serbian but never studied the grammar formally. Finally make sense of all those endings.</p>
+          <p data-i18n="aud2_desc">You grew up hearing Croatian but never studied the grammar formally. Finally make sense of all those endings.</p>
         </div>
         <div class="audience-item">
           <strong data-i18n="aud3_title">Translators and linguists</strong>
-          <p data-i18n="aud3_desc">Quick, structured morphological reference with regional variants. Every form indexed and searchable, plus quick lookup in Wiktionary, Hrvatski jezični portal, and Google.</p>
+          <p data-i18n="aud3_desc">Quick, structured morphological reference with regional variants across Croatia, Bosnia, Serbia and Montenegro. Every form indexed and searchable, plus quick lookup in Wiktionary, Hrvatski jezični portal, and Google.</p>
         </div>
       </div>
     </div>
@@ -182,19 +152,19 @@
       <div class="plans">
         <div class="plan plan--featured">
           <span class="plan-badge" data-i18n="plan_lifetime_badge">Best value</span>
-          <div class="plan-name" data-i18n="plan_lifetime_name">Pečenje</div>
+          <div class="plan-name" data-i18n="plan_lifetime_name">Govori Plus</div>
           <div class="plan-kind" data-i18n="plan_lifetime_kind">Lifetime</div>
           <div class="plan-price"><span data-i18n="plan_lifetime_price">$14.99</span> <small data-i18n="plan_lifetime_per">once</small></div>
           <div class="plan-billing" data-i18n="plan_lifetime_billing">One-time purchase · yours forever</div>
         </div>
         <div class="plan">
-          <div class="plan-name" data-i18n="plan_annual_name">Sarma</div>
+          <div class="plan-name" data-i18n="plan_annual_name">Govori Plus</div>
           <div class="plan-kind" data-i18n="plan_annual_kind">Yearly</div>
           <div class="plan-price"><span data-i18n="plan_annual_price">$9.99</span> <small data-i18n="plan_annual_per">/ year</small></div>
           <div class="plan-billing" data-i18n="plan_annual_billing">Billed once a year · ≈ $0.83 a month</div>
         </div>
         <div class="plan">
-          <div class="plan-name" data-i18n="plan_monthly_name">Kafa</div>
+          <div class="plan-name" data-i18n="plan_monthly_name">Govori Plus</div>
           <div class="plan-kind" data-i18n="plan_monthly_kind">Monthly</div>
           <div class="plan-price"><span data-i18n="plan_monthly_price">$1.99</span> <small data-i18n="plan_monthly_per">/ month</small></div>
           <div class="plan-billing" data-i18n="plan_monthly_billing">Cancel anytime</div>
@@ -215,7 +185,6 @@
             <tr><td data-i18n="pf_meanings">English and Russian meanings</td><td class="yes"></td><td class="yes"></td></tr>
             <tr><td data-i18n="pf_examples">Usage examples with translations</td><td class="yes"></td><td class="yes"></td></tr>
             <tr><td data-i18n="pf_labels">Accent, gender, aspect, register and regional labels</td><td class="yes"></td><td class="yes"></td></tr>
-            <tr><td data-i18n="pf_audio">Audio pronunciation for the 2,500 core words</td><td class="yes"></td><td class="yes"></td></tr>
             <tr><td data-i18n="pf_scripts">Latin ⇄ Cyrillic — the whole app switches</td><td class="yes"></td><td class="yes"></td></tr>
             <tr><td data-i18n="pf_favorites">Favorites, recent lookups, export as image or text</td><td class="yes"></td><td class="yes"></td></tr>
             <tr><td data-i18n="pf_offline">Fully offline, no ads, no account</td><td class="yes"></td><td class="yes"></td></tr>
@@ -233,17 +202,19 @@
   <!-- ── Get the app ───────────────────────────────── -->
   <div class="container">
     <section id="signup">
-      <h2 data-i18n="signup_heading">Get Govori</h2>
-      <p class="section-description" data-i18n="signup_desc">Govori is now available free on the App Store and Google Play — for iPhone, iPad and Android.</p>
+      <h2 data-i18n="signup_heading">Get Govori Croatian</h2>
+      <p class="section-description" data-i18n="signup_desc">Govori Croatian is coming soon to the App Store and Google Play.</p>
       <div class="cta-group">
-        <a href="https://apps.apple.com/app/apple-store/id6758169365?pt=128478223&amp;ct=web_footer&amp;mt=8" class="appstore-badge-link" aria-label="Download on the App Store">
-          <img class="appstore-badge" src="img/appstore-badge-en.svg"
-               alt="Download on the App Store" width="156" height="52">
-        </a>
-        <a href="https://play.google.com/store/apps/details?id=com.langapp.srb&amp;referrer=utm_source%3Dwebsite%26utm_medium%3Dbadge%26utm_campaign%3Dweb_footer" class="appstore-badge-link" aria-label="Get it on Google Play">
-          <img class="playstore-badge" src="img/playstore-badge-en.png"
-               alt="Get it on Google Play" width="175" height="52">
-        </a>
+        <span class="btn-badge-wrap" aria-label="App Store — coming soon">
+          <img class="appstore-badge" src="../img/appstore-badge-en.svg"
+               alt="App Store — coming soon" width="156" height="52">
+          <span class="badge-soon" data-i18n="app_soon">soon</span>
+        </span>
+        <span class="btn-badge-wrap" aria-label="Google Play — coming soon">
+          <img class="playstore-badge" src="../img/playstore-badge-en.png"
+               alt="Google Play — coming soon" width="175" height="52">
+          <span class="badge-soon" data-i18n="app_soon">soon</span>
+        </span>
       </div>
       <p class="form-note" data-i18n="signup_note">Requires iOS 16+ or Android 8+. Fully offline, no ads, no account needed.</p>
       <p class="form-note" data-i18n-html="signup_telegram">Want to share feedback or follow updates? Join our <a href="https://t.me/+9eXsVAtaA_4yYzFi">Telegram group</a>.</p>
@@ -256,13 +227,12 @@
       <div class="footer-lang">
         <button class="lang-link lang-btn active" data-lang="en">English</button>
         <button class="lang-link lang-btn" data-lang="ru">Русский</button>
-        <button class="lang-link lang-btn" data-lang="sr-latn">Srpski</button>
-        <button class="lang-link lang-btn" data-lang="sr-cyrl">Српски</button>
+        <button class="lang-link lang-btn" data-lang="hr">Hrvatski</button>
       </div>
       <div class="footer-links">
-        <a href="faq.html" data-i18n="footer_faq" data-i18n-href="footer_faq_href">FAQ</a>
-        <a href="privacy.html" data-i18n="footer_privacy">Privacy Policy</a>
-        <a href="terms.html" data-i18n="footer_terms">Terms of Use</a>
+        <a href="../faq.html" data-i18n="footer_faq" data-i18n-href="footer_faq_href">FAQ</a>
+        <a href="../privacy.html" data-i18n="footer_privacy">Privacy Policy</a>
+        <a href="../terms.html" data-i18n="footer_terms">Terms of Use</a>
         <a href="mailto:support@govoridictionaries.com" data-i18n="footer_contact">Contact</a>
       </div>
       <p>&copy; 2026 Sergei Khrykov &middot; <span data-i18n="footer_made">Made in Belgrade</span></p>
@@ -270,13 +240,13 @@
   </footer>
 
   <!-- ── Scripts ───────────────────────────────────── -->
-  <script src="js/strings-srb.js?v=1"></script>
-  <script src="js/i18n.js?v=4"></script>
+  <script src="../js/strings-hrv.js?v=1"></script>
+  <script src="../js/i18n.js?v=4"></script>
   <!-- Forwards an inbound ?utm_source=… into the store badges, so a partner
        link attributes to that partner rather than to the badge placement.
        Order-independent: i18n.js only swaps badge artwork, never hrefs. -->
-  <script src="js/store-links.js?v=1"></script>
-  <script src="js/carousel.js?v=1"></script>
+  <script src="../js/store-links.js?v=1"></script>
+  <script src="../js/carousel.js?v=1"></script>
 
   <!-- Firebase Analytics -->
   <script type="module">
