@@ -1,7 +1,8 @@
 // Screenshot carousels on the landing pages. Each .shot-carousel holds a
 // scroll-snapping .carousel-track of <figure class="shot"> slides; this adds
-// the arrow/dot navigation and a slow auto-advance that runs only while the
-// carousel is on screen and stops for good once the reader touches it.
+// prev/next buttons overlaid on the screenshot, the dots underneath, and a
+// slow auto-advance that runs only while the carousel is on screen and stops
+// for good once the reader touches it.
 (function () {
   'use strict';
 
@@ -27,14 +28,16 @@
       track.scrollTo({ left: slide.offsetLeft - track.offsetLeft, behavior: 'smooth' });
     }
 
-    // Wrap dots + arrows in a nav row
-    const nav = document.createElement('div');
-    nav.className = 'carousel-nav';
-    dotsContainer.parentNode.insertBefore(nav, dotsContainer);
+    // Prev/next buttons overlaid on the screenshot's left and right edges
+    // (the dots stay underneath).
+    const viewport = document.createElement('div');
+    viewport.className = 'carousel-viewport';
+    track.parentNode.insertBefore(viewport, track);
+    viewport.appendChild(track);
 
     const arrow = (points, delta) => {
       const btn = document.createElement('button');
-      btn.className = 'carousel-arrow';
+      btn.className = 'carousel-arrow ' + (delta < 0 ? 'carousel-arrow--prev' : 'carousel-arrow--next');
       btn.type = 'button';
       btn.setAttribute('aria-label', delta < 0 ? 'Previous screenshot' : 'Next screenshot');
       btn.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="' + points + '"/></svg>';
@@ -45,9 +48,25 @@
       return btn;
     };
 
-    nav.appendChild(arrow('15 18 9 12 15 6', -1));
+    const arrows = [arrow('15 18 9 12 15 6', -1), arrow('9 6 15 12 9 18', 1)];
+    arrows.forEach(a => viewport.appendChild(a));
+
+    // Centre the buttons on the image, not on the track (whose height also
+    // includes the caption, which wraps differently per language).
+    const firstImg = slides[0].querySelector('img');
+    function positionArrows() {
+      const h = firstImg.getBoundingClientRect().height;
+      if (!h) return;
+      arrows.forEach(a => { a.style.top = Math.round(h / 2 - a.offsetHeight / 2) + 'px'; });
+    }
+    positionArrows();
+    firstImg.addEventListener('load', positionArrows);
+    window.addEventListener('resize', positionArrows);
+
+    const nav = document.createElement('div');
+    nav.className = 'carousel-nav';
+    dotsContainer.parentNode.insertBefore(nav, dotsContainer);
     nav.appendChild(dotsContainer);
-    nav.appendChild(arrow('9 6 15 12 9 18', 1));
 
     slides.forEach((_, i) => {
       const dot = document.createElement('button');
