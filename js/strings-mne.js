@@ -45,8 +45,8 @@ window.APP_STRINGS = {
     plan_monthly_name: 'Kafa',
 
     signup_heading: 'Get Govori Montenegrin',
-    signup_desc: 'Govori Montenegrin is now available free on the App Store — for iPhone and iPad. The Android version is coming soon.',
-    signup_note: 'Requires iOS 16+. Fully offline, no ads, no account needed.',
+    signup_desc: 'Govori Montenegrin is now available free on the App Store and Google Play — for iPhone, iPad and Android.',
+    signup_note: 'Requires iOS 16+ or Android 8+. Fully offline, no ads, no account needed.',
     signup_telegram: 'Want to share feedback or follow updates? Join our <a href="https://t.me/+9eXsVAtaA_4yYzFi">Telegram group</a>.',
   },
 
@@ -93,8 +93,8 @@ window.APP_STRINGS = {
     plan_monthly_name: 'Kafa',
 
     signup_heading: 'Установить Govori Montenegrin',
-    signup_desc: 'Govori Montenegrin теперь доступен бесплатно в App Store — для iPhone и iPad. Версия для Android — скоро.',
-    signup_note: 'Требуется iOS 16+. Полностью офлайн, без рекламы и без аккаунта.',
+    signup_desc: 'Govori Montenegrin теперь доступен бесплатно в App Store и Google Play — для iPhone, iPad и Android.',
+    signup_note: 'Требуется iOS 16+ или Android 8+. Полностью офлайн, без рекламы и без аккаунта.',
     signup_telegram: 'Есть идеи или нашли ошибку? Заходите в <a href="https://t.me/+9eXsVAtaA_4yYzFi">Telegram-группу</a> — там обсуждаем найденные баги и делимся идеями по улучшению.',
   },
 
@@ -142,8 +142,8 @@ window.APP_STRINGS = {
     plan_monthly_name: 'Kafa',
 
     signup_heading: 'Preuzmite Govori',
-    signup_desc: 'Govori Montenegrin sada je dostupan besplatno u App Store-u — za iPhone i iPad. Verzija za Android stiže uskoro.',
-    signup_note: 'Potreban iOS 16+. Radi oflajn, bez reklama, bez naloga.',
+    signup_desc: 'Govori Montenegrin sada je dostupan besplatno u App Store-u i na Google Play-u — za iPhone, iPad i Android.',
+    signup_note: 'Potreban iOS 16+ ili Android 8+. Radi oflajn, bez reklama, bez naloga.',
     signup_telegram: 'Želite da podijelite utiske ili pratite novosti? Pridružite se našoj <a href="https://t.me/+9eXsVAtaA_4yYzFi">Telegram grupi</a>.',
   },
 
