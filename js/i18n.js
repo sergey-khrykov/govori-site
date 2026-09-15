@@ -63,7 +63,6 @@ const translations = {
     footer_privacy: 'Privacy Policy',
     footer_terms: 'Terms of Use',
     footer_contact: 'Contact',
-    footer_made: 'Made in Belgrade',
     footer_built: 'Built for iOS 16+ and Android 8+',
 
     // Privacy page
@@ -134,7 +133,6 @@ const translations = {
     footer_privacy: 'Политика конфиденциальности',
     footer_terms: 'Условия использования',
     footer_contact: 'Контакты',
-    footer_made: 'Сделано в Белграде',
     footer_built: 'Для iOS 16+ и Android 8+',
 
     priv_title: 'Политика конфиденциальности',
@@ -204,7 +202,6 @@ const translations = {
     footer_privacy: 'Politika privatnosti',
     footer_terms: 'Uslovi korišćenja',
     footer_contact: 'Kontakt',
-    footer_made: 'Napravljeno u Beogradu',
     footer_built: 'Za iOS 16+ i Android 8+',
 
     priv_title: 'Politika privatnosti',
@@ -274,7 +271,6 @@ const translations = {
     footer_privacy: 'Политика приватности',
     footer_terms: 'Услови коришћења',
     footer_contact: 'Контакт',
-    footer_made: 'Направљено у Београду',
     footer_built: 'За iOS 16+ и Android 8+',
 
     priv_title: 'Политика приватности',
@@ -345,7 +341,6 @@ const translations = {
     footer_privacy: 'Politika privatnosti',
     footer_terms: 'Uslovi korišćenja',
     footer_contact: 'Kontakt',
-    footer_made: 'Napravljeno u Beogradu',
     footer_built: 'Za iOS 16+ i Android 8+',
   },
 
@@ -398,7 +393,6 @@ const translations = {
     footer_privacy: 'Pravila privatnosti',
     footer_terms: 'Uvjeti korištenja',
     footer_contact: 'Kontakt',
-    footer_made: 'Napravljeno u Beogradu',
     footer_built: 'Za iOS 16+ i Android 8+',
   },
 };
