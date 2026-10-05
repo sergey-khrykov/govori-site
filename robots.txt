@@ -9,5 +9,11 @@
 User-agent: *
 Allow: /
 Disallow: /videos_full/
+# Govori Web, the dictionary at /sr-en/ and /sr-ru/ (web/robots.txt): its API,
+# audio clips and search page are not for crawling; its pages are.
+Disallow: /_/api/
+Disallow: /_/audio/
+Disallow: /sr-*/search
 
 Sitemap: https://govoridictionaries.com/sitemap.xml
+Sitemap: https://govoridictionaries.com/_/sitemap.xml
