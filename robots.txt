@@ -15,5 +15,12 @@ Disallow: /_/api/
 Disallow: /_/audio/
 Disallow: /sr-*/search
 
+# Not for training Google's AI models (Gemini). Google-Extended is a robots.txt
+# token, not a crawler: Googlebot still crawls and indexes everything above. Set
+# here because Cloudflare's "block AI training" rule blocked Googlebot itself
+# (403 on the sitemap, 2026-10-05).
+User-agent: Google-Extended
+Disallow: /
+
 Sitemap: https://govoridictionaries.com/sitemap.xml
 Sitemap: https://govoridictionaries.com/_/sitemap.xml
