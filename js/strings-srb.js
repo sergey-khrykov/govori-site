@@ -10,6 +10,8 @@ window.APP_STRINGS = {
     hero_headline: 'Learn Serbian with a dictionary that actually understands grammar.',
     hero_subtitle: 'Look up any word form — accusative, past tense, short adjective — and find the canonical entry. Available in Latin and Cyrillic.',
     hero_trust: 'Fully offline · No ads · No account needed',
+    hero_web: 'Or try the dictionary on the web (beta) →',
+    hero_web_href: 'sr-en/',
 
     // Features
     features_heading: 'See what Govori can do',
@@ -62,6 +64,8 @@ window.APP_STRINGS = {
     hero_headline: 'Сербский словарь, который понимает грамматику.',
     hero_subtitle: 'Все падежи, спряжения и времена. На латинице или кириллице. Полностью офлайн и без рекламы.',
     hero_trust: 'Полностью офлайн · Без рекламы · Без аккаунта',
+    hero_web: 'Или попробуйте словарь в браузере (бета) →',
+    hero_web_href: 'sr-ru/',
 
     features_heading: 'Что умеет Govori',
     group1_title: 'Быстрый и гибкий поиск',
@@ -109,6 +113,8 @@ window.APP_STRINGS = {
     hero_headline: 'Rečnik srpskog jezika koji zaista razume gramatiku.',
     hero_subtitle: 'Pronađite bilo koji oblik reči — akuzativ, prošlo vreme, kratki pridev — i dobijte rečnički članak. Latinica i ćirilica.',
     hero_trust: 'Radi oflajn · Bez reklama · Bez naloga',
+    hero_web: 'Ili probajte rečnik na vebu (beta) →',
+    hero_web_href: 'sr-en/',
 
     features_heading: 'Po čemu se Govori razlikuje',
     group1_title: 'Brza i fleksibilna pretraga',
@@ -156,6 +162,8 @@ window.APP_STRINGS = {
     hero_headline: 'Речник српског језика који заиста разуме граматику.',
     hero_subtitle: 'Пронађите било који облик речи — акузатив, прошло време, кратки придев — и добијте речнички чланак. Латиница и ћирилица.',
     hero_trust: 'Ради офлајн · Без реклама · Без налога',
+    hero_web: 'Или пробајте речник на вебу (бета) →',
+    hero_web_href: 'sr-en/',
 
     features_heading: 'По чему се Говори разликује',
     group1_title: 'Брза и флексибилна претрага',

@@ -334,6 +334,17 @@ header .subtitle {
   letter-spacing: 0.02em;
 }
 
+.hero-web {
+  margin-top: 0.75rem;
+  font-size: 0.95rem;
+}
+
+.hero-web a {
+  color: #fff;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
 .cta-group {
   display: flex;
   gap: 1rem;
