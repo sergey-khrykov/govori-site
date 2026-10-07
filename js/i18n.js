@@ -60,6 +60,7 @@ const translations = {
     // Footer
     footer_faq: 'FAQ',
     footer_faq_href: 'faq.html',
+    footer_blog: 'Blog',
     footer_privacy: 'Privacy Policy',
     footer_terms: 'Terms of Use',
     footer_contact: 'Contact',
@@ -130,6 +131,7 @@ const translations = {
 
     footer_faq: 'Вопросы и ответы',
     footer_faq_href: 'faq-ru.html',
+    footer_blog: 'Блог',
     footer_privacy: 'Политика конфиденциальности',
     footer_terms: 'Условия использования',
     footer_contact: 'Контакты',
@@ -199,6 +201,7 @@ const translations = {
 
     footer_faq: 'Česta pitanja',
     footer_faq_href: 'faq.html',
+    footer_blog: 'Blog',
     footer_privacy: 'Politika privatnosti',
     footer_terms: 'Uslovi korišćenja',
     footer_contact: 'Kontakt',
@@ -268,6 +271,7 @@ const translations = {
 
     footer_faq: 'Честа питања',
     footer_faq_href: 'faq.html',
+    footer_blog: 'Блог',
     footer_privacy: 'Политика приватности',
     footer_terms: 'Услови коришћења',
     footer_contact: 'Контакт',
@@ -338,6 +342,7 @@ const translations = {
 
     footer_faq: 'Česta pitanja',
     footer_faq_href: 'faq.html',
+    footer_blog: 'Blog',
     footer_privacy: 'Politika privatnosti',
     footer_terms: 'Uslovi korišćenja',
     footer_contact: 'Kontakt',
@@ -390,6 +395,7 @@ const translations = {
 
     footer_faq: 'Česta pitanja',
     footer_faq_href: 'faq.html',
+    footer_blog: 'Blog',
     footer_privacy: 'Pravila privatnosti',
     footer_terms: 'Uvjeti korištenja',
     footer_contact: 'Kontakt',
