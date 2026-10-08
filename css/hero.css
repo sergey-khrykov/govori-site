@@ -215,6 +215,35 @@
   text-decoration: underline;
 }
 
+/* The QR code beside the badges, for a desktop visitor's phone (P2) */
+.hero-qr {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-left: 6px;
+}
+
+.hero-qr svg {
+  flex: none;
+  padding: 0;
+  border-radius: 8px;
+  box-shadow: 0 6px 18px rgba(20, 18, 60, 0.25);
+}
+
+.hero-qr span {
+  max-width: 140px;
+  font-size: 0.8rem;
+  line-height: 1.35;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+/* A phone, or a window too narrow for it beside the badges: no QR code. */
+@media (hover: none), (max-width: 1100px) {
+  .hero-qr {
+    display: none;
+  }
+}
+
 /* Two phones at an angle */
 .hero-phones {
   position: relative;
