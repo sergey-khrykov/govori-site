@@ -10,6 +10,8 @@ window.APP_STRINGS = {
 
     hero_headline: 'Learn Croatian with a dictionary that actually understands grammar.',
     hero_subtitle: 'Look up any word form — accusative, past tense, short adjective — and find the canonical entry.',
+    tile_forms_ex: 'ljudi → čovjek',
+    tile_table_ex: 'kȕć<b>ama</b>',
     hero_trust: 'Fully offline · No ads · No account needed',
 
     features_heading: 'See what Govori can do',
@@ -44,6 +46,8 @@ window.APP_STRINGS = {
 
     hero_headline: 'Хорватский словарь, который понимает грамматику.',
     hero_subtitle: 'Все падежи, спряжения и времена. Полностью офлайн и без рекламы.',
+    tile_forms_ex: 'ljudi → čovjek',
+    tile_table_ex: 'kȕć<b>ama</b>',
     hero_trust: 'Полностью офлайн · Без рекламы · Без аккаунта',
 
     features_heading: 'Что умеет Govori',
@@ -79,6 +83,8 @@ window.APP_STRINGS = {
 
     hero_headline: 'Rječnik hrvatskog jezika koji zaista razumije gramatiku.',
     hero_subtitle: 'Pronađite bilo koji oblik riječi — akuzativ, prošlo vrijeme, kratki pridjev — i dobijte rječnički članak.',
+    tile_forms_ex: 'ljudi → čovjek',
+    tile_table_ex: 'kȕć<b>ama</b>',
     hero_trust: 'Radi offline · Bez oglasa · Bez računa',
 
     features_heading: 'Po čemu se Govori razlikuje',

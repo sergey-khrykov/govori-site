@@ -8,6 +8,8 @@ window.APP_STRINGS = {
 
     hero_headline: 'Learn Montenegrin with a dictionary that actually understands grammar.',
     hero_subtitle: 'Ijekavian forms first — mlijeko, vrijeme, dijete. Look up any word form and find the canonical entry. Available in Latin and Cyrillic.',
+    tile_forms_ex: 'ljudi → čovjek',
+    tile_table_ex: 'kȕć<b>ama</b>',
     hero_trust: 'Fully offline · No ads · No account needed',
 
     features_heading: 'See what Govori can do',
@@ -56,6 +58,8 @@ window.APP_STRINGS = {
 
     hero_headline: 'Черногорский словарь, который понимает грамматику.',
     hero_subtitle: 'Иекавские формы — в первую очередь: mlijeko, vrijeme, dijete. Все падежи, спряжения и времена. На латинице или кириллице. Полностью офлайн и без рекламы.',
+    tile_forms_ex: 'ljudi → čovjek',
+    tile_table_ex: 'kȕć<b>ama</b>',
     hero_trust: 'Полностью офлайн · Без рекламы · Без аккаунта',
 
     features_heading: 'Что умеет Govori',
@@ -105,6 +109,8 @@ window.APP_STRINGS = {
 
     hero_headline: 'Rječnik crnogorskog jezika koji zaista razumije gramatiku.',
     hero_subtitle: 'Ijekavski oblici na prvom mjestu — mlijeko, vrijeme, dijete. Pronađite bilo koji oblik riječi i dobijte rječnički članak. Latinica i ćirilica.',
+    tile_forms_ex: 'ljudi → čovjek',
+    tile_table_ex: 'kȕć<b>ama</b>',
     hero_trust: 'Radi oflajn · Bez reklama · Bez naloga',
 
     features_heading: 'Po čemu se Govori razlikuje',

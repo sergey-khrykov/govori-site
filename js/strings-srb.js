@@ -9,6 +9,8 @@ window.APP_STRINGS = {
     // Hero
     hero_headline: 'Learn Serbian with a dictionary that actually understands grammar.',
     hero_subtitle: 'Look up any word form — accusative, past tense, short adjective — and find the canonical entry. Available in Latin and Cyrillic.',
+    tile_forms_ex: 'ljudi → čovek',
+    tile_table_ex: 'kȕć<b>ama</b>',
     hero_trust: 'Fully offline · No ads · No account needed',
     hero_web: 'Or try the dictionary on the web (beta) →',
     hero_web_href: 'sr-en/',
@@ -66,6 +68,8 @@ window.APP_STRINGS = {
 
     hero_headline: 'Сербский словарь, который понимает грамматику.',
     hero_subtitle: 'Все падежи, спряжения и времена. На латинице или кириллице. Полностью офлайн и без рекламы.',
+    tile_forms_ex: 'ljudi → čovek',
+    tile_table_ex: 'kȕć<b>ama</b>',
     hero_trust: 'Полностью офлайн · Без рекламы · Без аккаунта',
     hero_web: 'Или попробуйте словарь в браузере (бета) →',
     hero_web_href: 'sr-ru/',
@@ -118,6 +122,8 @@ window.APP_STRINGS = {
 
     hero_headline: 'Rečnik srpskog jezika koji zaista razume gramatiku.',
     hero_subtitle: 'Pronađite bilo koji oblik reči — akuzativ, prošlo vreme, kratki pridev — i dobijte rečnički članak. Latinica i ćirilica.',
+    tile_forms_ex: 'ljudi → čovek',
+    tile_table_ex: 'kȕć<b>ama</b>',
     hero_trust: 'Radi oflajn · Bez reklama · Bez naloga',
     hero_web: 'Ili probajte rečnik na vebu (beta) →',
     hero_web_href: 'sr-en/',
@@ -170,6 +176,8 @@ window.APP_STRINGS = {
 
     hero_headline: 'Речник српског језика који заиста разуме граматику.',
     hero_subtitle: 'Пронађите било који облик речи — акузатив, прошло време, кратки придев — и добијте речнички чланак. Латиница и ћирилица.',
+    tile_forms_ex: 'људи → човек',
+    tile_table_ex: 'ку̏ћ<b>ама</b>',
     hero_trust: 'Ради офлајн · Без реклама · Без налога',
     hero_web: 'Или пробајте речник на вебу (бета) →',
     hero_web_href: 'sr-en/',

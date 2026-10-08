@@ -176,6 +176,92 @@
   transform: rotate(5deg);
 }
 
+/* Three tiles under the hero */
+.hero-tiles {
+  padding: 2.5rem 0 0;
+}
+
+.hero-tiles-in {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.hero-tile {
+  min-height: 200px;
+  padding: 22px 24px;
+  border-radius: 20px;
+  background: color-mix(in srgb, var(--brand) 7%, #fff);
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.hero-tile h3 {
+  margin: 0;
+  font-size: 1.25rem;
+  line-height: 1.25;
+}
+
+.hero-tile > p {
+  margin: 6px 0 0;
+  max-width: 290px;
+  font-size: 0.92rem;
+  color: var(--color-muted);
+}
+
+.hero-tile .hero-tile-ex {
+  margin: auto 0 0;
+  max-width: none;
+  padding-top: 18px;
+  align-self: flex-end;
+  text-align: right;
+  font-size: 1.85rem;
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--brand);
+}
+
+/* The ending in the colour each app gives endings (Brand.swift): Montenegrin's coral,
+   Croatian's; Serbian keeps the wordmark's orange. The icons' yellow would not read on
+   the pale tile. */
+.hero-tile-ex b {
+  color: var(--tile-ending, var(--brand-mark));
+  font-weight: 600;
+}
+
+body.theme-mne {
+  --tile-ending: #E67678;
+}
+
+body.theme-hrv {
+  --tile-ending: #E77070;
+}
+
+.hero-tile-ex small {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--color-muted);
+}
+
+.hero-tile--alt {
+  background: var(--brand);
+  color: #fff;
+}
+
+.hero-tile--alt > p,
+.hero-tile--alt .hero-tile-ex {
+  color: #fff;
+}
+
+.hero-tile--alt > p:not(.hero-tile-ex) {
+  opacity: 0.85;
+}
+
 /* The bar's field steps back while the hero's is on screen (js/hero.js); it keeps its
    column, so nothing beside it moves. */
 .hero-search-in-view .gbar-in > .gbar-search {
@@ -209,6 +295,15 @@
 
 /* A tablet: one column; the screenshots are further down the page. */
 @media (max-width: 900px) {
+  .hero-tiles-in {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 12px;
+  }
+
+  .hero-tile {
+    min-height: 0;
+  }
+
   .hero-v3 {
     grid-template-columns: minmax(0, 1fr);
   }
