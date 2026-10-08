@@ -83,8 +83,8 @@
 }
 
 .gbar-apps[open] > summary {
-  background: #fff;
-  color: var(--brand);
+  background: var(--color-surface);
+  color: var(--brand-text, var(--brand));
 }
 
 .gbar-menu {
@@ -94,7 +94,7 @@
   width: 300px;
   padding: 8px;
   border-radius: 12px;
-  background: #fff;
+  background: var(--color-surface);
   color: var(--color-text);
   box-shadow: 0 12px 40px rgba(20, 18, 40, 0.18), 0 2px 6px rgba(20, 18, 40, 0.08);
 }
@@ -131,7 +131,7 @@ a.gbar-app:hover {
 }
 
 .gbar-app.is-current {
-  background: color-mix(in srgb, var(--brand) 10%, #fff);
+  background: color-mix(in srgb, var(--brand) 14%, var(--color-surface));
 }
 
 .gbar-app img {
@@ -154,7 +154,7 @@ a.gbar-app:hover {
 .gbar-app i {
   font-style: normal;
   font-weight: 700;
-  color: var(--brand);
+  color: var(--brand-text, var(--brand));
 }
 
 .gbar-app.is-upcoming {
@@ -202,7 +202,7 @@ a.gbar-app:hover {
   gap: 8px;
   padding: 0 12px;
   border-radius: 10px;
-  background: #fff;
+  background: var(--color-surface);
   color: var(--color-text);
 }
 
@@ -282,6 +282,10 @@ a.gbar-app:hover {
     display: none;
   }
 
+  .gbar-theme--fold {
+    display: inline-grid;
+  }
+
   .gbar-more {
     display: block;
     position: relative;
@@ -309,7 +313,7 @@ a.gbar-app:hover {
     display: grid;
     gap: 14px;
     border-radius: 14px;
-    background: #fff;
+    background: var(--color-surface);
     color: var(--color-text);
     box-shadow: 0 12px 40px rgba(20, 18, 40, 0.2), 0 2px 6px rgba(20, 18, 40, 0.08);
   }
@@ -363,20 +367,171 @@ a.gbar-app:hover {
   }
 }
 
+/* The language menu: a chip with the current language, the languages by name below it */
+.gbar-langs {
+  position: relative;
+}
+
+.gbar-langs > summary {
+  list-style: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  height: 34px;
+  padding: 0 9px;
+  border-radius: 9px;
+  background: rgba(255, 255, 255, 0.16);
+  color: #fff;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.gbar-langs > summary::-webkit-details-marker {
+  display: none;
+}
+
+.gbar-langs[open] > summary,
+.gbar-langs > summary:hover {
+  background: rgba(255, 255, 255, 0.26);
+}
+
+.gbar-langmenu {
+  position: absolute;
+  top: calc(100% + 10px);
+  right: 0;
+  min-width: 190px;
+  padding: 6px;
+  display: grid;
+  border-radius: 12px;
+  background: var(--color-surface);
+  color: var(--color-text);
+  box-shadow: 0 12px 40px rgba(20, 18, 40, 0.18), 0 2px 6px rgba(20, 18, 40, 0.08);
+}
+
+.gbar-langmenu .gbar-lang-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 10px;
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  font-size: 0.9rem;
+  text-align: left;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.gbar-langmenu .gbar-lang-item + .gbar-lang-item {
+  border-left: 0;
+}
+
+.gbar-langmenu .gbar-lang-item:hover {
+  background: var(--color-card-bg);
+  color: var(--color-text);
+}
+
+.gbar-langmenu .gbar-lang-item.active {
+  background: color-mix(in srgb, var(--brand) 14%, var(--color-surface));
+  color: var(--brand-text, var(--brand));
+  font-weight: 600;
+}
+
+.gbar-lang-code {
+  min-width: 26px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--color-muted);
+}
+
+/* The day/night switch: a moon on a light page, a sun on a dark one, at the bar's far
+   right (owner, 2026-10-08); a folded bar shows its own right of the menu. */
+.gbar-theme {
+  flex: none;
+  width: 34px;
+  height: 34px;
+  display: inline-grid;
+  place-items: center;
+  border: 0;
+  border-radius: 9px;
+  background: rgba(255, 255, 255, 0.16);
+  color: #fff;
+  cursor: pointer;
+}
+
+.gbar-theme:hover {
+  background: rgba(255, 255, 255, 0.26);
+}
+
+.gbar-theme .gbar-sun,
+.gbar-theme--fold {
+  display: none;
+}
+
+:root[data-theme="dark"] .gbar-theme .gbar-moon {
+  display: none;
+}
+
+:root[data-theme="dark"] .gbar-theme .gbar-sun {
+  display: block;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .gbar-theme .gbar-moon {
+    display: none;
+  }
+
+  :root:not([data-theme="light"]) .gbar-theme .gbar-sun {
+    display: block;
+  }
+}
+
+/* The web dictionary's tab and its beta badge, in the wordmark's red-orange accent */
+.gbar-dict {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.gbar-beta {
+  font-style: normal;
+  font-size: 0.625rem;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #fff;
+  background: #E8612C;
+  border-radius: 999px;
+  padding: 3px 6px 2px;
+}
+
+/* ── The web dictionary's dropdown under every search field ──
+   The dictionary's own (its embed, /_/embed.js): rows and styles in a shadow root that
+   hangs from .govori-dd, which the embed places under the field. The bar's field is
+   narrower than a dictionary row needs. */
+
+.gbar-in > .gbar-search .govori-dd {
+  min-width: 520px;
+}
+
 /* ── Offer line under the bar (site/_build/offers.js) ─── */
 
 .goffer {
   position: relative;
   padding: 10px 48px 10px 16px;
-  background: color-mix(in srgb, var(--brand) 9%, #fff);
-  border-bottom: 1px solid color-mix(in srgb, var(--brand) 18%, #fff);
+  background: color-mix(in srgb, var(--brand) 12%, var(--color-surface));
+  border-bottom: 1px solid color-mix(in srgb, var(--brand) 22%, var(--color-surface));
   color: var(--color-text);
   font-size: 0.9rem;
   text-align: center;
 }
 
 .goffer a {
-  color: var(--brand);
+  color: var(--brand-text, var(--brand));
   font-weight: 600;
   text-decoration: none;
   white-space: nowrap;
@@ -403,7 +558,7 @@ a.gbar-app:hover {
 }
 
 .goffer-x:hover {
-  background: color-mix(in srgb, var(--brand) 12%, #fff);
+  background: color-mix(in srgb, var(--brand) 16%, var(--color-surface));
 }
 
 /* ── Footer ─────────────────────────────────────────── */
@@ -411,7 +566,7 @@ a.gbar-app:hover {
 .gfoot {
   padding: 0;
   border-top: 1px solid var(--color-card-border);
-  background: #f7f7fa;
+  background: var(--color-foot);
   text-align: left;
   font-size: 0.875rem;
   color: var(--color-muted);

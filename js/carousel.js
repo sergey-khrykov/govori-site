@@ -53,15 +53,18 @@
 
     // Centre the buttons on the image, not on the track (whose height also
     // includes the caption, which wraps differently per language).
-    const firstImg = slides[0].querySelector('img');
+    // The image on screen: a screenshot with a dark twin shows one of the two, by the theme.
+    const firstImgs = Array.from(slides[0].querySelectorAll('img'));
     function positionArrows() {
-      const h = firstImg.getBoundingClientRect().height;
+      const shown = firstImgs.find(img => img.offsetParent !== null) || firstImgs[0];
+      const h = shown.getBoundingClientRect().height;
       if (!h) return;
       arrows.forEach(a => { a.style.top = Math.round(h / 2 - a.offsetHeight / 2) + 'px'; });
     }
     positionArrows();
-    firstImg.addEventListener('load', positionArrows);
+    firstImgs.forEach(img => img.addEventListener('load', positionArrows));
     window.addEventListener('resize', positionArrows);
+    new MutationObserver(positionArrows).observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
 
     const nav = document.createElement('div');
     nav.className = 'carousel-nav';

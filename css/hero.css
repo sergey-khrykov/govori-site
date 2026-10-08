@@ -93,7 +93,7 @@
   gap: 12px;
   padding: 0 8px 0 18px;
   border-radius: 14px;
-  background: #fff;
+  background: var(--color-surface);
   color: var(--color-text);
   box-shadow: 0 14px 36px rgba(20, 18, 60, 0.25);
 }
@@ -142,106 +142,6 @@
 
 .hero-v3 .hero-trust {
   margin-top: 0.9rem;
-}
-
-/* Suggestions under the field (js/suggest.js) */
-.hero-search {
-  position: relative;
-}
-
-.hero-suggest {
-  position: absolute;
-  top: calc(100% + 8px);
-  left: 0;
-  right: 0;
-  z-index: 50;
-  padding: 6px;
-  border-radius: 14px;
-  background: #fff;
-  box-shadow: 0 18px 44px rgba(20, 18, 60, 0.28);
-  text-align: left;
-}
-
-.hs-row {
-  display: block;
-  padding: 8px 12px;
-  border-radius: 9px;
-  color: var(--color-text);
-  text-decoration: none;
-}
-
-.hs-row:hover,
-.hs-row.is-active {
-  background: color-mix(in srgb, var(--brand) 9%, #fff);
-}
-
-.hs-hw {
-  display: block;
-  font-size: 1.05rem;
-  font-weight: 500;
-}
-
-.hs-hw b {
-  font-weight: 700;
-}
-
-.hs-form {
-  font-size: 0.85rem;
-  font-weight: 500;
-  color: var(--color-muted);
-}
-
-.hs-gloss {
-  display: block;
-  overflow: hidden;
-  font-size: 0.85rem;
-  color: var(--color-muted);
-  white-space: nowrap;
-  text-overflow: ellipsis;
-}
-
-.hs-all {
-  display: block;
-  margin-top: 4px;
-  padding: 9px 12px;
-  border-top: 1px solid var(--color-card-border);
-  color: var(--brand);
-  font-size: 0.9rem;
-  font-weight: 600;
-  text-decoration: none;
-}
-
-.hs-all:hover {
-  text-decoration: underline;
-}
-
-/* The QR code beside the badges, for a desktop visitor's phone (P2) */
-.hero-qr {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  margin-left: 6px;
-}
-
-.hero-qr svg {
-  flex: none;
-  padding: 0;
-  border-radius: 8px;
-  box-shadow: 0 6px 18px rgba(20, 18, 60, 0.25);
-}
-
-.hero-qr span {
-  max-width: 140px;
-  font-size: 0.8rem;
-  line-height: 1.35;
-  color: rgba(255, 255, 255, 0.85);
-}
-
-/* A phone, or a window too narrow for it beside the badges: no QR code. */
-@media (hover: none), (max-width: 1100px) {
-  .hero-qr {
-    display: none;
-  }
 }
 
 /* Two phones at an angle */
@@ -296,7 +196,7 @@
   min-height: 200px;
   padding: 22px 24px;
   border-radius: 20px;
-  background: color-mix(in srgb, var(--brand) 7%, #fff);
+  background: color-mix(in srgb, var(--brand) 9%, var(--color-surface));
   display: flex;
   flex-direction: column;
   text-align: left;
@@ -324,7 +224,7 @@
   font-size: 1.85rem;
   font-weight: 600;
   line-height: 1.2;
-  color: var(--brand);
+  color: var(--brand-text, var(--brand));
 }
 
 /* The ending in the colour each app gives endings (Brand.swift): Montenegrin's coral,

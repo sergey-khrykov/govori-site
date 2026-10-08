@@ -71,7 +71,10 @@ const translations = {
     footer_built: 'Built for iOS 16+ and Android 8+',
 
     // Top bar, dictionary menu and footer (site/_build/chrome.js)
-    nav_dictionary: 'Dictionary',
+    nav_dictionary: 'Dictionary Online',
+    nav_beta: 'beta',
+    theme_toggle: 'Light or dark',
+    nav_language: 'Language',
     nav_get_app: 'Get the app',
     nav_menu: 'Menu',
     search_placeholder: 'Search the dictionary',
@@ -177,7 +180,10 @@ const translations = {
     footer_built: 'Для iOS 16+ и Android 8+',
 
     // Top bar, dictionary menu and footer (site/_build/chrome.js)
-    nav_dictionary: 'Словарь',
+    nav_dictionary: 'Словарь онлайн',
+    nav_beta: 'бета',
+    theme_toggle: 'Светлая или тёмная тема',
+    nav_language: 'Язык',
     nav_get_app: 'Скачать приложение',
     nav_menu: 'Меню',
     search_placeholder: 'Поиск в словаре',
@@ -284,7 +290,10 @@ const translations = {
     footer_built: 'Za iOS 16+ i Android 8+',
 
     // Top bar, dictionary menu and footer (site/_build/chrome.js)
-    nav_dictionary: 'Rečnik',
+    nav_dictionary: 'Rečnik onlajn',
+    nav_beta: 'beta',
+    theme_toggle: 'Svetla ili tamna tema',
+    nav_language: 'Jezik',
     nav_get_app: 'Preuzmite aplikaciju',
     nav_menu: 'Meni',
     search_placeholder: 'Pretražite rečnik',
@@ -389,7 +398,10 @@ const translations = {
     footer_built: 'За iOS 16+ и Android 8+',
 
     // Top bar, dictionary menu and footer (site/_build/chrome.js)
-    nav_dictionary: 'Речник',
+    nav_dictionary: 'Речник онлајн',
+    nav_beta: 'бета',
+    theme_toggle: 'Светла или тамна тема',
+    nav_language: 'Језик',
     nav_get_app: 'Преузмите апликацију',
     nav_menu: 'Мени',
     search_placeholder: 'Претражите речник',
@@ -495,7 +507,10 @@ const translations = {
     footer_built: 'Za iOS 16+ i Android 8+',
 
     // Top bar, dictionary menu and footer (site/_build/chrome.js)
-    nav_dictionary: 'Rječnik',
+    nav_dictionary: 'Rječnik onlajn',
+    nav_beta: 'beta',
+    theme_toggle: 'Svijetla ili tamna tema',
+    nav_language: 'Jezik',
     nav_get_app: 'Preuzmite aplikaciju',
     nav_menu: 'Meni',
     search_placeholder: 'Pretražite rječnik',
@@ -583,7 +598,10 @@ const translations = {
     footer_built: 'Za iOS 16+ i Android 8+',
 
     // Top bar, dictionary menu and footer (site/_build/chrome.js)
-    nav_dictionary: 'Rječnik',
+    nav_dictionary: 'Rječnik online',
+    nav_beta: 'beta',
+    theme_toggle: 'Svijetla ili tamna tema',
+    nav_language: 'Jezik',
     nav_get_app: 'Preuzmite aplikaciju',
     nav_menu: 'Izbornik',
     search_placeholder: 'Pretražite rječnik',
