@@ -108,6 +108,13 @@
   color: var(--color-muted);
 }
 
+/* A second brand's group (Lahko) below the Govori apps */
+.gbar-menu-h:not(:first-child) {
+  margin-top: 6px;
+  padding-top: 12px;
+  border-top: 1px solid var(--color-card-border);
+}
+
 .gbar-app {
   display: grid;
   grid-template-columns: 32px minmax(0, 1fr) auto;
@@ -150,7 +157,7 @@ a.gbar-app:hover {
   color: var(--brand);
 }
 
-.gbar-app.is-soon {
+.gbar-app.is-upcoming {
   opacity: 0.65;
 }
 
@@ -338,6 +345,20 @@ a.gbar-app:hover {
 
   .gbar-menu {
     width: min(calc(100vw - 24px), 300px);
+  }
+}
+
+/* A phone: the dictionary menu hangs from the bar, full width, not from its chip, whose
+   300 px ran past the screen's edge. */
+@media (max-width: 520px) {
+  .gbar-apps {
+    position: static;
+  }
+
+  .gbar-menu {
+    left: 12px;
+    right: 12px;
+    width: auto;
   }
 }
 

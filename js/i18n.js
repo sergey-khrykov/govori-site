@@ -19,8 +19,10 @@ const translations = {
     app_srb: 'Serbian',
     app_mne: 'Montenegrin',
     app_hrv: 'Croatian',
+    app_bih: 'Bosnian',
     app_slv: 'Slovenian',
     app_soon: 'soon',
+    app_planned: 'planned',
 
     // Pricing
     pricing_heading: 'Pricing',
@@ -109,8 +111,10 @@ const translations = {
     app_srb: 'Сербский',
     app_mne: 'Черногорский',
     app_hrv: 'Хорватский',
+    app_bih: 'Боснийский',
     app_slv: 'Словенский',
     app_soon: 'скоро',
+    app_planned: 'в планах',
 
     pricing_heading: 'Цены',
     pricing_intro: 'Первые 14 дней открыто всё. Потом поиск, значения и примеры остаются бесплатными навсегда, а грамматические таблицы входят в Govori Plus.',
@@ -196,8 +200,10 @@ const translations = {
     app_srb: 'Srpski',
     app_mne: 'Crnogorski',
     app_hrv: 'Hrvatski',
+    app_bih: 'Bosanski',
     app_slv: 'Slovenački',
     app_soon: 'uskoro',
+    app_planned: 'u planu',
 
     pricing_heading: 'Cene',
     pricing_intro: 'Prvih 14 dana sve je otključano. Posle toga pretraga, značenja i primeri ostaju zauvek besplatni, a gramatičke tabele su deo Govori Plus-a.',
@@ -283,8 +289,10 @@ const translations = {
     app_srb: 'Српски',
     app_mne: 'Црногорски',
     app_hrv: 'Хрватски',
+    app_bih: 'Босански',
     app_slv: 'Словеначки',
     app_soon: 'ускоро',
+    app_planned: 'у плану',
 
     pricing_heading: 'Цене',
     pricing_intro: 'Првих 14 дана све је откључано. После тога претрага, значења и примери остају заувек бесплатни, а граматичке табеле су део Govori Plus-а.',
@@ -371,8 +379,10 @@ const translations = {
     app_srb: 'Srpski',
     app_mne: 'Crnogorski',
     app_hrv: 'Hrvatski',
+    app_bih: 'Bosanski',
     app_slv: 'Slovenački',
     app_soon: 'uskoro',
+    app_planned: 'u planu',
 
     pricing_heading: 'Cijene',
     pricing_intro: 'Prvih 14 dana sve je otključano. Poslije toga pretraga, značenja i primjeri ostaju zauvijek besplatni, a gramatičke tabele su dio Govori Plus-a.',
@@ -441,8 +451,10 @@ const translations = {
     app_srb: 'Srpski',
     app_mne: 'Crnogorski',
     app_hrv: 'Hrvatski',
+    app_bih: 'Bosanski',
     app_slv: 'Slovenski',
     app_soon: 'uskoro',
+    app_planned: 'u planu',
 
     pricing_heading: 'Cijene',
     pricing_intro: 'Prvih 14 dana sve je otključano. Nakon toga pretraživanje, značenja i primjeri ostaju zauvijek besplatni, a gramatičke tablice dio su Govori Plusa.',
