@@ -68,9 +68,9 @@ const translations = {
 
     // Privacy page
     priv_title: 'Privacy Policy',
-    priv_updated: 'Last updated: August 17, 2026',
+    priv_updated: 'Last updated: October 8, 2026',
     priv_collect_h: 'What we collect',
-    priv_collect_site: 'This website collects nothing. There is no sign-up form, no account, and no mailing list.',
+    priv_collect_site: 'This website has no sign-up form, no account and no mailing list, and it sets no cookies. It counts visits with Umami, an analytics tool running on our own server: which pages are opened, which site or search a visit came from, and the visitor’s country, browser, operating system and type of device. Umami stores nothing that identifies a person, and nothing is passed to a third party. When you use “Report missing word” in the web dictionary, the word is recorded with the date, the search direction and the interface language, and nothing about you.',
     priv_collect_app: 'The Govori app requires no account and works fully offline. To improve stability and usability, it collects anonymous crash reports and performance diagnostics (Firebase Crashlytics) and anonymous usage statistics (Firebase Analytics): which features are used, and which words are searched for — including searches that return nothing, which is how the list of missing words is built. These are tied to a random installation identifier, never to an account or to your name, and are read as aggregate trends. If you submit in-app feedback, your report and the app version are stored along with that same random identifier. None of this data is linked to your identity or used for advertising; it is used solely to fix bugs and improve the app.',
     priv_teacher_p: 'If you contact us through the in-app "I\'m a teacher" form, the details you provide (name, email, institution, class size, message) are voluntary and are used only to respond to your inquiry.',
     priv_use_h: 'How we use it',
@@ -80,7 +80,7 @@ const translations = {
     priv_retention_h: 'Retention',
     priv_retention_p: 'Diagnostics and feedback are kept only as long as they are useful for fixing the app. To have anything you sent deleted, email <a href="mailto:support@govoridictionaries.com">support@govoridictionaries.com</a>.',
     priv_cookies_h: 'Cookies & tracking',
-    priv_cookies_p: 'This website uses no cookies, no analytics, and no tracking scripts.',
+    priv_cookies_p: 'No cookies, no advertising trackers, nothing that follows you to other sites.',
     priv_contact_h: 'Contact',
     priv_contact_p: 'Questions? Email <a href="mailto:support@govoridictionaries.com">support@govoridictionaries.com</a>.',
     priv_back: '← Back to home',
@@ -138,9 +138,9 @@ const translations = {
     footer_built: 'Для iOS 16+ и Android 8+',
 
     priv_title: 'Политика конфиденциальности',
-    priv_updated: 'Последнее обновление: 17 августа 2026',
+    priv_updated: 'Последнее обновление: 8 октября 2026',
     priv_collect_h: 'Что мы собираем',
-    priv_collect_site: 'Этот сайт не собирает ничего: ни формы регистрации, ни аккаунтов, ни рассылки.',
+    priv_collect_site: 'На этом сайте нет формы регистрации, аккаунтов и рассылки, и он не использует cookie. Посещения считает Umami — инструмент аналитики, который работает на нашем собственном сервере: какие страницы открывают, с какого сайта или из какого поиска пришёл посетитель, а также его страна, браузер, операционная система и тип устройства. Umami не хранит ничего, по чему можно установить личность, и ничего не передаётся третьим лицам. Когда вы нажимаете «Сообщить о проблеме» в веб-словаре, сохраняются слово, дата, направление поиска и язык интерфейса — и ничего о вас.',
     priv_collect_app: 'Приложение Govori не требует аккаунта и работает полностью офлайн. Ради стабильности и удобства оно собирает обезличенные отчёты о сбоях и диагностику производительности (Firebase Crashlytics), а также обезличенную статистику использования (Firebase Analytics): какими функциями пользуются и какие слова ищут, включая запросы, по которым ничего не нашлось, — из них и складывается список недостающих слов. Всё это привязано к случайному идентификатору установки, а не к аккаунту и не к вашему имени, и читается как общие тенденции. Если вы отправляете отзыв из приложения, вместе с ним сохраняются версия приложения и тот же случайный идентификатор. Эти данные не связаны с вашей личностью и не используются для рекламы; они нужны исключительно для исправления ошибок и улучшения приложения.',
     priv_teacher_p: 'Если вы обращаетесь к нам через форму «Я преподаватель» в приложении, указанные вами данные (имя, эл. почта, организация, размер группы, сообщение) предоставляются добровольно и используются только для ответа на ваш запрос.',
     priv_use_h: 'Как мы используем данные',
@@ -150,7 +150,7 @@ const translations = {
     priv_retention_h: 'Хранение',
     priv_retention_p: 'Диагностика и отзывы хранятся ровно столько, сколько они полезны для исправления приложения. Чтобы удалить отправленное вами, напишите на <a href="mailto:support@govoridictionaries.com">support@govoridictionaries.com</a>.',
     priv_cookies_h: 'Cookie и слежка',
-    priv_cookies_p: 'Этот сайт не использует cookie, аналитику и скрипты отслеживания.',
+    priv_cookies_p: 'Никаких cookie, рекламных трекеров и ничего, что следит за вами на других сайтах.',
     priv_contact_h: 'Контакты',
     priv_contact_p: 'Вопросы? Напишите на <a href="mailto:support@govoridictionaries.com">support@govoridictionaries.com</a>.',
     priv_back: '← На главную',
@@ -208,9 +208,9 @@ const translations = {
     footer_built: 'Za iOS 16+ i Android 8+',
 
     priv_title: 'Politika privatnosti',
-    priv_updated: 'Poslednje ažuriranje: 17. avgust 2026.',
+    priv_updated: 'Poslednje ažuriranje: 8. oktobar 2026.',
     priv_collect_h: 'Šta prikupljamo',
-    priv_collect_site: 'Ovaj sajt ne prikuplja ništa. Nema forme za prijavu, naloga ni mejling liste.',
+    priv_collect_site: 'Ovaj sajt nema formu za prijavu, naloge ni mejling listu i ne koristi kolačiće. Posete broji Umami, alat za analitiku koji radi na našem sopstvenom serveru: koje se stranice otvaraju, sa kog sajta ili iz koje pretrage je poseta došla, kao i zemlja, pregledač, operativni sistem i vrsta uređaja posetioca. Umami ne čuva ništa po čemu bi se mogla utvrditi nečija ličnost, i ništa se ne prosleđuje trećim licima. Kada u veb-rečniku upotrebite dugme „Report missing word“, beleže se reč, datum, smer pretrage i jezik interfejsa, a ništa o vama.',
     priv_collect_app: 'Aplikacija Govori ne zahteva nalog i radi potpuno oflajn. Radi poboljšanja stabilnosti i upotrebljivosti, prikuplja anonimne izveštaje o greškama i dijagnostiku performansi (Firebase Crashlytics), kao i anonimnu statistiku korišćenja (Firebase Analytics): koje se funkcije koriste i koje se reči traže — uključujući i pretrage bez rezultata, od kojih nastaje spisak reči koje nedostaju. Sve je vezano za nasumični identifikator instalacije, nikada za nalog niti za vaše ime, i čita se kao zbirni trend. Ako pošaljete povratne informacije iz aplikacije, uz njih se čuvaju verzija aplikacije i taj isti nasumični identifikator. Ovi podaci nisu povezani sa vašim identitetom niti se koriste za oglašavanje; koriste se isključivo za ispravku grešaka i poboljšanje aplikacije.',
     priv_teacher_p: 'Ako nam se obratite putem forme „Ja sam predavač“ u aplikaciji, podaci koje navedete (ime, imejl, institucija, veličina grupe, poruka) daju se dobrovoljno i koriste se isključivo za odgovor na vaš upit.',
     priv_use_h: 'Kako koristimo podatke',
@@ -220,7 +220,7 @@ const translations = {
     priv_retention_h: 'Čuvanje podataka',
     priv_retention_p: 'Dijagnostika i povratne informacije čuvaju se samo dok su korisne za ispravku aplikacije. Da biste obrisali ono što ste poslali, pišite na <a href="mailto:support@govoridictionaries.com">support@govoridictionaries.com</a>.',
     priv_cookies_h: 'Kolačići i praćenje',
-    priv_cookies_p: 'Ovaj sajt ne koristi kolačiće, analitiku ni skripte za praćenje.',
+    priv_cookies_p: 'Bez kolačića, bez reklamnih alata za praćenje i bez ičega što vas prati na drugim sajtovima.',
     priv_contact_h: 'Kontakt',
     priv_contact_p: 'Pitanja? Pišite na <a href="mailto:support@govoridictionaries.com">support@govoridictionaries.com</a>.',
     priv_back: '← Nazad na početnu',
@@ -278,9 +278,9 @@ const translations = {
     footer_built: 'За iOS 16+ и Android 8+',
 
     priv_title: 'Политика приватности',
-    priv_updated: 'Последње ажурирање: 17. август 2026.',
+    priv_updated: 'Последње ажурирање: 8. октобар 2026.',
     priv_collect_h: 'Шта прикупљамо',
-    priv_collect_site: 'Овај сајт не прикупља ништа. Нема форме за пријаву, налога ни мејлинг листе.',
+    priv_collect_site: 'Овај сајт нема форму за пријаву, налоге ни мејлинг листу и не користи колачиће. Посете броји Umami, алат за аналитику који ради на нашем сопственом серверу: које се странице отварају, са ког сајта или из које претраге је посета дошла, као и земља, прегледач, оперативни систем и врста уређаја посетиоца. Umami не чува ништа по чему би се могла утврдити нечија личност, и ништа се не прослеђује трећим лицима. Када у веб-речнику употребите дугме „Report missing word“, бележе се реч, датум, смер претраге и језик интерфејса, а ништа о вама.',
     priv_collect_app: 'Апликација Говори не захтева налог и ради потпуно офлајн. Ради побољшања стабилности и употребљивости, прикупља анонимне извештаје о грешкама и дијагностику перформанси (Firebase Crashlytics), као и анонимну статистику коришћења (Firebase Analytics): које се функције користе и које се речи траже — укључујући и претраге без резултата, од којих настаје списак речи које недостају. Све је везано за насумични идентификатор инсталације, никада за налог нити за ваше име, и чита се као збирни тренд. Ако пошаљете повратне информације из апликације, уз њих се чувају верзија апликације и тај исти насумични идентификатор. Ови подаци нису повезани са вашим идентитетом нити се користе за оглашавање; користе се искључиво за исправку грешака и побољшање апликације.',
     priv_teacher_p: 'Ако нам се обратите путем форме „Ја сам предавач“ у апликацији, подаци које наведете (име, имејл, институција, величина групе, порука) дају се добровољно и користе се искључиво за одговор на ваш упит.',
     priv_use_h: 'Како користимо податке',
@@ -290,7 +290,7 @@ const translations = {
     priv_retention_h: 'Чување података',
     priv_retention_p: 'Дијагностика и повратне информације чувају се само док су корисне за исправку апликације. Да бисте обрисали оно што сте послали, пишите на <a href="mailto:support@govoridictionaries.com">support@govoridictionaries.com</a>.',
     priv_cookies_h: 'Колачићи и праћење',
-    priv_cookies_p: 'Овај сајт не користи колачиће, аналитику ни скрипте за праћење.',
+    priv_cookies_p: 'Без колачића, без рекламних алата за праћење и без ичега што вас прати на другим сајтовима.',
     priv_contact_h: 'Контакт',
     priv_contact_p: 'Питања? Пишите на <a href="mailto:support@govoridictionaries.com">support@govoridictionaries.com</a>.',
     priv_back: '← Назад на почетну',
@@ -468,7 +468,7 @@ function setLang(lang) {
   });
 
   // Persist choice
-  localStorage.setItem('govori-lang', lang);
+  try { localStorage.setItem('govori-lang', lang); } catch (e) {}
 
   // Swap the store badge artwork to the locale the stores provide
   // (only EN and RU exist for our language set; Serbian falls back to EN)
@@ -529,7 +529,33 @@ function resolveLang(wanted, available) {
   return 'en';
 }
 
+// A page the build rendered in one language (site/_build/render.js, <html
+// data-lang-fixed>): its language buttons are links, so nothing here may switch
+// the text, or a Russian browser would get Russian text under the English URL.
+// Only a Latin page with a Cyrillic switch (data-latin, data-cyrillic) works the
+// switch in place: ?script=cyrl or the reader's last choice opens it in Cyrillic.
+function initFixedPage() {
+  const root = document.documentElement;
+  const latin = root.getAttribute('data-latin');
+  const cyrillic = root.getAttribute('data-cyrillic');
+  if (!latin || !cyrillic) return;
+  document.querySelectorAll('button.lang-btn[data-lang]').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const lang = btn.getAttribute('data-lang');
+      setLang(lang);
+      try { localStorage.setItem('govori-script', lang === cyrillic ? 'cyrl' : 'latn'); } catch (err) {}
+    });
+  });
+  let stored = null;
+  try { stored = localStorage.getItem('govori-script'); } catch (err) {}
+  const wanted = new URLSearchParams(window.location.search).get('script') || stored;
+  if (wanted === 'cyrl') setLang(cyrillic);
+}
+
 function initI18n() {
+  if (document.documentElement.hasAttribute('data-lang-fixed')) return initFixedPage();
+
   // Detect language: URL param > localStorage > browser
   const params = new URLSearchParams(window.location.search);
   let lang = params.get('lang');
