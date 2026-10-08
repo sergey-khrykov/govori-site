@@ -1,0 +1,248 @@
+/* The app pages' hero in the V3 look (site/_build/hero.js; landing-page.md R1b): copy on
+   the left, two phones at an angle on the right. On a desktop the search leads and the
+   badges follow; on a phone the badges come first and the search follows (P2). */
+
+.hero-gradient {
+  padding: 3.5rem 0 4.5rem;
+  overflow: hidden;
+}
+
+.hero-v3 {
+  max-width: 1200px;
+  padding: 0 20px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 470px;
+  align-items: center;
+  gap: 40px;
+  text-align: left;
+}
+
+.hero-appicon {
+  display: flex;
+  justify-content: center;
+}
+
+.hero-appicon img {
+  width: 240px;
+  height: 240px;
+  border-radius: 54px;
+  box-shadow: 0 30px 60px rgba(10, 10, 40, 0.3);
+  transform: rotate(-4deg);
+}
+
+.hero-copy {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.hero-copy > .hero-pill { order: 0; }
+.hero-copy > h1 { order: 1; }
+.hero-copy > .subtitle { order: 2; }
+.hero-copy > .hero-search { order: 3; }
+.hero-copy > .cta-group { order: 4; }
+.hero-copy > .hero-trust { order: 5; }
+
+.hero-pill {
+  display: inline-flex;
+  align-items: center;
+  min-height: 30px;
+  padding: 4px 13px;
+  margin-bottom: 1.1rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.16);
+  color: #fff;
+  font-size: 0.85rem;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.hero-pill:hover {
+  background: rgba(255, 255, 255, 0.24);
+}
+
+.hero-pill::after {
+  content: "→";
+  margin-left: 0.4em;
+}
+
+.hero-v3 h1 {
+  margin: 0;
+  color: #fff;
+  font-size: clamp(2.1rem, 3.6vw, 3.25rem);
+  font-weight: 700;
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+}
+
+.hero-v3 .subtitle {
+  margin: 1.1rem 0 0;
+  max-width: 590px;
+  font-size: 1.15rem;
+}
+
+.hero-search {
+  width: 100%;
+  max-width: 600px;
+  height: 58px;
+  margin-top: 1.75rem;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0 8px 0 18px;
+  border-radius: 14px;
+  background: #fff;
+  color: var(--color-text);
+  box-shadow: 0 14px 36px rgba(20, 18, 60, 0.25);
+}
+
+.hero-search svg {
+  flex: none;
+  color: #8d8a9c;
+}
+
+.hero-search input {
+  flex: 1;
+  min-width: 0;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  font-size: 1.05rem;
+}
+
+.hero-search button {
+  flex: none;
+  height: 42px;
+  padding: 0 18px;
+  border: 0;
+  border-radius: 10px;
+  background: var(--brand);
+  color: #fff;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.hero-search button:hover {
+  background: var(--brand-hover);
+}
+
+.hero-search:focus-within {
+  box-shadow: 0 14px 36px rgba(20, 18, 60, 0.25), 0 0 0 3px rgba(255, 255, 255, 0.5);
+}
+
+.hero-v3 .cta-group {
+  margin-top: 1.5rem;
+  justify-content: flex-start;
+}
+
+.hero-v3 .hero-trust {
+  margin-top: 0.9rem;
+}
+
+/* Two phones at an angle */
+.hero-phones {
+  position: relative;
+  height: 580px;
+}
+
+.hero-phone {
+  position: absolute;
+  width: 262px;
+  padding: 10px;
+  border-radius: 42px;
+  background: #0e0e12;
+  box-shadow: 0 30px 60px rgba(10, 10, 40, 0.35);
+}
+
+.hero-phone img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 33px;
+}
+
+.hero-phone--1 {
+  left: 0;
+  top: 0;
+  transform: rotate(-6deg);
+}
+
+.hero-phone--2 {
+  left: 200px;
+  top: 40px;
+  transform: rotate(5deg);
+}
+
+/* The bar's field steps back while the hero's is on screen (js/hero.js); it keeps its
+   column, so nothing beside it moves. */
+.hero-search-in-view .gbar-in > .gbar-search {
+  visibility: hidden;
+}
+
+@media (max-width: 1100px) {
+  .hero-v3 {
+    grid-template-columns: minmax(0, 1fr) 360px;
+  }
+
+  .hero-phones {
+    height: 470px;
+  }
+
+  .hero-phone {
+    width: 210px;
+    border-radius: 34px;
+    padding: 8px;
+  }
+
+  .hero-phone img {
+    border-radius: 27px;
+  }
+
+  .hero-phone--2 {
+    left: 150px;
+    top: 34px;
+  }
+}
+
+/* A tablet: one column; the screenshots are further down the page. */
+@media (max-width: 900px) {
+  .hero-v3 {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .hero-phones,
+  .hero-appicon {
+    display: none;
+  }
+}
+
+/* A phone: the app first and the search after it (P2). */
+@media (max-width: 760px) {
+  .hero-gradient {
+    padding: 2rem 0 2.75rem;
+  }
+
+  .hero-v3 {
+    padding: 0 16px;
+  }
+
+  .hero-copy > .cta-group { order: 3; }
+  .hero-copy > .hero-trust { order: 4; }
+  .hero-copy > .hero-search { order: 5; }
+
+  .hero-v3 .subtitle {
+    font-size: 1.05rem;
+  }
+
+  .hero-search {
+    height: 52px;
+    margin-top: 1.5rem;
+  }
+
+  .hero-search button {
+    display: none;
+  }
+}
