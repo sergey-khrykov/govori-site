@@ -362,6 +362,49 @@ a.gbar-app:hover {
   }
 }
 
+/* ── Offer line under the bar (site/_build/offers.js) ─── */
+
+.goffer {
+  position: relative;
+  padding: 10px 48px 10px 16px;
+  background: color-mix(in srgb, var(--brand) 9%, #fff);
+  border-bottom: 1px solid color-mix(in srgb, var(--brand) 18%, #fff);
+  color: var(--color-text);
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+.goffer a {
+  color: var(--brand);
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.goffer a:hover {
+  text-decoration: underline;
+}
+
+.goffer-x {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  width: 32px;
+  height: 32px;
+  transform: translateY(-50%);
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  color: var(--color-muted);
+  font-size: 1.25rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.goffer-x:hover {
+  background: color-mix(in srgb, var(--brand) 12%, #fff);
+}
+
 /* ── Footer ─────────────────────────────────────────── */
 
 .gfoot {

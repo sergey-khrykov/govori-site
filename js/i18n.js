@@ -84,6 +84,9 @@ const translations = {
     footer_help: 'Help',
     footer_legal: 'Legal',
     footer_telegram: 'Telegram group',
+    offer_mne_text: 'In Montenegro? Govori has a Montenegrin dictionary too.',
+    offer_mne_link: 'Govori Montenegrin →',
+    offer_close: 'Close',
 
     // Privacy page
     priv_title: 'Privacy Policy',
@@ -174,6 +177,11 @@ const translations = {
     footer_help: 'Помощь',
     footer_legal: 'Правовая информация',
     footer_telegram: 'Группа в Telegram',
+    offer_mne_text: 'Вы в Черногории? У Govori есть и черногорский словарь.',
+    offer_mne_link: 'Govori для черногорского →',
+    offer_close: 'Закрыть',
+    offer_ru_text: 'Эта страница есть на русском.',
+    offer_ru_link: 'Открыть по-русски →',
 
     priv_title: 'Политика конфиденциальности',
     priv_updated: 'Последнее обновление: 8 октября 2026',
@@ -263,6 +271,9 @@ const translations = {
     footer_help: 'Pomoć',
     footer_legal: 'Pravne informacije',
     footer_telegram: 'Telegram grupa',
+    offer_mne_text: 'U Crnoj Gori ste? Govori ima i crnogorski rečnik.',
+    offer_mne_link: 'Govori na crnogorskom →',
+    offer_close: 'Zatvori',
 
     priv_title: 'Politika privatnosti',
     priv_updated: 'Poslednje ažuriranje: 8. oktobar 2026.',
@@ -352,6 +363,9 @@ const translations = {
     footer_help: 'Помоћ',
     footer_legal: 'Правне информације',
     footer_telegram: 'Telegram група',
+    offer_mne_text: 'У Црној Гори сте? Говори има и црногорски речник.',
+    offer_mne_link: 'Говори на црногорском →',
+    offer_close: 'Затвори',
 
     priv_title: 'Политика приватности',
     priv_updated: 'Последње ажурирање: 8. октобар 2026.',
@@ -442,6 +456,9 @@ const translations = {
     footer_help: 'Pomoć',
     footer_legal: 'Pravne informacije',
     footer_telegram: 'Telegram grupa',
+    offer_mne_text: 'U Crnoj Gori ste? Govori ima i crnogorski rječnik.',
+    offer_mne_link: 'Govori na crnogorskom →',
+    offer_close: 'Zatvori',
   },
 
   // Croatian (ijekavian; the local language on /hrv/)
@@ -514,6 +531,9 @@ const translations = {
     footer_help: 'Pomoć',
     footer_legal: 'Pravne informacije',
     footer_telegram: 'Telegram grupa',
+    offer_mne_text: 'U Crnoj Gori ste? Govori ima i crnogorski rječnik.',
+    offer_mne_link: 'Govori na crnogorskom →',
+    offer_close: 'Zatvori',
   },
 };
 
