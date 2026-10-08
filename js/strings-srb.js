@@ -17,6 +17,7 @@ window.APP_STRINGS = {
     hero_pill: 'New: the dictionary on the web (beta)',
     hero_search_placeholder: 'Type any Serbian word or form',
     hero_search_button: 'Search',
+    hero_search_all: 'All results for “{q}”',
 
     // Features
     features_heading: 'See what Govori can do',
@@ -76,6 +77,7 @@ window.APP_STRINGS = {
     hero_pill: 'Новое: словарь в браузере (бета)',
     hero_search_placeholder: 'Любое сербское слово или форма',
     hero_search_button: 'Найти',
+    hero_search_all: 'Все результаты: «{q}»',
 
     features_heading: 'Что умеет Govori',
     group1_title: 'Быстрый и гибкий поиск',
@@ -130,6 +132,7 @@ window.APP_STRINGS = {
     hero_pill: 'Novo: rečnik na vebu (beta)',
     hero_search_placeholder: 'Upišite bilo koju reč ili oblik',
     hero_search_button: 'Traži',
+    hero_search_all: 'Svi rezultati za „{q}”',
 
     features_heading: 'Po čemu se Govori razlikuje',
     group1_title: 'Brza i fleksibilna pretraga',
@@ -184,6 +187,7 @@ window.APP_STRINGS = {
     hero_pill: 'Ново: речник на вебу (бета)',
     hero_search_placeholder: 'Упишите било коју реч или облик',
     hero_search_button: 'Тражи',
+    hero_search_all: 'Сви резултати за „{q}”',
 
     features_heading: 'По чему се Говори разликује',
     group1_title: 'Брза и флексибилна претрага',

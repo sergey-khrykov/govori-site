@@ -2,9 +2,11 @@
    the left, two phones at an angle on the right. On a desktop the search leads and the
    badges follow; on a phone the badges come first and the search follows (P2). */
 
+/* Sideways only: the tilted phones must not widen the page, and the suggestions under the
+   field must be free to hang below the hero. */
 .hero-gradient {
   padding: 3.5rem 0 4.5rem;
-  overflow: hidden;
+  overflow-x: clip;
 }
 
 .hero-v3 {
@@ -140,6 +142,77 @@
 
 .hero-v3 .hero-trust {
   margin-top: 0.9rem;
+}
+
+/* Suggestions under the field (js/suggest.js) */
+.hero-search {
+  position: relative;
+}
+
+.hero-suggest {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  right: 0;
+  z-index: 50;
+  padding: 6px;
+  border-radius: 14px;
+  background: #fff;
+  box-shadow: 0 18px 44px rgba(20, 18, 60, 0.28);
+  text-align: left;
+}
+
+.hs-row {
+  display: block;
+  padding: 8px 12px;
+  border-radius: 9px;
+  color: var(--color-text);
+  text-decoration: none;
+}
+
+.hs-row:hover,
+.hs-row.is-active {
+  background: color-mix(in srgb, var(--brand) 9%, #fff);
+}
+
+.hs-hw {
+  display: block;
+  font-size: 1.05rem;
+  font-weight: 500;
+}
+
+.hs-hw b {
+  font-weight: 700;
+}
+
+.hs-form {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--color-muted);
+}
+
+.hs-gloss {
+  display: block;
+  overflow: hidden;
+  font-size: 0.85rem;
+  color: var(--color-muted);
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.hs-all {
+  display: block;
+  margin-top: 4px;
+  padding: 9px 12px;
+  border-top: 1px solid var(--color-card-border);
+  color: var(--brand);
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.hs-all:hover {
+  text-decoration: underline;
 }
 
 /* Two phones at an angle */
