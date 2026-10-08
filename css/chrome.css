@@ -1,0 +1,440 @@
+/* The top bar and footer on every page (site/_build/chrome.js; landing-page.md R1, N2).
+   Colours come from the page's brand tokens in style.css, so the Montenegrin pages get the
+   app's red (body.theme-mne). */
+
+/* ── Top bar ─────────────────────────────────────────── */
+
+.gbar {
+  position: sticky;
+  top: env(safe-area-inset-top, 0px);
+  z-index: 100;
+  color: #fff;
+  /* A shade over the brand gradient, so the bar reads as a strip above a gradient hero. */
+  background: linear-gradient(rgba(0, 0, 0, 0.12), rgba(0, 0, 0, 0.12)), var(--brand-gradient);
+  box-shadow: 0 2px 10px rgba(20, 18, 60, 0.14);
+}
+
+/* Three columns: the search in the middle, the sides at least as wide as what they hold.
+   When a language's labels are long (Russian), the search gives up width rather than the
+   tabs running under it. */
+.gbar-in {
+  max-width: 1200px;
+  height: 60px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: grid;
+  grid-template-columns: minmax(max-content, 1fr) minmax(0, 400px) minmax(max-content, 1fr);
+  align-items: center;
+  column-gap: 20px;
+}
+
+.gbar-l {
+  flex: 1 1 0;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.gbar-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.125rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.gbar-brand img {
+  width: 28px;
+  height: 28px;
+  border-radius: 7px;
+  box-shadow: 0 0 0 1.5px rgba(255, 255, 255, 0.55);
+}
+
+/* The dictionary menu: every app of the family */
+.gbar-apps {
+  position: relative;
+}
+
+.gbar-apps > summary,
+.gbar-more > summary {
+  list-style: none;
+  cursor: pointer;
+}
+
+.gbar-apps > summary::-webkit-details-marker,
+.gbar-more > summary::-webkit-details-marker {
+  display: none;
+}
+
+.gbar-apps > summary {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 5px 10px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.18);
+  font-size: 0.875rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.gbar-apps[open] > summary {
+  background: #fff;
+  color: var(--brand);
+}
+
+.gbar-menu {
+  position: absolute;
+  top: calc(100% + 10px);
+  left: 0;
+  width: 300px;
+  padding: 8px;
+  border-radius: 12px;
+  background: #fff;
+  color: var(--color-text);
+  box-shadow: 0 12px 40px rgba(20, 18, 40, 0.18), 0 2px 6px rgba(20, 18, 40, 0.08);
+}
+
+.gbar-menu-h {
+  padding: 6px 10px 4px;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+}
+
+.gbar-app {
+  display: grid;
+  grid-template-columns: 32px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 10px;
+  border-radius: 9px;
+  color: inherit;
+  text-decoration: none;
+}
+
+a.gbar-app:hover {
+  background: var(--color-card-bg);
+}
+
+.gbar-app.is-current {
+  background: color-mix(in srgb, var(--brand) 10%, #fff);
+}
+
+.gbar-app img {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+}
+
+.gbar-app b {
+  display: block;
+  font-size: 0.9375rem;
+}
+
+.gbar-app small {
+  display: block;
+  font-size: 0.75rem;
+  color: var(--color-muted);
+}
+
+.gbar-app i {
+  font-style: normal;
+  font-weight: 700;
+  color: var(--brand);
+}
+
+.gbar-app.is-soon {
+  opacity: 0.65;
+}
+
+.gbar-app em,
+.gfoot-app em {
+  font-style: normal;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+  background: var(--color-card-bg);
+  border-radius: 6px;
+  padding: 3px 7px;
+}
+
+.gbar-tabs {
+  display: flex;
+  gap: 16px;
+}
+
+.gbar-tabs a {
+  color: rgba(255, 255, 255, 0.85);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.gbar-tabs a:hover,
+.gbar-link:hover {
+  color: #fff;
+}
+
+/* The dictionary's search: a plain form to its results page */
+.gbar-search {
+  flex: 0 1 400px;
+  min-width: 0;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 12px;
+  border-radius: 10px;
+  background: #fff;
+  color: var(--color-text);
+}
+
+.gbar-search svg {
+  flex: none;
+  color: #8d8a9c;
+}
+
+.gbar-search input {
+  flex: 1;
+  min-width: 0;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  font-size: 0.95rem;
+}
+
+.gbar-search:focus-within {
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.45);
+}
+
+.gbar-r {
+  flex: 1 1 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+.gbar-link {
+  color: rgba(255, 255, 255, 0.9);
+  text-decoration: none;
+  font-size: 0.875rem;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.gbar-get {
+  display: inline-flex;
+  align-items: center;
+  height: 34px;
+  padding: 0 14px;
+  border-radius: 9px;
+  background: #fff;
+  color: var(--brand);
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.gbar-more {
+  display: none;
+}
+
+/* The hero no longer holds the old pill row; give its content the room back. */
+.hero-gradient {
+  padding-top: 2.5rem;
+}
+
+/* ── Narrow windows and phones: the bar folds into a menu ── */
+
+/* 1100px: below it the Russian bar would leave the search under 200px. */
+@media (max-width: 1100px) {
+  .gbar-in {
+    display: flex;
+    gap: 12px;
+    padding: 0 12px;
+  }
+
+  .gbar-tabs,
+  .gbar-in > .gbar-search,
+  .gbar-r {
+    display: none;
+  }
+
+  .gbar-more {
+    display: block;
+    position: relative;
+    margin-left: auto;
+  }
+
+  .gbar-more > summary {
+    width: 40px;
+    height: 40px;
+    display: grid;
+    place-items: center;
+    border-radius: 9px;
+  }
+
+  .gbar-more[open] > summary {
+    background: rgba(255, 255, 255, 0.2);
+  }
+
+  .gbar-panel {
+    position: absolute;
+    top: calc(100% + 10px);
+    right: 0;
+    width: min(calc(100vw - 24px), 360px);
+    padding: 14px;
+    display: grid;
+    gap: 14px;
+    border-radius: 14px;
+    background: #fff;
+    color: var(--color-text);
+    box-shadow: 0 12px 40px rgba(20, 18, 40, 0.2), 0 2px 6px rgba(20, 18, 40, 0.08);
+  }
+
+  .gbar-panel .gbar-search {
+    flex: none;
+    background: var(--color-card-bg);
+    border: 1px solid var(--color-card-border);
+  }
+
+  .gbar-panel-links {
+    display: grid;
+    gap: 10px;
+  }
+
+  .gbar-panel-links a {
+    color: var(--color-text);
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+  }
+
+  .gbar-panel .lang-switcher {
+    border: 1px solid var(--color-card-border);
+    align-self: start;
+    width: max-content;
+  }
+
+  .gbar-panel .gbar-get {
+    justify-content: center;
+    background: var(--brand);
+    color: #fff;
+  }
+
+  .gbar-menu {
+    width: min(calc(100vw - 24px), 300px);
+  }
+}
+
+/* ── Footer ─────────────────────────────────────────── */
+
+.gfoot {
+  padding: 0;
+  border-top: 1px solid var(--color-card-border);
+  background: #f7f7fa;
+  text-align: left;
+  font-size: 0.875rem;
+  color: var(--color-muted);
+}
+
+.gfoot-in {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 40px 20px 28px;
+}
+
+.gfoot-cols {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.gfoot h2 {
+  margin: 0 0 10px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-text);
+}
+
+.gfoot ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 7px;
+}
+
+.gfoot a {
+  color: var(--color-muted);
+  text-decoration: none;
+}
+
+.gfoot a:hover {
+  color: var(--color-text);
+}
+
+.gfoot-app {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.gfoot-app img {
+  width: 18px;
+  height: 18px;
+  border-radius: 5px;
+}
+
+.gfoot-words {
+  margin: 28px 0 0;
+  padding-top: 18px;
+  border-top: 1px solid var(--color-card-border);
+  line-height: 2;
+}
+
+.gfoot-words a {
+  margin-right: 8px;
+}
+
+.gfoot-bottom {
+  margin-top: 18px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.gfoot-bottom .footer-lang {
+  margin: 0;
+  justify-content: flex-start;
+}
+
+@media (max-width: 760px) {
+  .gfoot-cols {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gbar * {
+    transition: none !important;
+  }
+}
